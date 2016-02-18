@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="88.0" fitWidth="99.0" layoutX="483.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" layoutX="494.0" layoutY="123.0" text="Naam Leerling" />
+      <TextArea layoutX="163.0" layoutY="35.0" prefHeight="105.0" prefWidth="275.0" />
+      <Button layoutX="498.0" layoutY="265.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="69.0" text="Home" />
+      <Label layoutX="163.0" layoutY="14.0" text="Opmerkingen:" />
+      <ImageView fitHeight="105.0" fitWidth="124.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="14.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="427.0" />
+      <CheckBox layoutX="24.0" layoutY="174.0" mnemonicParsing="false" text="Zenuwachtig" />
+      <CheckBox layoutX="24.0" layoutY="199.0" mnemonicParsing="false" text="Concentratie" />
+      <CheckBox layoutX="24.0" layoutY="224.0" mnemonicParsing="false" text="Schrik" />
+      <CheckBox layoutX="24.0" layoutY="250.0" mnemonicParsing="false" text="Asociaal" />
+      <CheckBox layoutX="24.0" layoutY="275.0" mnemonicParsing="false" text="Verkeersgevaarlijk" />
+      <CheckBox layoutX="238.0" layoutY="275.0" mnemonicParsing="false" text="Eigenwijs" />
+      <CheckBox layoutX="238.0" layoutY="249.0" mnemonicParsing="false" text="Verstrooid" />
+      <CheckBox layoutX="238.0" layoutY="224.0" mnemonicParsing="false" text="Inzet" />
+      <CheckBox layoutX="238.0" layoutY="199.0" mnemonicParsing="false" text="Aggressief" />
+      <CheckBox layoutX="238.0" layoutY="174.0" mnemonicParsing="false" text="Ongeduldig" />
+   </children>
+</Pane>

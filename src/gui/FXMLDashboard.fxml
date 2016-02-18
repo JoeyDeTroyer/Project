@@ -29,8 +29,7 @@
       <Button layoutX="517.0" layoutY="157.0" mnemonicParsing="false" text="Evaluatie1" />
       <Button layoutX="517.0" layoutY="188.0" mnemonicParsing="false" text="Evaluatie2" />
       <Button layoutX="517.0" layoutY="220.0" mnemonicParsing="false" text="Evaluatie3" />
-      <Button layoutX="517.0" layoutY="259.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="69.0" text="Home" />
       <ProgressBar layoutX="46.0" layoutY="361.0" prefHeight="18.0" prefWidth="448.0" progress="0.0" />
-      <Button layoutX="517.0" layoutY="336.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="69.0" text="Log out" />
+      <Button layoutX="517.0" layoutY="270.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="69.0" text="Log out" />
    </children>
 </Pane>
