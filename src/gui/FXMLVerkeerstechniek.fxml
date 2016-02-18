@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="88.0" fitWidth="99.0" layoutX="493.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label alignment="CENTER" layoutX="494.0" layoutY="102.0" text="Naam Leerling" />
+      <Button layoutX="523.0" layoutY="322.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="69.0" text="Home" />
+      <Button layoutX="282.0" layoutY="84.0" mnemonicParsing="false" text="Voorrang" />
+      <Button layoutX="313.0" layoutY="122.0" mnemonicParsing="false" text="Verkeerstekens" />
+      <Button layoutX="378.0" layoutY="157.0" mnemonicParsing="false" text="Snelheid" />
+      <Button layoutX="333.0" layoutY="200.0" mnemonicParsing="false" text="Volgafstand" />
+      <Button layoutX="151.0" layoutY="200.0" mnemonicParsing="false" text="Inhalen" />
+      <Button layoutX="193.0" layoutY="84.0" mnemonicParsing="false" text="Kruisen" />
+      <Button layoutX="193.0" layoutY="243.0" mnemonicParsing="false" text="Links draaien" />
+      <Button layoutX="286.0" layoutY="243.0" mnemonicParsing="false" text="Rechts draaien" />
+      <Button layoutX="122.0" layoutY="122.0" mnemonicParsing="false" text="Richtingaanwijzers" />
+      <Button layoutX="98.0" layoutY="157.0" mnemonicParsing="false" text="Plaats op de openbare weg" />
+      <ToolBar layoutX="21.0" layoutY="288.0" orientation="VERTICAL" prefHeight="98.0" prefWidth="85.0">
+        <items>
+          <Button mnemonicParsing="false" text="Zwak" />
+            <Button mnemonicParsing="false" text="Gemiddeld" />
+            <Button mnemonicParsing="false" text="Goed" />
+        </items>
+      </ToolBar>
+   </children>
+</Pane>
