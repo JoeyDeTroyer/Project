@@ -19,7 +19,7 @@
             <Button mnemonicParsing="false" text="Goed" />
          </items>
       </ToolBar>
-      <Button layoutX="119.0" layoutY="68.0" mnemonicParsing="false" text="Coorrect gebruik koppeling" />
+      <Button layoutX="119.0" layoutY="68.0" mnemonicParsing="false" text="Correct gebruik koppeling" />
       <Button layoutX="119.0" layoutY="106.0" mnemonicParsing="false" text="Remtechniek" />
       <Button layoutX="119.0" layoutY="145.0" mnemonicParsing="false" text="Stuurtechniek" />
       <Button layoutX="119.0" layoutY="182.0" mnemonicParsing="false" text="Schakeltechniek" />
