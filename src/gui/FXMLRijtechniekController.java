@@ -1,27 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 
-/**
- * FXML Controller class
- *
- * @author rilextus
- */
-public class FXMLRijtechniekController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+public class FXMLRijtechniekController extends BorderPane 
+{
+    @FXML
+    Button btnHome, btnZithouding;
     
+    ScreenSwitcher switcher;
+    
+    public FXMLRijtechniekController(ScreenSwitcher switcher)
+    {
+        this.switcher = switcher;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLRijtechniek.fxml"));
+        loader.setRoot(this);
+        loader.setController(this);
+
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    @FXML
+    public void dashboard()
+    {
+        switcher.dashboard();
+    }
+    
+    @FXML
+    public void zithouding()
+    {
+        switcher.zithouding();
+    }
 }

@@ -1,6 +1,35 @@
 package gui;
 
-public class FXMLVerkeerstechniekController
-{
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 
+public class FXMLVerkeerstechniekController extends BorderPane
+{
+    @FXML
+    Button btnHome;
+    
+    ScreenSwitcher switcher;
+    
+    public FXMLVerkeerstechniekController(ScreenSwitcher switcher)
+    {
+        this.switcher = switcher;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLVerkeerstechniek.fxml"));
+        loader.setRoot(this);
+        loader.setController(this);
+
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    @FXML
+    public void dashboard()
+    {
+        switcher.dashboard();
+    }
 }
