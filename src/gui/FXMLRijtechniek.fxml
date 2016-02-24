@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToolBar?>
@@ -7,33 +11,33 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="88.0" fitWidth="99.0" layoutX="493.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <Label alignment="CENTER" layoutX="494.0" layoutY="102.0" text="Naam Leerling" />
             <Button fx:id="btnHome" layoutX="517.0" layoutY="323.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="63.0" prefWidth="69.0" text="Home" />
-            <ToolBar layoutX="25.0" layoutY="288.0" orientation="VERTICAL" prefHeight="98.0" prefWidth="62.0">
+            <ToolBar layoutX="25.0" layoutY="281.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="97.0">
                <items>
-                  <Button mnemonicParsing="false" text="Zwak" />
-                  <Button mnemonicParsing="false" text="Gemiddeld" />
-                  <Button mnemonicParsing="false" text="Goed" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Zwak" />
+                  <Button mnemonicParsing="false" prefWidth="85.0" text="Gemiddeld" />
+                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Goed" />
                </items>
             </ToolBar>
-            <Button layoutX="119.0" layoutY="68.0" mnemonicParsing="false" text="Correct gebruik koppeling" />
-            <Button layoutX="119.0" layoutY="106.0" mnemonicParsing="false" text="Remtechniek" />
-            <Button layoutX="119.0" layoutY="145.0" mnemonicParsing="false" text="Stuurtechniek" />
-            <Button layoutX="119.0" layoutY="182.0" mnemonicParsing="false" text="Schakeltechniek" />
-            <Button layoutX="119.0" layoutY="220.0" mnemonicParsing="false" text="Kijktechniek" />
-            <Button fx:id="btnZithouding" layoutX="119.0" layoutY="258.0" mnemonicParsing="false" onAction="#zithouding" text="Zithouding" />
-            <Button layoutX="335.0" layoutY="145.0" mnemonicParsing="false" text="Achteruitrijden" />
-            <Button layoutX="336.0" layoutY="182.0" mnemonicParsing="false" text="Garage" />
-            <Button layoutX="333.0" layoutY="220.0" mnemonicParsing="false" text="Keren" />
-            <Button layoutX="331.0" layoutY="258.0" mnemonicParsing="false" text="Parkeren" />
-            <Button layoutX="335.0" layoutY="106.0" mnemonicParsing="false" text="Stuuroefeningen" />
-            <Button layoutX="336.0" layoutY="68.0" mnemonicParsing="false" text="Starten op een helling" />
+            <Button layoutX="133.0" layoutY="68.0" mnemonicParsing="false" prefWidth="150.0" text="Gebruik koppeling" />
+            <Button layoutX="133.0" layoutY="106.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Remtechniek" />
+            <Button layoutX="133.0" layoutY="145.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Stuurtechniek" />
+            <Button layoutX="133.0" layoutY="182.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Schakeltechniek" />
+            <Button layoutX="133.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Kijktechniek" />
+            <Button fx:id="btnZithouding" layoutX="133.0" layoutY="258.0" mnemonicParsing="false" onAction="#zithouding" prefHeight="27.0" prefWidth="150.0" text="Zithouding" />
+            <Button layoutX="320.0" layoutY="145.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Achteruitrijden" />
+            <Button layoutX="320.0" layoutY="182.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Garage" />
+            <Button layoutX="320.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Keren" />
+            <Button layoutX="320.0" layoutY="258.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Parkeren" />
+            <Button layoutX="320.0" layoutY="106.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Stuuroefeningen" />
+            <Button layoutX="320.0" layoutY="68.0" mnemonicParsing="false" prefWidth="150.0" text="Starten op helling" />
          </children>
       </Pane>
-   </center>
+   </bottom>
 </fx:root>
