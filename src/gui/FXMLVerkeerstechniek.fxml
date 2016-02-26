@@ -11,12 +11,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="88.0" fitWidth="99.0" layoutX="493.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="CENTER" layoutX="494.0" layoutY="102.0" text="Naam Leerling" />
+            <Label alignment="CENTER" layoutX="509.0" layoutY="14.0" text="Naam Leerling" />
             <Button fx:id="btnHome" layoutX="517.0" layoutY="323.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="63.0" prefWidth="69.0" text="Home" />
             <ToolBar layoutX="25.0" layoutY="283.0" orientation="VERTICAL" prefHeight="103.0" prefWidth="97.0">
               <items>
