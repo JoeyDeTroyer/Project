@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -13,27 +14,23 @@
 
 <fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <Label alignment="CENTER" layoutX="509.0" layoutY="14.0" text="Naam Leerling" />
-            <Button fx:id="btnHome" layoutX="517.0" layoutY="323.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="63.0" prefWidth="69.0" text="Home" />
-            <ToolBar layoutX="25.0" layoutY="283.0" orientation="VERTICAL" prefHeight="103.0" prefWidth="97.0">
-              <items>
-                  <Button mnemonicParsing="false" prefWidth="85.0" text="Zwak" />
-                <Button mnemonicParsing="false" prefWidth="85.0" text="Gemiddeld" />
-                  <Button mnemonicParsing="false" prefWidth="85.0" text="Goed" />
-              </items>
-            </ToolBar>
-            <Button layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefWidth="150.0" text="Plaats openbare weg" />
-            <Button layoutX="133.0" layoutY="136.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Voorrang" />
-            <Button layoutX="133.0" layoutY="175.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Richtingsaanwijzers" />
-            <Button layoutX="133.0" layoutY="212.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Volgafstand" />
-            <Button layoutX="133.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Links afslaan" />
-            <Button layoutX="320.0" layoutY="98.0" mnemonicParsing="false" prefWidth="150.0" text="Verkeerstekens" />
-            <Button layoutX="320.0" layoutY="136.0" mnemonicParsing="false" prefWidth="150.0" text="Snelheid" />
-            <Button layoutX="320.0" layoutY="175.0" mnemonicParsing="false" prefWidth="150.0" text="Inhalen" />
-            <Button layoutX="320.0" layoutY="212.0" mnemonicParsing="false" prefWidth="150.0" text="Kruisen" />
-            <Button layoutX="320.0" layoutY="250.0" mnemonicParsing="false" prefWidth="150.0" text="Rechts afslaan" />
+            <Label alignment="CENTER" layoutX="880.0" layoutY="20.0" text="Naam Leerling">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Button fx:id="btnHome" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="100.0" prefWidth="120.0" text="Home" />
+            <Button layoutX="283.0" layoutY="61.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Plaats openbare weg" />
+            <Button layoutX="283.0" layoutY="186.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Voorrang" />
+            <Button layoutX="283.0" layoutY="312.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Richtingsaanwijzers" />
+            <Button layoutX="283.0" layoutY="441.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Volgafstand" />
+            <Button layoutX="283.0" layoutY="585.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Links afslaan" />
+            <Button layoutX="512.0" layoutY="61.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Verkeerstekens" />
+            <Button layoutX="512.0" layoutY="186.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Snelheid" />
+            <Button layoutX="512.0" layoutY="312.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Inhalen" />
+            <Button layoutX="512.0" layoutY="441.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Kruisen" />
+            <Button layoutX="512.0" layoutY="585.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Rechts afslaan" />
          </children>
       </Pane>
    </center>
