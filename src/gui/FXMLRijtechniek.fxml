@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -24,18 +19,18 @@
                   <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="85.0" text="Goed" />
                </items>
             </ToolBar>
-            <Button layoutX="133.0" layoutY="68.0" mnemonicParsing="false" prefWidth="150.0" text="Gebruik koppeling" />
-            <Button layoutX="133.0" layoutY="106.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Remtechniek" />
-            <Button layoutX="133.0" layoutY="145.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Stuurtechniek" />
-            <Button layoutX="133.0" layoutY="182.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Schakeltechniek" />
-            <Button layoutX="133.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Kijktechniek" />
+            <Button fx:id="btnKoppeling" layoutX="133.0" layoutY="68.0" mnemonicParsing="false" onAction="#koppeling" prefWidth="150.0" text="Gebruik koppeling" />
+            <Button fx:id="btnRemtechniek" layoutX="133.0" layoutY="106.0" mnemonicParsing="false" onAction="#remtechniek" prefHeight="27.0" prefWidth="150.0" text="Remtechniek" />
+            <Button fx:id="btnStuurtechniek" layoutX="133.0" layoutY="145.0" mnemonicParsing="false" onAction="#stuurtechniek" prefHeight="27.0" prefWidth="150.0" text="Stuurtechniek" />
+            <Button fx:id="btnSchakeltechniek" layoutX="133.0" layoutY="182.0" mnemonicParsing="false" onAction="#schakeltechniek" prefHeight="27.0" prefWidth="150.0" text="Schakeltechniek" />
+            <Button fx:id="btnKijktechniek" layoutX="133.0" layoutY="220.0" mnemonicParsing="false" onAction="#kijktechniek" prefHeight="27.0" prefWidth="150.0" text="Kijktechniek" />
             <Button fx:id="btnZithouding" layoutX="133.0" layoutY="258.0" mnemonicParsing="false" onAction="#zithouding" prefHeight="27.0" prefWidth="150.0" text="Zithouding" />
             <Button layoutX="320.0" layoutY="145.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Achteruitrijden" />
             <Button layoutX="320.0" layoutY="182.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Garage" />
-            <Button layoutX="320.0" layoutY="220.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Keren" />
-            <Button layoutX="320.0" layoutY="258.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Parkeren" />
+            <Button fx:id="btnKeren" layoutX="320.0" layoutY="220.0" mnemonicParsing="false" onAction="#keren" prefHeight="27.0" prefWidth="150.0" text="Keren" />
+            <Button fx:id="btnParkeren" layoutX="320.0" layoutY="258.0" mnemonicParsing="false" onAction="#parkeren" prefHeight="27.0" prefWidth="150.0" text="Parkeren" />
             <Button layoutX="320.0" layoutY="106.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Stuuroefeningen" />
-            <Button layoutX="320.0" layoutY="68.0" mnemonicParsing="false" prefWidth="150.0" text="Starten op helling" />
+            <Button fx:id="btnHelling" layoutX="320.0" layoutY="68.0" mnemonicParsing="false" onAction="#helling" prefWidth="150.0" text="Starten op helling" />
          </children>
       </Pane>
    </bottom>

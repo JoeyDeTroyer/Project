@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -24,16 +19,16 @@
                   <Button mnemonicParsing="false" prefWidth="85.0" text="Goed" />
               </items>
             </ToolBar>
-            <Button layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefWidth="150.0" text="Plaats openbare weg" />
+            <Button fx:id="btnOpenbareWeg" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#openbareWeg" prefWidth="150.0" text="Plaats openbare weg" />
             <Button layoutX="133.0" layoutY="136.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Voorrang" />
-            <Button layoutX="133.0" layoutY="175.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Richtingsaanwijzers" />
-            <Button layoutX="133.0" layoutY="212.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Volgafstand" />
-            <Button layoutX="133.0" layoutY="250.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" text="Links afslaan" />
-            <Button layoutX="320.0" layoutY="98.0" mnemonicParsing="false" prefWidth="150.0" text="Verkeerstekens" />
+            <Button fx:id="btnRichtingaanwijzers" layoutX="133.0" layoutY="175.0" mnemonicParsing="false" onAction="#richtingaanwijzers" prefHeight="27.0" prefWidth="150.0" text="Richtingsaanwijzers" />
+            <Button fx:id="btnVolgafstand" layoutX="133.0" layoutY="212.0" mnemonicParsing="false" onAction="#volgafstand" prefHeight="27.0" prefWidth="150.0" text="Volgafstand" />
+            <Button fx:id="btnLinksaf" layoutX="133.0" layoutY="250.0" mnemonicParsing="false" onAction="#linksaf" prefHeight="27.0" prefWidth="150.0" text="Links afslaan" />
+            <Button fx:id="btnVerkeerstekens" layoutX="320.0" layoutY="98.0" mnemonicParsing="false" onAction="#verkeerstekens" prefWidth="150.0" text="Verkeerstekens" />
             <Button layoutX="320.0" layoutY="136.0" mnemonicParsing="false" prefWidth="150.0" text="Snelheid" />
-            <Button layoutX="320.0" layoutY="175.0" mnemonicParsing="false" prefWidth="150.0" text="Inhalen" />
+            <Button fx:id="btnInhalen" layoutX="320.0" layoutY="175.0" mnemonicParsing="false" onAction="#inhalen" prefWidth="150.0" text="Inhalen" />
             <Button layoutX="320.0" layoutY="212.0" mnemonicParsing="false" prefWidth="150.0" text="Kruisen" />
-            <Button layoutX="320.0" layoutY="250.0" mnemonicParsing="false" prefWidth="150.0" text="Rechts afslaan" />
+            <Button fx:id="btnRechtsaf" layoutX="320.0" layoutY="250.0" mnemonicParsing="false" onAction="#rechtsaf" prefWidth="150.0" text="Rechts afslaan" />
          </children>
       </Pane>
    </center>

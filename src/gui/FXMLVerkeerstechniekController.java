@@ -9,7 +9,8 @@ import javafx.scene.layout.BorderPane;
 public class FXMLVerkeerstechniekController extends BorderPane
 {
     @FXML
-    Button btnHome;
+    Button btnHome, btnInhalen, btnLinksaf, btnOpenbareWeg, btnRechtsaf, btnRichtingaanwijzers,
+            btnVerkeerstekens, btnVolgafstand;
     
     ScreenSwitcher switcher;
     
@@ -31,5 +32,46 @@ public class FXMLVerkeerstechniekController extends BorderPane
     public void dashboard()
     {
         switcher.dashboard();
+    }
+    
+    @FXML
+    public void inhalen()
+    {
+        switcher.inhalen();
+    }
+    
+    @FXML
+    public void linksaf()
+    {
+        switcher.linksaf();
+    }
+    
+    @FXML
+    public void openbareWeg()
+    {
+        switcher.openbareWeg();
+    }
+    @FXML
+    public void rechtsaf()
+    {
+        switcher.rechtsaf();
+    }
+    
+    @FXML
+    public void richtingaanwijzers()
+    {
+        switcher.richtingaanwijzers();
+    }
+    
+    @FXML
+    public void verkeerstekens()
+    {
+        switcher.verkeerstekens();
+    }
+    
+    @FXML
+    public void volgafstand()
+    {
+        switcher.volgafstand();
     }
 }
