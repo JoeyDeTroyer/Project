@@ -9,7 +9,8 @@ import javafx.scene.layout.BorderPane;
 public class FXMLRijtechniekController extends BorderPane 
 {
     @FXML
-    Button btnHome, btnZithouding;
+    Button btnHome, btnZithouding, btnKijktechniek, btnSchakeltechniek, btnStuurtechniek, btnRemtechniek, 
+            btnKoppeling, btnHelling, btnParkeren, btnKeren;
     
     ScreenSwitcher switcher;
     
@@ -37,5 +38,53 @@ public class FXMLRijtechniekController extends BorderPane
     public void zithouding()
     {
         switcher.zithouding();
+    }
+    
+    @FXML
+    public void kijktechniek()
+    {
+        switcher.kijktechniek();
+    }
+    
+    @FXML
+    public void schakeltechniek()
+    {
+        switcher.schakeltechniek();
+    }
+    
+    @FXML
+    public void stuurtechniek()
+    {
+        switcher.stuurtechniek();
+    }
+    
+    @FXML
+    public void remtechniek()
+    {
+        switcher.remtechniek();
+    }
+    
+    @FXML
+    public void koppeling()
+    {
+        switcher.koppeling();
+    }
+    
+    @FXML
+    public void helling()
+    {
+        switcher.helling();
+    }
+    
+    @FXML
+    public void parkeren()
+    {
+        switcher.parkeren();
+    }
+    
+    @FXML
+    public void keren()
+    {
+        switcher.keren();
     }
 }
