@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
@@ -50,7 +46,7 @@
             <Button layoutX="845.0" layoutY="534.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Foto" />
             <Button layoutX="674.0" layoutY="605.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Aanmaken" />
             <Button layoutX="845.0" layoutY="605.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Annuleer" />
-            <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" onAction="#nieuw" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
+            <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
             <Button layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
             <Button fx:id="btnLogIn" layoutX="332.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Log in" />
             <ImageView fitHeight="150.0" fitWidth="210.0" layoutX="615.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" />
