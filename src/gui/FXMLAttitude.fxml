@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -14,26 +15,65 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <Label alignment="CENTER" layoutX="494.0" layoutY="14.0" text="Naam Leerling" />
-            <TextArea layoutX="163.0" layoutY="35.0" prefHeight="105.0" prefWidth="275.0" />
-            <Button fx:id="btnHome" layoutX="498.0" layoutY="265.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="55.0" prefWidth="69.0" text="Home" />
-            <Label layoutX="163.0" layoutY="14.0" text="Opmerkingen:" />
-            <ImageView fitHeight="105.0" fitWidth="124.0" layoutX="14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="14.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" width="427.0" />
-            <CheckBox layoutX="24.0" layoutY="174.0" mnemonicParsing="false" text="Zenuwachtig" />
-            <CheckBox layoutX="24.0" layoutY="199.0" mnemonicParsing="false" text="Concentratie" />
-            <CheckBox layoutX="24.0" layoutY="224.0" mnemonicParsing="false" text="Schrik" />
-            <CheckBox layoutX="24.0" layoutY="250.0" mnemonicParsing="false" text="Asociaal" />
-            <CheckBox layoutX="24.0" layoutY="275.0" mnemonicParsing="false" text="Verkeersgevaarlijk" />
-            <CheckBox layoutX="238.0" layoutY="275.0" mnemonicParsing="false" text="Eigenwijs" />
-            <CheckBox layoutX="238.0" layoutY="249.0" mnemonicParsing="false" text="Verstrooid" />
-            <CheckBox layoutX="238.0" layoutY="224.0" mnemonicParsing="false" text="Inzet" />
-            <CheckBox layoutX="238.0" layoutY="199.0" mnemonicParsing="false" text="Aggressief" />
-            <CheckBox layoutX="238.0" layoutY="174.0" mnemonicParsing="false" text="Ongeduldig" />
+            <Label alignment="CENTER" layoutX="871.0" layoutY="31.0" prefHeight="30.0" prefWidth="143.0" text="Naam Leerling">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <TextArea layoutX="196.0" layoutY="69.0" prefHeight="259.0" prefWidth="673.0" />
+            <Button fx:id="btnHome" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="100.0" prefWidth="120.0" text="Home">
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+            <Label layoutX="196.0" layoutY="23.0" prefHeight="45.0" prefWidth="584.0" text="Opmerkingen:">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <ImageView fitHeight="260.0" fitWidth="150.0" layoutX="33.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="389.0" layoutX="25.0" layoutY="364.0" stroke="BLACK" strokeType="INSIDE" width="846.0" />
+            <CheckBox layoutX="44.0" layoutY="392.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="239.0" text="Zenuwachtig">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="45.0" layoutY="468.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="186.0" text="Concentratie">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="45.0" layoutY="542.0" mnemonicParsing="false" text="Schrik">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="45.0" layoutY="620.0" mnemonicParsing="false" text="Asociaal">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="47.0" layoutY="696.0" mnemonicParsing="false" text="Verkeersgevaarlijk">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="537.0" layoutY="696.0" mnemonicParsing="false" text="Eigenwijs">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="537.0" layoutY="620.0" mnemonicParsing="false" text="Verstrooid">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="537.0" layoutY="542.0" mnemonicParsing="false" text="Inzet">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="537.0" layoutY="468.0" mnemonicParsing="false" text="Aggressief">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
+            <CheckBox layoutX="537.0" layoutY="392.0" mnemonicParsing="false" text="Ongeduldig">
+               <font>
+                  <Font size="24.0" />
+               </font></CheckBox>
          </children>
       </Pane>
    </center>

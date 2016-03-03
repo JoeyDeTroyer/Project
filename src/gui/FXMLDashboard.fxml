@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -13,31 +14,48 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <Label fx:id="lblNaamLeerling" alignment="CENTER" layoutX="505.0" layoutY="101.0" text="Naam Leerling" />
-            <TextArea fx:id="txtOpmerkingen" layoutX="40.0" layoutY="14.0" prefHeight="87.0" prefWidth="451.0" text="opmerkingen" />
-            <Button fx:id="btnRijtechniek" layoutX="40.0" layoutY="119.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="126.0" prefWidth="116.0" text="Rijtechniek" />
-            <Button fx:id="btnAttitude" layoutX="212.0" layoutY="119.0" mnemonicParsing="false" onAction="#attitude" prefHeight="126.0" prefWidth="116.0" text="Attitude" />
-            <Button fx:id="btnVerkeerstechniek" layoutX="377.0" layoutY="119.0" mnemonicParsing="false" onAction="#verkeerstechniek" prefHeight="126.0" prefWidth="116.0" text="Verkeerstechniek" />
-            <ToggleButton layoutX="40.0" layoutY="259.0" mnemonicParsing="false" prefWidth="75.0" text="Functie1" />
-            <ToggleButton layoutX="133.0" layoutY="259.0" mnemonicParsing="false" prefWidth="75.0" text="Functie2" />
-            <ToggleButton layoutX="228.0" layoutY="259.0" mnemonicParsing="false" prefWidth="75.0" text="Functie3" />
-            <ToggleButton layoutX="322.0" layoutY="259.0" mnemonicParsing="false" prefWidth="75.0" text="Functie4" />
-            <ToggleButton layoutX="415.0" layoutY="259.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Functie5" />
-            <ToggleButton layoutX="40.0" layoutY="297.0" mnemonicParsing="false" prefWidth="75.0" text="Functie6" />
-            <ToggleButton layoutX="133.0" layoutY="297.0" mnemonicParsing="false" prefWidth="75.0" text="Functie7" />
-            <ToggleButton layoutX="228.0" layoutY="297.0" mnemonicParsing="false" prefWidth="75.0" text="Functie8" />
-            <ToggleButton layoutX="322.0" layoutY="297.0" mnemonicParsing="false" prefWidth="75.0" text="Functie9" />
-            <ToggleButton layoutX="415.0" layoutY="297.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="Functie10" />
-            <Button fx:id="btnEvaluatie1" layoutX="503.0" layoutY="126.0" mnemonicParsing="false" text="Evaluatie1" />
-            <Button fx:id="btnEvaluatie2" layoutX="502.0" layoutY="167.0" mnemonicParsing="false" text="Evaluatie2" />
-            <Button fx:id="btnEvaluatie3" layoutX="502.0" layoutY="207.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="82.0" text="Evaluatie3" />
-            <ProgressBar layoutX="46.0" layoutY="361.0" prefHeight="18.0" prefWidth="448.0" progress="0.0" />
-            <Button fx:id="btnLogout" layoutX="502.0" layoutY="306.0" mnemonicParsing="false" onAction="#logout" prefHeight="73.0" prefWidth="82.0" text="Log out" />
-            <ImageView fitHeight="85.0" fitWidth="82.0" layoutX="503.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lblNaamLeerling" alignment="CENTER" layoutX="884.0" layoutY="167.0" text="Naam Leerling">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <TextArea fx:id="txtOpmerkingen" layoutX="39.0" layoutY="24.0" prefHeight="168.0" prefWidth="806.0" promptText="Opmerkingen" />
+            <Button fx:id="btnRijtechniek" layoutX="152.0" layoutY="323.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="175.0" prefWidth="175.0" text="Rijtechniek" />
+            <Button fx:id="btnAttitude" layoutX="346.0" layoutY="422.0" mnemonicParsing="false" onAction="#attitude" prefHeight="175.0" prefWidth="175.0" text="Attitude" />
+            <Button fx:id="btnVerkeerstechniek" layoutX="535.0" layoutY="324.0" mnemonicParsing="false" onAction="#verkeerstechniek" prefHeight="175.0" prefWidth="175.0" text="Verkeerstechniek" />
+            <ToggleButton layoutX="33.0" layoutY="495.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie1" />
+            <ToggleButton layoutX="33.0" layoutY="411.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie2" />
+            <ToggleButton layoutX="33.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie3" />
+            <ToggleButton layoutX="171.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie4" />
+            <ToggleButton layoutX="305.0" layoutY="236.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie5" />
+            <ToggleButton layoutX="462.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie6" />
+            <ToggleButton layoutX="593.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie7" />
+            <ToggleButton layoutX="736.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie8" />
+            <ToggleButton layoutX="736.0" layoutY="411.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie9" />
+            <ToggleButton layoutX="736.0" layoutY="495.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie10" />
+            <Button fx:id="btnEvaluatie1" layoutX="886.0" layoutY="450.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 1">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="btnEvaluatie2" layoutX="886.0" layoutY="510.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 2">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="btnEvaluatie3" layoutX="886.0" layoutY="567.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 3">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <ProgressBar layoutX="107.0" layoutY="705.0" prefHeight="31.0" prefWidth="694.0" progress="0.0" />
+            <Button fx:id="btnLogout" layoutX="885.0" layoutY="651.0" mnemonicParsing="false" onAction="#logout" prefHeight="85.0" prefWidth="125.0" text="Log out">
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+            <ImageView fitHeight="150.0" fitWidth="125.0" layoutX="885.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="811.0" layoutY="708.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="+" />
+            <Button layoutX="40.0" layoutY="708.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="-" />
          </children>
       </Pane>
    </center>
