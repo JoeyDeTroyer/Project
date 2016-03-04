@@ -144,18 +144,18 @@
                         <Font size="24.0" />
                      </font></RadioButton>
                   <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="Andere" />
-                     </toggleGroup>
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Andere_Bediening" />
+                     </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere_Bediening" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere_Bediening" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
@@ -232,15 +232,18 @@
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Andere_Gebruik" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere_Gebruik" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8">
-                     <font>
-                        <Font size="24.0" />
-                     </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere_Gebruik" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>

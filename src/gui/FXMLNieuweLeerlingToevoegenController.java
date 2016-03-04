@@ -1,11 +1,16 @@
 package gui;
 
 import java.io.IOException;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
 public class FXMLNieuweLeerlingToevoegenController extends BorderPane
 {
+    @FXML
+    Button btnAnnuleer;
+    
     ScreenSwitcher switcher;
     
     public FXMLNieuweLeerlingToevoegenController(ScreenSwitcher switcher)
@@ -21,5 +26,10 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
             ex.printStackTrace();
         }
     }
-
+    
+    @FXML
+    public void annuleer()
+    {
+        switcher.logout();
+    }
 }
