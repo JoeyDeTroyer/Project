@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -26,16 +27,16 @@
             <Button fx:id="btnRijtechniek" layoutX="152.0" layoutY="323.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="175.0" prefWidth="175.0" text="Rijtechniek" />
             <Button fx:id="btnAttitude" layoutX="346.0" layoutY="422.0" mnemonicParsing="false" onAction="#attitude" prefHeight="175.0" prefWidth="175.0" text="Attitude" />
             <Button fx:id="btnVerkeerstechniek" layoutX="535.0" layoutY="324.0" mnemonicParsing="false" onAction="#verkeerstechniek" prefHeight="175.0" prefWidth="175.0" text="Verkeerstechniek" />
-            <ToggleButton layoutX="33.0" layoutY="495.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie1" />
-            <ToggleButton layoutX="33.0" layoutY="411.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie2" />
-            <ToggleButton layoutX="33.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie3" />
+            <ToggleButton fx:id="btnBanden" layoutX="33.0" layoutY="495.0" mnemonicParsing="false" onAction="#banden" prefHeight="50.0" prefWidth="100.0" text="Banden" />
+            <ToggleButton fx:id="btnVloeistoffen" layoutX="33.0" layoutY="411.0" mnemonicParsing="false" onAction="#vloeistoffen" prefHeight="50.0" prefWidth="100.0" text="Vloeistoffen" />
+            <ToggleButton fx:id="btnSchakelaars" layoutX="33.0" layoutY="324.0" mnemonicParsing="false" onAction="#schakelaars" prefHeight="50.0" prefWidth="100.0" text="Schakelaars" />
             <ToggleButton layoutX="171.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie4" />
             <ToggleButton layoutX="305.0" layoutY="236.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie5" />
             <ToggleButton layoutX="462.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie6" />
             <ToggleButton layoutX="593.0" layoutY="237.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie7" />
-            <ToggleButton layoutX="736.0" layoutY="324.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie8" />
-            <ToggleButton layoutX="736.0" layoutY="411.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie9" />
-            <ToggleButton layoutX="736.0" layoutY="495.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Functie10" />
+            <ToggleButton fx:id="btnTanken" layoutX="736.0" layoutY="324.0" mnemonicParsing="false" onAction="#tanken" prefHeight="50.0" prefWidth="100.0" text="Tanken" />
+            <ToggleButton fx:id="btnGPS" layoutX="736.0" layoutY="411.0" mnemonicParsing="false" onAction="#gps" prefHeight="50.0" prefWidth="100.0" text="GPS" />
+            <ToggleButton fx:id="btnNoodstop" layoutX="736.0" layoutY="495.0" mnemonicParsing="false" onAction="#noodstop" prefHeight="50.0" prefWidth="100.0" text="Noodstop" />
             <Button fx:id="btnEvaluatie1" layoutX="886.0" layoutY="450.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 1">
                <font>
                   <Font size="18.0" />
@@ -56,6 +57,12 @@
             <ImageView fitHeight="150.0" fitWidth="125.0" layoutX="885.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
             <Button layoutX="811.0" layoutY="708.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="+" />
             <Button layoutX="40.0" layoutY="708.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="-" />
+            <Circle fx:id="circleSchakelaars" fill="WHITE" layoutX="133.0" layoutY="349.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleVloeistoffen" fill="WHITE" layoutX="133.0" layoutY="436.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleBanden" fill="WHITE" layoutX="133.0" layoutY="520.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleTanken" fill="WHITE" layoutX="736.0" layoutY="349.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleGPS" fill="WHITE" layoutX="736.0" layoutY="436.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleNoodstop" fill="WHITE" layoutX="736.0" layoutY="520.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </Pane>
    </center>

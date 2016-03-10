@@ -6,7 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 public class FXMLDashboardController extends BorderPane
 {
@@ -17,7 +22,13 @@ public class FXMLDashboardController extends BorderPane
     Button btnRijtechniek, btnAttitude, btnVerkeerstechniek, btnLogout,btnEvaluatie1,btnEvaluatie2,btnEvaluatie3;
     
     @FXML
+    ToggleButton btnBanden, btnTanken, btnNoodstop, btnGPS, btnVloeistoffen, btnSchakelaars;
+    
+    @FXML
     TextArea txtOpmerkingen;
+    
+    @FXML
+    Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS, circleNoodstop;
     
     ScreenSwitcher switcher;
     
@@ -57,5 +68,85 @@ public class FXMLDashboardController extends BorderPane
     public void logout()
     {
         switcher.logout();
+    }
+    
+    @FXML
+    public void schakelaars()
+    {
+        if(circleSchakelaars.getFill() == Color.WHITE)
+        {
+            circleSchakelaars.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleSchakelaars.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void vloeistoffen()
+    {
+        if(circleVloeistoffen.getFill() == Color.WHITE)
+        {
+            circleVloeistoffen.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleVloeistoffen.setFill(Color.WHITE);
+        }
+    }
+    
+    
+    @FXML
+    public void banden()
+    {
+        if(circleBanden.getFill() == Color.WHITE)
+        {
+            circleBanden.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleBanden.setFill(Color.WHITE);
+        }
+    }
+    
+    
+    @FXML
+    public void tanken()
+    {
+        if(circleTanken.getFill() == Color.WHITE)
+        {
+            circleTanken.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleTanken.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void gps()
+    {
+        if(circleGPS.getFill() == Color.WHITE)
+        {
+            circleGPS.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleGPS.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void noodstop()
+    {
+        if(circleNoodstop.getFill() == Color.WHITE)
+        {
+            circleNoodstop.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleNoodstop.setFill(Color.WHITE);
+        }
     }
 }
