@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Koppeling {
     private int koppeling;
 
@@ -14,7 +10,15 @@ public class Rijtechniek_Koppeling {
     public void setKoppeling(int koppeling) {
         this.koppeling = koppeling;
     }
-    
-    
+
+    public Rijtechniek_Koppeling() 
+    {
+        
+    }
+
+    public Rijtechniek_Koppeling(int koppeling) 
+    {
+        this.koppeling = koppeling;
+    }
     
 }

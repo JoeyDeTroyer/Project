@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Balanceren {
     
     private int balanceren;
@@ -15,7 +11,14 @@ public class Rijtechniek_Balanceren {
     public void setBalanceren(int balanceren) {
         this.balanceren = balanceren;
     }
-    
-    
+
+    public Rijtechniek_Balanceren() 
+    {
+    }
+
+    public Rijtechniek_Balanceren(int balanceren) 
+    {
+        this.balanceren = balanceren;
+    }
     
 }

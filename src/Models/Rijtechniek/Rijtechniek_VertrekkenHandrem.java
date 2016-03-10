@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_VertrekkenHandrem {
     
     private int vertrekkenHandrem;
@@ -15,6 +11,14 @@ public class Rijtechniek_VertrekkenHandrem {
     public void setVertrekkenHandrem(int vertrekkenHandrem) {
         this.vertrekkenHandrem = vertrekkenHandrem;
     }
-   
-    
+
+    public Rijtechniek_VertrekkenHandrem() 
+    {
+        
+    }
+
+    public Rijtechniek_VertrekkenHandrem(int vertrekkenHandrem) 
+    {
+        this.vertrekkenHandrem = vertrekkenHandrem;
+    }
 }
