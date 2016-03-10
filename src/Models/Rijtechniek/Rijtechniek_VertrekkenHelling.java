@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_VertrekkenHelling {
     private int vertrekkenHelling;
 
@@ -14,7 +10,14 @@ public class Rijtechniek_VertrekkenHelling {
     public void setVertrekkenHelling(int vertrekkenHelling) {
         this.vertrekkenHelling = vertrekkenHelling;
     }
-    
-    
-    
+
+    public Rijtechniek_VertrekkenHelling() 
+    {
+        
+    }
+
+    public Rijtechniek_VertrekkenHelling(int vertrekkenHelling) 
+    {
+        this.vertrekkenHelling = vertrekkenHelling;
+    }    
 }

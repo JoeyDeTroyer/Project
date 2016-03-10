@@ -1,10 +1,5 @@
-
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Stuurtechniek {
     private int stuurTechniek;
 
@@ -15,4 +10,14 @@ public class Rijtechniek_Stuurtechniek {
     public void setStuurTechniek(int stuurTechniek) {
         this.stuurTechniek = stuurTechniek;
     }   
+
+    public Rijtechniek_Stuurtechniek() 
+    {
+        
+    }
+
+    public Rijtechniek_Stuurtechniek(int stuurTechniek) 
+    {
+        this.stuurTechniek = stuurTechniek;
+    }
 }

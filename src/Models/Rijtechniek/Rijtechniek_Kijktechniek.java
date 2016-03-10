@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Kijktechniek {
     private int kijkTechniekVergewissen;
     private int kijkTechniekSpiegels;
@@ -59,7 +55,18 @@ public class Rijtechniek_Kijktechniek {
     public void setKijkTechniekAndere(int kijkTechniekAndere) {
         this.kijkTechniekAndere = kijkTechniekAndere;
     }
-    
-    
-    
+
+    public Rijtechniek_Kijktechniek() 
+    {
+        
+    }
+
+    public Rijtechniek_Kijktechniek(int kijkTechniekVergewissen, int kijkTechniekSpiegels, int kijkTechniekDodeHoek, int kijkTechniekVerGenoeg, int kijkTechniekSelecteren, int kijkTechniekAndere) {
+        this.kijkTechniekVergewissen = kijkTechniekVergewissen;
+        this.kijkTechniekSpiegels = kijkTechniekSpiegels;
+        this.kijkTechniekDodeHoek = kijkTechniekDodeHoek;
+        this.kijkTechniekVerGenoeg = kijkTechniekVerGenoeg;
+        this.kijkTechniekSelecteren = kijkTechniekSelecteren;
+        this.kijkTechniekAndere = kijkTechniekAndere;
+    }
 }

@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_VertrekkenVoetrem {
     
     private int vertrekkenVoetrem;
@@ -15,6 +11,14 @@ public class Rijtechniek_VertrekkenVoetrem {
     public void setVertrekkenVoetrem(int vertrekkenVoetrem) {
         this.vertrekkenVoetrem = vertrekkenVoetrem;
     }
-   
-    
+
+    public Rijtechniek_VertrekkenVoetrem() 
+    {
+        
+    }
+
+    public Rijtechniek_VertrekkenVoetrem(int vertrekkenVoetrem) 
+    {
+        this.vertrekkenVoetrem = vertrekkenVoetrem;
+    }
 }

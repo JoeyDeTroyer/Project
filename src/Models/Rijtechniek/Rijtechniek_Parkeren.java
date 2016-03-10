@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Parkeren {
     
     private int parkerenTweeVoertuigen;
@@ -33,7 +29,17 @@ public class Rijtechniek_Parkeren {
     public void setParkerenLinks(int parkerenLinks) {
         this.parkerenLinks = parkerenLinks;
     }
-    
-    
-    
+
+    public Rijtechniek_Parkeren() 
+    {
+        
+    }
+
+    public Rijtechniek_Parkeren(int parkerenTweeVoertuigen, int parkerenAchterVoertuigen, int parkerenLinks) 
+    {
+        this.parkerenTweeVoertuigen = parkerenTweeVoertuigen;
+        this.parkerenAchterVoertuigen = parkerenAchterVoertuigen;
+        this.parkerenLinks = parkerenLinks;
+    }
+        
 }

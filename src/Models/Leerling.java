@@ -40,6 +40,11 @@ public class Leerling {
         this.email = email;
     }
     
+    public Leerling()
+    {
+        
+    }
+    
     public Leerling(String inschrijvingsNr, String voorNaam, String naam, 
             String email) {
         this.setInschrijvingsNr(inschrijvingsNr);

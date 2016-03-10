@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Remtechniek {
     private int remTechniek;
 
@@ -14,7 +10,14 @@ public class Rijtechniek_Remtechniek {
     public void setRemTechniek(int remTechniek) {
         this.remTechniek = remTechniek;
     }
-    
-    
-    
+
+    public Rijtechniek_Remtechniek() 
+    {
+        
+    }
+
+    public Rijtechniek_Remtechniek(int remTechniek) 
+    {
+        this.remTechniek = remTechniek;
+    }
 }

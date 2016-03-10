@@ -1,9 +1,5 @@
 package Models.Rijtechniek;
 
-/**
- *
- * @author Beau
- */
 public class Rijtechniek_Keren {
     
     private int keren;
@@ -42,7 +38,18 @@ public class Rijtechniek_Keren {
     public void setKerenAchterwaarts(int kerenAchterwaarts) {
         this.kerenAchterwaarts = kerenAchterwaarts;
     }
-    
-    
+
+    public Rijtechniek_Keren() 
+    {
+        
+    }
+
+    public Rijtechniek_Keren(int keren, int kerenEenBeweging, int kerenDrieBewegingen, int kerenAchterwaarts) 
+    {
+        this.keren = keren;
+        this.kerenEenBeweging = kerenEenBeweging;
+        this.kerenDrieBewegingen = kerenDrieBewegingen;
+        this.kerenAchterwaarts = kerenAchterwaarts;
+    }
     
 }
