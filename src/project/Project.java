@@ -5,6 +5,8 @@
  */
 package project;
 
+import DAO.LeerlingDAO;
+import Models.Leerling;
 import gui.ScreenSwitcher;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -16,6 +18,7 @@ public class Project extends Application {
     @Override
     public void start(Stage primaryStage) 
     {
+      Model.getInstance().initialize();
       primaryStage.setTitle("Rijschool Paul");
       ScreenSwitcher screen = new ScreenSwitcher();
       screen.dashboard();
