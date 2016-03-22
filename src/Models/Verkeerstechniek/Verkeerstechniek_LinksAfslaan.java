@@ -1,50 +1,42 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_LinksAfslaan 
 {
-    private int verkeerstechniekOpstelling;
-    private int verkeerstechniekUitvoering;
-    private int verkeerstechniekAndere;
+    private int opstelling;
+    private int uitvoering;
+    private int linksAfslaanAndere;
 
     public Verkeerstechniek_LinksAfslaan() 
     {
         
     }
 
-    public Verkeerstechniek_LinksAfslaan(int verkeerstechniekOpstelling, int verkeerstechniekUitvoering, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekOpstelling = verkeerstechniekOpstelling;
-        this.verkeerstechniekUitvoering = verkeerstechniekUitvoering;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public int getOpstelling() {
+        return opstelling;
     }
 
-    public int getVerkeerstechniekOpstelling() 
-    {
-        return verkeerstechniekOpstelling;
+    public void setOpstelling(int opstelling) {
+        this.opstelling = opstelling;
     }
 
-    public void setVerkeerstechniekOpstelling(int verkeerstechniekOpstelling) 
-    {
-        this.verkeerstechniekOpstelling = verkeerstechniekOpstelling;
+    public int getUitvoering() {
+        return uitvoering;
     }
 
-    public int getVerkeerstechniekUitvoering() 
-    {
-        return verkeerstechniekUitvoering;
+    public void setUitvoering(int uitvoering) {
+        this.uitvoering = uitvoering;
     }
 
-    public void setVerkeerstechniekUitvoering(int verkeerstechniekUitvoering) 
-    {
-        this.verkeerstechniekUitvoering = verkeerstechniekUitvoering;
+    public int getLinksAfslaanAndere() {
+        return linksAfslaanAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setLinksAfslaanAndere(int linksAfslaanAndere) {
+        this.linksAfslaanAndere = linksAfslaanAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+    
 }

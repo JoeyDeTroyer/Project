@@ -1,52 +1,44 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_Inhalen 
 {
-    private int verkeerstechniekInhalen;
-    private int verkeersVoorbijrijden;
-    private int verkeerstechniekAndere;
+    private int inhalen;
+    private int voorbijrijden;
+    private int inhalenAndere;
 
     public Verkeerstechniek_Inhalen() 
     {
         
     }
 
-    public Verkeerstechniek_Inhalen(int verkeerstechniekInhalen, int verkeersVoorbijrijden, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekInhalen = verkeerstechniekInhalen;
-        this.verkeersVoorbijrijden = verkeersVoorbijrijden;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public int getInhalen() {
+        return inhalen;
     }
 
-    public int getVerkeerstechniekInhalen() 
-    {
-        return verkeerstechniekInhalen;
+    public void setInhalen(int inhalen) {
+        this.inhalen = inhalen;
     }
 
-    public void setVerkeerstechniekInhalen(int verkeerstechniekInhalen) 
-    {
-        this.verkeerstechniekInhalen = verkeerstechniekInhalen;
+    public int getVoorbijrijden() {
+        return voorbijrijden;
     }
 
-    public int getVerkeersVoorbijrijden() 
-    {
-        return verkeersVoorbijrijden;
+    public void setVoorbijrijden(int voorbijrijden) {
+        this.voorbijrijden = voorbijrijden;
     }
 
-    public void setVerkeersVoorbijrijden(int verkeersVoorbijrijden) 
-    {
-        this.verkeersVoorbijrijden = verkeersVoorbijrijden;
+    public int getInhalenAndere() {
+        return inhalenAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setInhalenAndere(int inhalenAndere) {
+        this.inhalenAndere = inhalenAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+    
     
     
     
