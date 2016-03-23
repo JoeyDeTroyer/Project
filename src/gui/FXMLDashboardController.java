@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.Background;
@@ -19,7 +20,7 @@ public class FXMLDashboardController extends BorderPane
     Label lblNaamLeerling;
     
     @FXML
-    Button btnRijtechniek, btnAttitude, btnVerkeerstechniek, btnLogout,btnEvaluatie1,btnEvaluatie2,btnEvaluatie3;
+    Button btnRijtechniek, btnAttitude, btnVerkeerstechniek, btnLogout,btnEvaluatie1,btnEvaluatie2,btnEvaluatie3, btnMin, btnPlus;
     
     @FXML
     ToggleButton btnBanden, btnTanken, btnNoodstop, btnGPS, btnVloeistoffen, btnSchakelaars;
@@ -29,6 +30,9 @@ public class FXMLDashboardController extends BorderPane
     
     @FXML
     Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS, circleNoodstop;
+    
+    @FXML
+    ProgressBar progressbar;      
     
     ScreenSwitcher switcher;
     
@@ -148,5 +152,29 @@ public class FXMLDashboardController extends BorderPane
         {
             circleNoodstop.setFill(Color.WHITE);
         }
+    }
+    
+    @FXML 
+    public void pbMin()
+    {
+        if(progressbar.getProgress() == 0)
+        {
+            //kan niet lager dan 0
+        }
+        else{
+            progressbar.setProgress(progressbar.getProgress() - 0.05);
+        }
+    }
+    
+    @FXML
+    public void pbPlus()
+    {
+      if(progressbar.getProgress() == 1)
+        {
+            //kan niet hoger dan 1
+        }
+        else{
+            progressbar.setProgress(progressbar.getProgress() + 0.05);
+        }   
     }
 }
