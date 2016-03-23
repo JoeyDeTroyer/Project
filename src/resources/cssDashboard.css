@@ -1,0 +1,64 @@
+.bgDashboard{
+    -fx-background-image: url("bgDashboard.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.banden{
+    -fx-background-image: url("banden.png");
+    -fx-background-size: cover;
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    
+}
+
+.gps{
+    -fx-background-image: url("gps.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.noodstop{
+    -fx-background-image: url("noodstop.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.schakelaars{
+    -fx-background-image: url("schakelaars.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.tanken{
+    -fx-background-image: url("tanken.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.vloeistoffen{
+    -fx-background-image: url("vloeistoffen.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.stuur{
+    -fx-background-image: url("stuur.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.rotonde{
+    -fx-background-image: url("rotonde.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+
+}
