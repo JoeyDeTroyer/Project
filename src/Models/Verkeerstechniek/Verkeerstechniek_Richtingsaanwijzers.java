@@ -1,50 +1,50 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_Richtingsaanwijzers 
 {
-    private int verkeerstechniekGebruik;
-    private int verkeerstechniekTijdigGebruik;
-    private int verkeerstechniekAndere;
+    private int gebruik;
+    private int tijdigGebruik;
+    private int richtingsaanwijzersAndere;
 
     public Verkeerstechniek_Richtingsaanwijzers() 
     {
         
     }
 
-    public Verkeerstechniek_Richtingsaanwijzers(int verkeerstechniekGebruik, int verkeerstechniekTijdigGebruik, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekGebruik = verkeerstechniekGebruik;
-        this.verkeerstechniekTijdigGebruik = verkeerstechniekTijdigGebruik;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public Verkeerstechniek_Richtingsaanwijzers(int gebruik, int tijdigGebruik, int richtingsaanwijzersAndere) {
+        this.gebruik = gebruik;
+        this.tijdigGebruik = tijdigGebruik;
+        this.richtingsaanwijzersAndere = richtingsaanwijzersAndere;
+    }
+    
+    
+
+    public int getGebruik() {
+        return gebruik;
     }
 
-    public int getVerkeerstechniekGebruik() 
-    {
-        return verkeerstechniekGebruik;
+    public void setGebruik(int gebruik) {
+        this.gebruik = gebruik;
     }
 
-    public void setVerkeerstechniekGebruik(int verkeerstechniekGebruik) 
-    {
-        this.verkeerstechniekGebruik = verkeerstechniekGebruik;
+    public int getTijdigGebruik() {
+        return tijdigGebruik;
     }
 
-    public int getVerkeerstechniekTijdigGebruik() 
-    {
-        return verkeerstechniekTijdigGebruik;
+    public void setTijdigGebruik(int tijdigGebruik) {
+        this.tijdigGebruik = tijdigGebruik;
     }
 
-    public void setVerkeerstechniekTijdigGebruik(int verkeerstechniekTijdigGebruik) 
-    {
-        this.verkeerstechniekTijdigGebruik = verkeerstechniekTijdigGebruik;
+    public int getRichtingsaanwijzersAndere() {
+        return richtingsaanwijzersAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setRichtingsaanwijzersAndere(int richtingsaanwijzersAndere) {
+        this.richtingsaanwijzersAndere = richtingsaanwijzersAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+    
 }

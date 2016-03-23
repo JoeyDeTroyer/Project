@@ -1,50 +1,50 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_Volgafstand 
 {
-    private int verkeerstechniekVolgafstand;
-    private int verkeerstechniekZijdelings;
-    private int verkeerstechniekAndere;
+    private int volgafstand;
+    private int zijdelings;
+    private int volgafstandAndere;
 
     public Verkeerstechniek_Volgafstand() 
     {
         
     }
 
-    public Verkeerstechniek_Volgafstand(int verkeerstechniekVolgafstand, int verkeerstechniekZijdelings, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekVolgafstand = verkeerstechniekVolgafstand;
-        this.verkeerstechniekZijdelings = verkeerstechniekZijdelings;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public Verkeerstechniek_Volgafstand(int volgafstand, int zijdelings, int volgafstandAndere) {
+        this.volgafstand = volgafstand;
+        this.zijdelings = zijdelings;
+        this.volgafstandAndere = volgafstandAndere;
+    }
+    
+    
+
+    public int getVolgafstand() {
+        return volgafstand;
     }
 
-    public int getVerkeerstechniekVolgafstand() 
-    {
-        return verkeerstechniekVolgafstand;
+    public void setVolgafstand(int volgafstand) {
+        this.volgafstand = volgafstand;
     }
 
-    public void setVerkeerstechniekVolgafstand(int verkeerstechniekVolgafstand) 
-    {
-        this.verkeerstechniekVolgafstand = verkeerstechniekVolgafstand;
+    public int getZijdelings() {
+        return zijdelings;
     }
 
-    public int getVerkeerstechniekZijdelings() 
-    {
-        return verkeerstechniekZijdelings;
+    public void setZijdelings(int zijdelings) {
+        this.zijdelings = zijdelings;
     }
 
-    public void setVerkeerstechniekZijdelings(int verkeerstechniekZijdelings) 
-    {
-        this.verkeerstechniekZijdelings = verkeerstechniekZijdelings;
+    public int getVolgafstandAndere() {
+        return volgafstandAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setVolgafstandAndere(int volgafstandAndere) {
+        this.volgafstandAndere = volgafstandAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+    
 }

@@ -1,52 +1,51 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_Verkeerstekens 
 {
-    private int verkeerstechniekVerkeerstekens;
-    private int verkeerstechniekBevelenBevoegden;
-    private int verkeerstechniekAndere;
+    private int verkeerstekens;
+    private int bevelenBevoegden;
+    private int verkeerstekensAndere;
 
     public Verkeerstechniek_Verkeerstekens() 
     {
         
     }
 
-    public Verkeerstechniek_Verkeerstekens(int verkeerstechniekVerkeerstekens, int verkeerstechniekBevelenBevoegden, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekVerkeerstekens = verkeerstechniekVerkeerstekens;
-        this.verkeerstechniekBevelenBevoegden = verkeerstechniekBevelenBevoegden;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public Verkeerstechniek_Verkeerstekens(int verkeerstekens, int bevelenBevoegden, int verkeerstekensAndere) {
+        this.verkeerstekens = verkeerstekens;
+        this.bevelenBevoegden = bevelenBevoegden;
+        this.verkeerstekensAndere = verkeerstekensAndere;
+    }
+    
+
+    public int getVerkeerstekens() {
+        return verkeerstekens;
     }
 
-    public int getVerkeerstechniekVerkeerstekens() 
-    {
-        return verkeerstechniekVerkeerstekens;
+    public void setVerkeerstekens(int verkeerstekens) {
+        this.verkeerstekens = verkeerstekens;
     }
 
-    public void setVerkeerstechniekVerkeerstekens(int verkeerstechniekVerkeerstekens) 
-    {
-        this.verkeerstechniekVerkeerstekens = verkeerstechniekVerkeerstekens;
+    public int getBevelenBevoegden() {
+        return bevelenBevoegden;
     }
 
-    public int getVerkeerstechniekBevelenBevoegden() 
-    {
-        return verkeerstechniekBevelenBevoegden;
+    public void setBevelenBevoegden(int bevelenBevoegden) {
+        this.bevelenBevoegden = bevelenBevoegden;
     }
 
-    public void setVerkeerstechniekBevelenBevoegden(int verkeerstechniekBevelenBevoegden) 
-    {
-        this.verkeerstechniekBevelenBevoegden = verkeerstechniekBevelenBevoegden;
+    public int getVerkeerstekensAndere() {
+        return verkeerstekensAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setVerkeerstekensAndere(int verkeerstekensAndere) {
+        this.verkeerstekensAndere = verkeerstekensAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+    
     
     
     

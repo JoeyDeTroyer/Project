@@ -1,5 +1,8 @@
 package Models.Rijtechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Rijtechniek_VertrekkenHelling {
     private int vertrekkenHelling;
 

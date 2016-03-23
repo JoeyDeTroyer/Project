@@ -1,10 +1,13 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_PlaatsOpenbareWeg 
 {
-    private int verkeerstechniekPlaatsOpDeWeg;
-    private int verkeerstechniekVoorsorteren;
-    private int verkeerstechniekAndere;
+    private int plaatsOpDeWeg;
+    private int Voorsorteren;
+    private int plaatsOpenbarewegAndere;
 
     public Verkeerstechniek_PlaatsOpenbareWeg() 
     {
@@ -13,37 +16,34 @@ public class Verkeerstechniek_PlaatsOpenbareWeg
 
     public Verkeerstechniek_PlaatsOpenbareWeg(int verkeerstechniekPlaatsOpDeWeg, int verkeerstechniekVoorsorteren, int verkeerstechniekAndere) 
     {
-        this.verkeerstechniekPlaatsOpDeWeg = verkeerstechniekPlaatsOpDeWeg;
-        this.verkeerstechniekVoorsorteren = verkeerstechniekVoorsorteren;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+        this.plaatsOpDeWeg = plaatsOpDeWeg;
+        this.Voorsorteren = Voorsorteren;
+        this.plaatsOpenbarewegAndere = plaatsOpenbarewegAndere;
     }
 
-    public int getVerkeerstechniekPlaatsOpDeWeg() 
-    {
-        return verkeerstechniekPlaatsOpDeWeg;
+    public int getPlaatsOpDeWeg() {
+        return plaatsOpDeWeg;
     }
 
-    public void setVerkeerstechniekPlaatsOpDeWeg(int verkeerstechniekPlaatsOpDeWeg) 
-    {
-        this.verkeerstechniekPlaatsOpDeWeg = verkeerstechniekPlaatsOpDeWeg;
+    public void setPlaatsOpDeWeg(int plaatsOpDeWeg) {
+        this.plaatsOpDeWeg = plaatsOpDeWeg;
     }
 
-    public int getVerkeerstechniekVoorsorteren() {
-        return verkeerstechniekVoorsorteren;
+    public int getVoorsorteren() {
+        return Voorsorteren;
     }
 
-    public void setVerkeerstechniekVoorsorteren(int verkeerstechniekVoorsorteren) 
-    {
-        this.verkeerstechniekVoorsorteren = verkeerstechniekVoorsorteren;
+    public void setVoorsorteren(int Voorsorteren) {
+        this.Voorsorteren = Voorsorteren;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public int getPlaatsOpenbarewegAndere() {
+        return plaatsOpenbarewegAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public void setPlaatsOpenbarewegAndere(int plaatsOpenbarewegAndere) {
+        this.plaatsOpenbarewegAndere = plaatsOpenbarewegAndere;
     }
+
+    
 }

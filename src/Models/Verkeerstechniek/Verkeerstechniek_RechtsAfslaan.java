@@ -1,50 +1,49 @@
 package Models.Verkeerstechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Verkeerstechniek_RechtsAfslaan
 {
-    private int verkeerstechniekOpstelling;
-    private int verkeerstechniekUitvoering;
-    private int verkeerstechniekAndere;
+    private int opstelling;
+    private int uitvoering;
+    private int rechtsAfslaanAndere;
 
     public Verkeerstechniek_RechtsAfslaan() 
     {
         
     }
 
-    public Verkeerstechniek_RechtsAfslaan(int verkeerstechniekOpstelling, int verkeerstechniekUitvoering, int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekOpstelling = verkeerstechniekOpstelling;
-        this.verkeerstechniekUitvoering = verkeerstechniekUitvoering;
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
+    public Verkeerstechniek_RechtsAfslaan(int opstelling, int uitvoering, int rechtsAfslaanAndere) {
+        this.opstelling = opstelling;
+        this.uitvoering = uitvoering;
+        this.rechtsAfslaanAndere = rechtsAfslaanAndere;
+    }
+    
+
+    public int getOpstelling() {
+        return opstelling;
     }
 
-    public int getVerkeerstechniekOpstelling() 
-    {
-        return verkeerstechniekOpstelling;
+    public void setOpstelling(int opstelling) {
+        this.opstelling = opstelling;
     }
 
-    public void setVerkeerstechniekOpstelling(int verkeerstechniekOpstelling) 
-    {
-        this.verkeerstechniekOpstelling = verkeerstechniekOpstelling;
+    public int getUitvoering() {
+        return uitvoering;
     }
 
-    public int getVerkeerstechniekUitvoering() 
-    {
-        return verkeerstechniekUitvoering;
+    public void setUitvoering(int uitvoering) {
+        this.uitvoering = uitvoering;
     }
 
-    public void setVerkeerstechniekUitvoering(int verkeerstechniekUitvoering) 
-    {
-        this.verkeerstechniekUitvoering = verkeerstechniekUitvoering;
+    public int getRechtsAfslaanAndere() {
+        return rechtsAfslaanAndere;
     }
 
-    public int getVerkeerstechniekAndere() 
-    {
-        return verkeerstechniekAndere;
+    public void setRechtsAfslaanAndere(int rechtsAfslaanAndere) {
+        this.rechtsAfslaanAndere = rechtsAfslaanAndere;
     }
 
-    public void setVerkeerstechniekAndere(int verkeerstechniekAndere) 
-    {
-        this.verkeerstechniekAndere = verkeerstechniekAndere;
-    }
+   
 }
