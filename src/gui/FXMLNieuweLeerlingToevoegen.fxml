@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
@@ -28,10 +28,10 @@
                   <Font size="20.0" />
                </font></Label>
             <ImageView fitHeight="570.0" fitWidth="468.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField layoutX="615.0" layoutY="194.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField layoutX="615.0" layoutY="264.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField layoutX="615.0" layoutY="334.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField layoutX="615.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtInschrijvingsnummer" layoutX="615.0" layoutY="194.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtNaam" layoutX="615.0" layoutY="264.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtVoornaam" layoutX="615.0" layoutY="334.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtEmail" layoutX="615.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" />
             <Label layoutX="615.0" layoutY="164.0" prefHeight="17.0" prefWidth="258.0" text="Inschrijvingsnummer:">
                <font>
                   <Font size="20.0" />
@@ -49,7 +49,7 @@
                   <Font size="20.0" />
                </font></Label>
             <Button layoutX="845.0" layoutY="534.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Foto" />
-            <Button layoutX="674.0" layoutY="605.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Aanmaken" />
+            <Button fx:id="btnAanmaken" layoutX="674.0" layoutY="605.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="50.0" prefWidth="150.0" text="Aanmaken" />
             <Button fx:id="btnAnnuleer" layoutX="845.0" layoutY="605.0" mnemonicParsing="false" onAction="#annuleer" prefHeight="50.0" prefWidth="150.0" text="Annuleer" />
             <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
             <Button layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />

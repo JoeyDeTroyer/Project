@@ -1,5 +1,8 @@
 package Models.Rijtechniek;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Rijtechniek_Balanceren {
     
     private int balanceren;
