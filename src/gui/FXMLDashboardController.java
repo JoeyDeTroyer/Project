@@ -29,7 +29,7 @@ public class FXMLDashboardController extends BorderPane
     TextArea txtOpmerkingen;
     
     @FXML
-    Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS, circleNoodstop;
+    Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS, circleNoodstop, circleAutostrade, circleStad, circleRijstroken, circleRotonde;
     
     @FXML
     ProgressBar progressbar;      
@@ -48,6 +48,8 @@ public class FXMLDashboardController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        progressbar.setProgress(0);
+        btnMin.setDisable(true);
     }
     
     @FXML
@@ -157,24 +159,118 @@ public class FXMLDashboardController extends BorderPane
     @FXML 
     public void pbMin()
     {
-        if(progressbar.getProgress() == 0)
+        btnPlus.setDisable(false);
+        if(progressbar.getProgress() <= 0.101)
         {
             //kan niet lager dan 0
+            progressbar.setProgress(0);
+            btnMin.setDisable(true);
         }
-        else{
-            progressbar.setProgress(progressbar.getProgress() - 0.05);
+        else
+        {
+            progressbar.setProgress(progressbar.getProgress() - 0.1);
         }
     }
     
     @FXML
     public void pbPlus()
     {
-      if(progressbar.getProgress() == 1)
+      btnMin.setDisable(false);
+      
+      if(progressbar.getProgress() >= 0.899)
         {
             //kan niet hoger dan 1
+            progressbar.setProgress(1);
+            btnPlus.setDisable(true);
         }
-        else{
-            progressbar.setProgress(progressbar.getProgress() + 0.05);
+        else
+        {
+            progressbar.setProgress(progressbar.getProgress() + 0.1);
         }   
     }
+    
+    @FXML
+    public void rotonde()
+    {
+        if(circleRotonde.getFill() == Color.WHITE)
+        {
+            circleRotonde.setFill(Color.RED);
+        }
+        else if(circleRotonde.getFill() == Color.RED)
+        {
+            circleRotonde.setFill(Color.ORANGE);
+        }
+        else if(circleRotonde.getFill() == Color.ORANGE)
+        {
+            circleRotonde.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleRotonde.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void rijstroken()
+    {
+        if(circleRijstroken.getFill() == Color.WHITE)
+        {
+            circleRijstroken.setFill(Color.RED);
+        }
+        else if(circleRijstroken.getFill() == Color.RED)
+        {
+            circleRijstroken.setFill(Color.ORANGE);
+        }
+        else if(circleRijstroken.getFill() == Color.ORANGE)
+        {
+            circleRijstroken.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleRijstroken.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void stad()
+    {
+        if(circleStad.getFill() == Color.WHITE)
+        {
+            circleStad.setFill(Color.RED);
+        }
+        else if(circleStad.getFill() == Color.RED)
+        {
+            circleStad.setFill(Color.ORANGE);
+        }
+        else if(circleStad.getFill() == Color.ORANGE)
+        {
+            circleStad.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleStad.setFill(Color.WHITE);
+        }
+    }
+    
+    @FXML
+    public void autostrade()
+    {
+        if(circleAutostrade.getFill() == Color.WHITE)
+        {
+            circleAutostrade.setFill(Color.RED);
+        }
+        else if(circleAutostrade.getFill() == Color.RED)
+        {
+            circleAutostrade.setFill(Color.ORANGE);
+        }
+        else if(circleAutostrade.getFill() == Color.ORANGE)
+        {
+            circleAutostrade.setFill(Color.GREEN);
+        }
+        else
+        {
+            circleAutostrade.setFill(Color.WHITE);
+        }
+    }
+    
 }

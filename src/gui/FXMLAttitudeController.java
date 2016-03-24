@@ -56,25 +56,24 @@ public class FXMLAttitudeController extends BorderPane
         if("".equals(txtToevoegen.getText()))
         {
             //Foutcode te implementeren
-            listView2.setItems(valuesTemp);
         }
         else
         {
-            if(listView2.getItems() == null)
-            {
-                valuesLeerling.add(txtToevoegen.getText());
-                listView2.setItems(valuesLeerling);
-                txtToevoegen.clear();
-            }
-            else
-            {
-                valuesTemp.add(txtToevoegen.getText());
-                listView2.setItems(valuesTemp);
-                txtToevoegen.clear();
-            }
+                if(listView2.getItems() == null)
+                {
+                    valuesLeerling.add(txtToevoegen.getText());
+                    listView2.setItems(valuesLeerling);
+                    txtToevoegen.clear();
+                }
+                else 
+                {
+                    valuesTemp.add(txtToevoegen.getText());
+                    listView2.setItems(valuesTemp);
+                    txtToevoegen.clear();
+                }
         }
     }
-    // TO DO: Code voor duplicaten niet toe te staan
+
     @FXML
     public void right()
     {
@@ -91,7 +90,7 @@ public class FXMLAttitudeController extends BorderPane
         {
             //for(int i=0; i < valuesTemp.size(); i++)
             //{
-                if(listView2.getSelectionModel().getSelectedItems().contains(listView1.getSelectionModel().getSelectedItems()) == true)
+                if(valuesTemp.contains(listView1.getSelectionModel().getSelectedItem()))
                 {
                     listView1.getItems().remove(listView1.getSelectionModel().getSelectedItem());
                 }
@@ -104,7 +103,7 @@ public class FXMLAttitudeController extends BorderPane
             //}    
         }
     }
-    // TO DO: Code voor duplicaten niet toe te staan
+
     @FXML
     public void left()
     {
@@ -119,16 +118,19 @@ public class FXMLAttitudeController extends BorderPane
         }
         else
         {
-            if(listView1.getSelectionModel().getSelectedItems().contains(listView2.getSelectionModel().getSelectedItems()) == true)
-            {
-                listView2.getItems().remove(listView2.getSelectionModel().getSelectedIndex());
-            }
-            else
-            {
-                valuesTemp.add(listView2.getSelectionModel().getSelectedItem());
-                listView2.getItems().remove(listView2.getSelectionModel().getSelectedIndex());
-                listView1.setItems(valuesTemp);
-            }
+            //for(int i=0; i < valuesTemp.size(); i++)
+            //{
+                if(listView1.getSelectionModel().getSelectedItems().contains(listView2.getSelectionModel().getSelectedItems()) == true)
+                {
+                    listView2.getItems().remove(listView2.getSelectionModel().getSelectedIndex());
+                }
+                else
+                {
+                    valuesTemp.add(listView2.getSelectionModel().getSelectedItem());
+                    listView2.getItems().remove(listView2.getSelectionModel().getSelectedIndex());
+                    listView1.setItems(valuesTemp);
+                }
+            //}
         }
     }
 }
