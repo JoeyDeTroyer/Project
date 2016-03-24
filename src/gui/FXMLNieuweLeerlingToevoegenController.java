@@ -2,14 +2,20 @@ package gui;
 
 import DAO.LeerlingDAO;
 import Models.Leerling;
+import gui.LeerlingCell;
+import gui.FXMLInlogschermController;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.LabelBuilder;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.util.Callback;
 import project.Model;
 
 public class FXMLNieuweLeerlingToevoegenController extends BorderPane
@@ -25,6 +31,10 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
     private TextField txtVoornaam;
     @FXML
     private TextField txtEmail;
+    @FXML
+    private Label lblFoutmelding;
+    
+    
     
     ScreenSwitcher switcher;
     
@@ -48,15 +58,30 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
         switcher.logout();
     }
     
-        public void saveAction() {
-        // Create a new group, or update the existing one.
+    
+    
+        public void saveAction() 
+        {
+            if ( txtInschrijvingsnummer.getText().trim().length() == 0 ) {
+                lblFoutmelding.setText("Inschrijvingsnummer is niet ingevuld!");} 
+            if ( txtNaam.getText().trim().length() == 0 ) {
+                lblFoutmelding.setText("Naam is niet ingevuld!");}
+            if ( txtVoornaam.getText().trim().length() == 0 ) {
+                lblFoutmelding.setText("Voornaam is niet ingevuld!");}
+            if ( txtEmail.getText().trim().length() == 0 ) {
+                lblFoutmelding.setText("Email adres is niet ingevuld!");} 
+            else {
+                
             Leerling leerling = new Leerling();
             leerling.setInschrijvingsNr(Integer.parseInt(txtInschrijvingsnummer.getText()));
             leerling.setNaam(txtNaam.getText().trim());
             leerling.setVoorNaam(txtVoornaam.getText().trim());
             leerling.setEmail(txtEmail.getText().trim());
             LeerlingDAO.getInstance().addLeerling(leerling);
+            LeerlingDAO.getInstance().findAllLeerlingen();
+            Model.getInstance().initialize();
+            switcher.logout();
+           
         }
-            
-        
+        }      
 }

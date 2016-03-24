@@ -14,48 +14,42 @@
 <?import javafx.scene.text.Font?>
 
 <fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+   <right>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="90.0" layoutY="610.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField layoutX="230.0" layoutY="655.0" prefHeight="30.0" prefWidth="240.0" />
-            <Label layoutX="20.0" layoutY="615.0" text="Naam">
-               <font>
-                  <Font size="20.0" />
-               </font></Label>
-            <Label layoutX="20.0" layoutY="660.0" text="Inschrijvingsnummer">
-               <font>
-                  <Font size="20.0" />
-               </font></Label>
             <ImageView fitHeight="570.0" fitWidth="468.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField fx:id="txtInschrijvingsnummer" layoutX="615.0" layoutY="194.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField fx:id="txtNaam" layoutX="615.0" layoutY="264.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField fx:id="txtVoornaam" layoutX="615.0" layoutY="334.0" prefHeight="30.0" prefWidth="380.0" />
-            <TextField fx:id="txtEmail" layoutX="615.0" layoutY="404.0" prefHeight="30.0" prefWidth="380.0" />
-            <Label layoutX="615.0" layoutY="164.0" prefHeight="17.0" prefWidth="258.0" text="Inschrijvingsnummer:">
+            <TextField fx:id="txtInschrijvingsnummer" layoutX="292.0" layoutY="185.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtNaam" layoutX="292.0" layoutY="255.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtVoornaam" layoutX="292.0" layoutY="325.0" prefHeight="30.0" prefWidth="380.0" />
+            <TextField fx:id="txtEmail" layoutX="292.0" layoutY="395.0" prefHeight="30.0" prefWidth="380.0" />
+            <Label layoutX="292.0" layoutY="155.0" prefHeight="17.0" prefWidth="258.0" text="Inschrijvingsnummer:">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="615.0" layoutY="234.0" prefHeight="17.0" prefWidth="258.0" text="Familienaam:">
+            <Label layoutX="292.0" layoutY="225.0" prefHeight="17.0" prefWidth="258.0" text="Familienaam:">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="615.0" layoutY="303.0" prefHeight="17.0" prefWidth="258.0" text="Voornaam:">
+            <Label layoutX="292.0" layoutY="294.0" prefHeight="17.0" prefWidth="258.0" text="Voornaam:">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="615.0" layoutY="373.0" prefHeight="30.0" prefWidth="380.0" text="Email:">
+            <Label layoutX="292.0" layoutY="364.0" prefHeight="30.0" prefWidth="380.0" text="Email:">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Button layoutX="845.0" layoutY="534.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Foto" />
-            <Button fx:id="btnAanmaken" layoutX="674.0" layoutY="605.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="50.0" prefWidth="150.0" text="Aanmaken" />
-            <Button fx:id="btnAnnuleer" layoutX="845.0" layoutY="605.0" mnemonicParsing="false" onAction="#annuleer" prefHeight="50.0" prefWidth="150.0" text="Annuleer" />
-            <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
-            <Button layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
-            <Button fx:id="btnLogIn" layoutX="332.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Log in" />
-            <ImageView fitHeight="150.0" fitWidth="210.0" layoutX="615.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true" />
+            <Button disable="true" layoutX="522.0" layoutY="689.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="Foto" />
+            <Button fx:id="btnAanmaken" layoutX="292.0" layoutY="465.0" mnemonicParsing="false" onAction="#saveAction" prefHeight="50.0" prefWidth="180.0" text="Aanmaken" />
+            <Button fx:id="btnAnnuleer" layoutX="492.0" layoutY="465.0" mnemonicParsing="false" onAction="#annuleer" prefHeight="50.0" prefWidth="180.0" text="Annuleer" />
+            <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
+            <Button layoutX="172.0" layoutY="700.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
+            <Button fx:id="btnLogIn" layoutX="332.0" layoutY="700.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="Log in" />
+            <ImageView fitHeight="150.0" fitWidth="210.0" layoutX="292.0" layoutY="608.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lblFoutmelding" layoutX="292.0" layoutY="527.0" prefHeight="81.0" prefWidth="380.0" textAlignment="CENTER" textFill="#dd1a1a">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
          </children>
       </Pane>
-   </center>
+   </right>
 </fx:root>

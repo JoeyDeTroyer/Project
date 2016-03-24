@@ -1,15 +1,27 @@
 package gui;
 
+import Models.Leerling;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
+import javafx.util.Callback;
+import project.Model;
 
-public class FXMLInlogschermController extends BorderPane
+public class FXMLInlogschermController extends BorderPane 
 {
     @FXML
-    Button btnNieuw;       
+    private Button btnNieuw;       
+   
+    @FXML
+    private ListView<Leerling> lstGebruikers;
+    
     
     ScreenSwitcher switcher;
     
@@ -31,5 +43,19 @@ public class FXMLInlogschermController extends BorderPane
     public void nieuw()
     {
         switcher.nieuw();
+    }
+
+    
+    public void initialize() 
+    {
+        
+        lstGebruikers.setItems(Model.getInstance().getLeerlingen());
+        lstGebruikers.setCellFactory(new Callback<ListView<Leerling>, ListCell<Leerling>>() {
+            @Override
+            public ListCell<Leerling> call(ListView<Leerling> p) {
+                return new LeerlingCell();
+            }
+        });
+        
     }
 }

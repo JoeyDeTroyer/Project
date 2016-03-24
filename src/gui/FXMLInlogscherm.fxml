@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
@@ -34,8 +34,8 @@
                   <Font size="20.0" />
                </font></Label>
             <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" onAction="#nieuw" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
-            <Button layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
-            <ListView layoutX="492.0" layoutY="14.0" prefHeight="737.0" prefWidth="518.0" />
+            <Button fx:id="btnZoeken" layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
+            <ListView fx:id="lstGebruikers" layoutX="492.0" layoutY="14.0" prefHeight="737.0" prefWidth="518.0" />
             <ImageView fitHeight="570.0" fitWidth="468.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="btnLogIn" layoutX="332.0" layoutY="701.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Log in" />
          </children>
