@@ -5,6 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -48,15 +50,17 @@ public class FXMLAttitudeController extends BorderPane
         switcher.dashboard();
     }
 
-    //TO DO: Code voor duplicaten niet toe te staan
+   
     @FXML
     public void toevoegen()
     {
         ObservableList valuesTemp = listView2.getItems();
         if("".equals(txtToevoegen.getText()))
         {
-            //Foutcode te implementeren
-            listView2.setItems(valuesTemp);
+           Alert alert = new Alert(AlertType.ERROR);
+           alert.setTitle("Error");
+           alert.setContentText("U kan geen lege waarde toevoegen aan de lijst.");
+           alert.showAndWait();
         }
         else
         {
@@ -68,13 +72,25 @@ public class FXMLAttitudeController extends BorderPane
             }
             else
             {
-                valuesTemp.add(txtToevoegen.getText());
-                listView2.setItems(valuesTemp);
-                txtToevoegen.clear();
+                if(valuesTemp.contains(txtToevoegen.getText()))
+                {
+                    //error
+                    Alert alert = new Alert(AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setContentText("Deze waarde is reeds toegevoegd aan de lijst van de leerling");
+                    alert.showAndWait();
+                    txtToevoegen.clear();
+                }
+                    else
+                    {
+                    valuesTemp.add(txtToevoegen.getText());
+                    listView2.setItems(valuesTemp);
+                    txtToevoegen.clear();
+                    }
             }
         }
     }
-    // TO DO: Code voor duplicaten niet toe te staan
+  
     @FXML
     public void right()
     {
@@ -89,9 +105,7 @@ public class FXMLAttitudeController extends BorderPane
         }
         else
         {
-            //for(int i=0; i < valuesTemp.size(); i++)
-            //{
-                if(listView2.getSelectionModel().getSelectedItems().contains(listView1.getSelectionModel().getSelectedItems()) == true)
+                if(valuesTemp.contains(listView1.getSelectionModel().getSelectedItem()))
                 {
                     listView1.getItems().remove(listView1.getSelectionModel().getSelectedItem());
                 }
@@ -101,7 +115,7 @@ public class FXMLAttitudeController extends BorderPane
                     listView1.getItems().remove(listView1.getSelectionModel().getSelectedIndex());
                     listView2.setItems(valuesTemp);
                 }
-            //}    
+            
         }
     }
     // TO DO: Code voor duplicaten niet toe te staan
@@ -119,7 +133,7 @@ public class FXMLAttitudeController extends BorderPane
         }
         else
         {
-            if(listView1.getSelectionModel().getSelectedItems().contains(listView2.getSelectionModel().getSelectedItems()) == true)
+            if(valuesTemp.contains(listView2.getSelectionModel().getSelectedItem()))
             {
                 listView2.getItems().remove(listView2.getSelectionModel().getSelectedIndex());
             }
