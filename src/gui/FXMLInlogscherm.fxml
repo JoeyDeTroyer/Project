@@ -13,31 +13,32 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
-            <TextField layoutX="90.0" layoutY="610.0" prefHeight="30.0" prefWidth="380.0">
+            <TextField layoutX="90.0" layoutY="545.0" prefHeight="30.0" prefWidth="380.0">
                <font>
                   <Font size="16.0" />
                </font></TextField>
-            <TextField layoutX="230.0" layoutY="655.0" prefHeight="30.0" prefWidth="240.0">
+            <TextField layoutX="230.0" layoutY="590.0" prefHeight="30.0" prefWidth="240.0">
                <font>
                   <Font size="16.0" />
                </font></TextField>
-            <Label layoutX="20.0" layoutY="615.0" text="Naam">
+            <Label layoutX="20.0" layoutY="545.0" text="Naam">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="20.0" layoutY="660.0" text="Inschrijvingsnummer">
+            <Label layoutX="20.0" layoutY="590.0" text="Inschrijvingsnummer">
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Button fx:id="btnNieuw" layoutX="14.0" layoutY="700.0" mnemonicParsing="false" onAction="#nieuw" prefHeight="50.0" prefWidth="150.0" text="Nieuw" />
-            <Button fx:id="btnZoeken" layoutX="172.0" layoutY="700.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Zoeken" />
-            <ListView fx:id="lstGebruikers" layoutX="492.0" layoutY="14.0" prefHeight="737.0" prefWidth="518.0" />
-            <ImageView fitHeight="570.0" fitWidth="468.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="btnLogIn" layoutX="332.0" layoutY="701.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Log in" />
+            <Button fx:id="btnNieuw" layoutX="20.0" layoutY="640.0" mnemonicParsing="false" onAction="#nieuw" prefHeight="50.0" prefWidth="200.0" text="Nieuw" />
+            <Button fx:id="btnZoeken" layoutX="270.0" layoutY="640.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Zoeken" />
+            <ListView fx:id="lstGebruikers" layoutX="490.0" layoutY="15.0" prefHeight="740.0" prefWidth="520.0" />
+            <ImageView fitHeight="510.0" fitWidth="468.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnLogIn" layoutX="270.0" layoutY="705.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Log in" />
+            <Button fx:id="btnVerwijder" layoutX="20.0" layoutY="705.0" mnemonicParsing="false" onAction="#verwijder" prefHeight="50.0" prefWidth="200.0" text="Verwijder" />
          </children>
       </Pane>
    </center>

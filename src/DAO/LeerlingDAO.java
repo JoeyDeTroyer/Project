@@ -42,6 +42,25 @@ public class LeerlingDAO {
         }
     }
     
+    public void verwijderLeerling(int id)
+    {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            Leerling l = em.getReference(Leerling.class, id);
+            l.getInschrijvingsNr();
+            em.remove(l);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
+    
     private LeerlingDAO() {
             
         }

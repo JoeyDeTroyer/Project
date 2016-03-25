@@ -1,9 +1,11 @@
 package gui;
 
+import DAO.LeerlingDAO;
 import Models.Leerling;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +19,7 @@ import project.Model;
 public class FXMLInlogschermController extends BorderPane 
 {
     @FXML
-    private Button btnNieuw;       
+    private Button btnNieuw, btnVerwijder, btnZoeken, btnLogin;       
    
     @FXML
     private ListView<Leerling> lstGebruikers;
@@ -43,6 +45,16 @@ public class FXMLInlogschermController extends BorderPane
     public void nieuw()
     {
         switcher.nieuw();
+        btnVerwijder.setDisable(false);
+    }
+    
+    @FXML
+    public void verwijder()
+    {
+        Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
+        Model.getInstance().getLeerlingen().remove(l);
+        LeerlingDAO.getInstance().verwijderLeerling(l.getInschrijvingsNr());
+        initialize();
     }
 
     
@@ -56,6 +68,11 @@ public class FXMLInlogschermController extends BorderPane
                 return new LeerlingCell();
             }
         });
+        
+        if(Model.getInstance().getLeerlingen().isEmpty())
+        {
+            btnVerwijder.setDisable(true);
+        }
         
     }
 }
