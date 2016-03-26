@@ -50,6 +50,7 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        lblFoutmelding.setWrapText(true);
     }
     
     @FXML
@@ -63,15 +64,22 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
         public void saveAction() 
         {
             if ( txtInschrijvingsnummer.getText().trim().length() == 0 ) {
-                lblFoutmelding.setText("Inschrijvingsnummer is niet ingevuld!");} 
+                lblFoutmelding.setText("Inschrijvingsnummer is niet ingevuld!");}
+            for (Leerling l : LeerlingDAO.getInstance().findAllLeerlingen())
+            {
+                if(l.getInschrijvingsNr() == Integer.parseInt(txtInschrijvingsnummer.getText().trim()))
+                {
+                    lblFoutmelding.setText("Er bestaat al een leerling met dit inschrijvingsnummer!");
+                }
+            }
             if ( txtNaam.getText().trim().length() == 0 ) {
                 lblFoutmelding.setText("Naam is niet ingevuld!");}
             if ( txtVoornaam.getText().trim().length() == 0 ) {
                 lblFoutmelding.setText("Voornaam is niet ingevuld!");}
             if ( txtEmail.getText().trim().length() == 0 ) {
                 lblFoutmelding.setText("Email adres is niet ingevuld!");} 
-            else {
-                
+            else
+            {
             Leerling leerling = new Leerling();
             leerling.setInschrijvingsNr(Integer.parseInt(txtInschrijvingsnummer.getText()));
             leerling.setNaam(txtNaam.getText().trim());
@@ -81,7 +89,6 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane
             LeerlingDAO.getInstance().findAllLeerlingen();
             Model.getInstance().initialize();
             switcher.logout();
-           
-        }
+            }
         }      
 }
