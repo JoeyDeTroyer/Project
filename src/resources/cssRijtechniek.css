@@ -1,91 +1,89 @@
-.bgDashboard{
-    -fx-background-image: url("bgDashboard.jpg");
+.bgRijtechniek{
+    -fx-background-image: url("rijtechniekBG.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.banden{
-    -fx-background-image: url("banden.png");
-    -fx-background-size: cover;
-    -fx-background-color: transparent;
-    -fx-background-repeat: no-repeat;
-    
-}
-
-.gps{
-    -fx-background-image: url("gps.png");
+.achteruit{
+    -fx-background-image: url("achteruit.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.noodstop{
-    -fx-background-image: url("noodstop.png");
+.garage{
+    -fx-background-image: url("garage.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.schakelaars{
-    -fx-background-image: url("schakelaars.png");
+.keren{
+    -fx-background-image: url("keren.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.tanken{
-    -fx-background-image: url("tanken.png");
+.kijken{
+    -fx-background-image: url("kijken.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.vloeistoffen{
-    -fx-background-image: url("vloeistoffen.png");
+.koppeling{
+    -fx-background-image: url("koppeling.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.stuur{
-    -fx-background-image: url("stuur.png");
+.parkeren{
+    -fx-background-image: url("parkeren.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.rotonde{
-    -fx-background-image: url("rotonde.png");
-    -fx-background-size: cover;
-    -fx-background-repeat: no-repeat;
-    -fx-background-color: transparent;
-
-}
-
-.autostrade{
-     -fx-background-image: url("autostrade.png");
+.rem{
+    -fx-background-image: url("rem.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.rotondeKlein{
-     -fx-background-image: url("rotondeKlein.png");
+.schakelen{
+    -fx-background-image: url("schakelen.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.stad{
-     -fx-background-image: url("stad.png");
+.sturen{
+    -fx-background-image: url("sturen.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
-.rijstroken{
-     -fx-background-image: url("rijstroken.png");
+.stuuroefeningen{
+    -fx-background-image: url("stuuroefeningen.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.vertrekkenHelling{
+    -fx-background-image: url("vertrekkenHelling.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.zithouding{
+    -fx-background-image: url("zithouding.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;

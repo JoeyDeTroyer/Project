@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgVerkeerstechniek" stylesheets="@../resources/cssVerkeerstechniek.css">
          <children>
 
-            <Label alignment="CENTER" layoutX="880.0" layoutY="20.0" text="Naam Leerling">
+            <Label alignment="CENTER" layoutX="880.0" layoutY="20.0" text="Naam Leerling" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Label>
             <Button fx:id="btnHome" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="100.0" prefWidth="120.0" text="Home" />
-            <Button fx:id="btnOpenbareWeg" layoutX="283.0" layoutY="61.0" mnemonicParsing="false" onAction="#openbareWeg" prefHeight="100.0" prefWidth="150.0" text="Plaats openbare weg" />
-            <Button layoutX="283.0" layoutY="186.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Voorrang" />
-            <Button fx:id="btnRichtingaanwijzers" layoutX="283.0" layoutY="312.0" mnemonicParsing="false" onAction="#richtingaanwijzers" prefHeight="100.0" prefWidth="150.0" text="Richtingsaanwijzers" />
-            <Button fx:id="btnVolgafstand" layoutX="283.0" layoutY="441.0" mnemonicParsing="false" onAction="#volgafstand" prefHeight="100.0" prefWidth="150.0" text="Volgafstand" />
-            <Button fx:id="btnLinksaf" layoutX="283.0" layoutY="585.0" mnemonicParsing="false" onAction="#linksaf" prefHeight="100.0" prefWidth="150.0" text="Links afslaan" />
-            <Button fx:id="btnVerkeerstekens" layoutX="512.0" layoutY="61.0" mnemonicParsing="false" onAction="#verkeerstekens" prefHeight="100.0" prefWidth="150.0" text="Verkeerstekens" />
-            <Button layoutX="512.0" layoutY="186.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Snelheid" />
-            <Button fx:id="btnInhalen" layoutX="512.0" layoutY="312.0" mnemonicParsing="false" onAction="#inhalen" prefHeight="100.0" prefWidth="150.0" text="Inhalen" />
-            <Button layoutX="512.0" layoutY="441.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="150.0" text="Kruisen" />
-            <Button fx:id="btnRechtsaf" layoutX="512.0" layoutY="585.0" mnemonicParsing="false" onAction="#rechtsaf" prefHeight="100.0" prefWidth="150.0" text="Rechts afslaan" />
+            <Button fx:id="btnOpenbareWeg" layoutX="244.0" layoutY="87.0" mnemonicParsing="false" onAction="#openbareWeg" prefHeight="122.0" prefWidth="122.0" styleClass="openbareWeg" />
+            <Button layoutX="454.0" layoutY="50.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="116.0" styleClass="voorrang" />
+            <Button fx:id="btnRichtingaanwijzers" layoutX="120.0" layoutY="221.0" mnemonicParsing="false" onAction="#richtingaanwijzers" prefHeight="112.0" prefWidth="113.0" styleClass="pinkers" />
+            <Button fx:id="btnVolgafstand" layoutX="780.0" layoutY="430.0" mnemonicParsing="false" onAction="#volgafstand" prefHeight="123.0" prefWidth="124.0" styleClass="volgafstand" />
+            <Button fx:id="btnLinksaf" layoutX="244.0" layoutY="563.0" mnemonicParsing="false" onAction="#linksaf" prefHeight="104.0" prefWidth="106.0" styleClass="linksaf" />
+            <Button fx:id="btnVerkeerstekens" layoutX="657.0" layoutY="86.0" mnemonicParsing="false" onAction="#verkeerstekens" prefHeight="124.0" prefWidth="123.0" styleClass="tekensBevelen" />
+            <Button layoutX="782.0" layoutY="216.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="122.0" styleClass="snelheid" />
+            <Button fx:id="btnInhalen" layoutX="656.0" layoutY="553.0" mnemonicParsing="false" onAction="#inhalen" prefHeight="124.0" prefWidth="124.0" styleClass="inhalen" />
+            <Button layoutX="452.0" layoutY="610.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="121.0" styleClass="kruisen" />
+            <Button fx:id="btnRechtsaf" layoutX="126.0" layoutY="452.0" mnemonicParsing="false" onAction="#rechtsaf" prefHeight="101.0" prefWidth="101.0" styleClass="rechtsaf" />
 
          </children>
       </Pane>
