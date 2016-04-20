@@ -6,6 +6,7 @@
     <class>Models.Leerling</class>
     <class>Models.Verkeerstechniek.Verkeerstechniek</class>
     <class>Models.Dashboard.Dashboard</class>
+    <class>Models.Evaluatie</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/tilt"/>
       <property name="javax.persistence.jdbc.user" value="tilt"/>

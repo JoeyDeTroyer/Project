@@ -1,6 +1,14 @@
 package gui;
 
+import DAO.EvaluatieDAO;
+import DAO.RijtechniekDAO;
+import Models.Configuratie;
+import Models.Evaluatie;
+import Models.Leerling;
+import Models.Rijtechniek.Rijtechniek;
 import java.io.IOException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,6 +21,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import project.Model;
 
 public class FXMLDashboardController extends BorderPane
 {
@@ -35,6 +44,8 @@ public class FXMLDashboardController extends BorderPane
     ProgressBar progressbar;      
     
     ScreenSwitcher switcher;
+    private ObservableList<Evaluatie> evaluatie;
+    private Evaluatie evaluatietest;
     
     public FXMLDashboardController(ScreenSwitcher switcher)
     {
@@ -48,14 +59,36 @@ public class FXMLDashboardController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        Leerling leerling = Configuratie.getLeerling();
         progressbar.setProgress(0);
         btnMin.setDisable(true);
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
     @FXML
     public void attitude()
     {
         switcher.attitude();
+    }
+    
+    
+    @FXML
+    public void evaluatie1()
+    {
+       evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, 1);
+       if (evaluatietest == null){
+           Evaluatie nieuweEvaluatie = new Evaluatie();
+           Rijtechniek rijtechniek  = new Rijtechniek();
+           //rijtechniek.setId(1);
+           RijtechniekDAO.getInstance().addRijtechniek(rijtechniek);
+           nieuweEvaluatie.setRijtechniek(rijtechniek);
+           nieuweEvaluatie.setLeerling(Configuratie.leerling);
+           nieuweEvaluatie.setVolgNummer(1);
+           EvaluatieDAO.getInstance().addEvaluatie(nieuweEvaluatie);
+           evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, 1);
+       } 
+            Configuratie.setEvaluatie(evaluatietest);
+            System.out.println(evaluatietest.getLeerling().getNaamVoornaam());   
     }
     
     @FXML
@@ -95,6 +128,7 @@ public class FXMLDashboardController extends BorderPane
         if(circleVloeistoffen.getFill() == Color.WHITE)
         {
             circleVloeistoffen.setFill(Color.GREEN);
+            
         }
         else
         {

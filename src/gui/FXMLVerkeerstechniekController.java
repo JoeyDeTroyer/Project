@@ -1,9 +1,12 @@
 package gui;
 
+import Models.Configuratie;
+import Models.Leerling;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class FXMLVerkeerstechniekController extends BorderPane
@@ -11,6 +14,8 @@ public class FXMLVerkeerstechniekController extends BorderPane
     @FXML
     Button btnHome, btnInhalen, btnLinksaf, btnOpenbareWeg, btnRechtsaf, btnRichtingaanwijzers,
             btnVerkeerstekens, btnVolgafstand;
+    @FXML
+    Label lblNaamLeerling;
     
     ScreenSwitcher switcher;
     
@@ -20,12 +25,15 @@ public class FXMLVerkeerstechniekController extends BorderPane
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLVerkeerstechniek.fxml"));
         loader.setRoot(this);
         loader.setController(this);
-
+        
         try {
             loader.load();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        Leerling leerling = Configuratie.getLeerling();
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
     @FXML

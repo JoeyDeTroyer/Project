@@ -1,6 +1,7 @@
 package gui;
 
 import DAO.LeerlingDAO;
+import Models.Configuratie;
 import Models.Leerling;
 import java.io.IOException;
 import java.util.Optional;
@@ -48,6 +49,14 @@ public class FXMLInlogschermController extends BorderPane
         btnVerwijder.setDisable(false);
     }
     
+    public void login() 
+    {
+        Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
+        Configuratie.setLeerling(l);
+        switcher.dashboard();
+        
+    }
+    
     @FXML
     public void verwijder()
     {
@@ -80,7 +89,6 @@ public class FXMLInlogschermController extends BorderPane
             }
         }
     }
-
     
     public void initialize() 
     {

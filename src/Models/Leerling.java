@@ -59,8 +59,13 @@ public class Leerling {
     
     
     public String getNaamVoornaam(){
-    return this.voorNaam + " " + this.naam;
+    return this.inschrijvingsNr + " - " + this.voorNaam + " " + this.naam;
     }
+    
+    public String getVolledigeNaam() {
+        return this.voorNaam + " " + this.naam;
+    }
+    
 //    public Leerling()
 //    {
 //        
