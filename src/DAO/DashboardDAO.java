@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-
 public class DashboardDAO {
     
     public List<Dashboard> findAllDashboards() {
@@ -21,20 +20,14 @@ public class DashboardDAO {
                 em.close();
             }
             emf.close();
-        }
-        
-        
+        }    
     }
     
-    private DashboardDAO() {
-            
-        }
+    private DashboardDAO() {}
     
     private static final DashboardDAO instance = new DashboardDAO();
 
     public static DashboardDAO getInstance() {
         return instance;
-    }
-    
-    
+    } 
 }

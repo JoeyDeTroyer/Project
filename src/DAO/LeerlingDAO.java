@@ -21,9 +21,7 @@ public class LeerlingDAO {
                 em.close();
             }
             emf.close();
-        }
-        
-        
+        }    
     }
     
     public void addLeerling(Leerling l)  {
@@ -61,15 +59,11 @@ public class LeerlingDAO {
         }
     }
     
-    private LeerlingDAO() {
-            
-        }
+    private LeerlingDAO() {}
     
     private static final LeerlingDAO instance = new LeerlingDAO();
 
     public static LeerlingDAO getInstance() {
         return instance;
-    }
-    
-    
+    }  
 }

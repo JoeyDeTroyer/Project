@@ -43,6 +43,5 @@ public class Rijtechniek_Parkeren {
         this.parkerenTweeVoertuigen = parkerenTweeVoertuigen;
         this.parkerenAchterVoertuigen = parkerenAchterVoertuigen;
         this.parkerenLinks = parkerenLinks;
-    }
-        
+    }   
 }

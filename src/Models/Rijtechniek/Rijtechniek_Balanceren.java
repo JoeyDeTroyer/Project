@@ -22,6 +22,5 @@ public class Rijtechniek_Balanceren {
     public Rijtechniek_Balanceren(int balanceren) 
     {
         this.balanceren = balanceren;
-    }
-    
+    }  
 }

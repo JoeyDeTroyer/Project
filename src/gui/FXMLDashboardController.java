@@ -2,10 +2,12 @@ package gui;
 
 import DAO.EvaluatieDAO;
 import DAO.RijtechniekDAO;
+import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
 import Models.Evaluatie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek;
+import Models.Verkeerstechniek.Verkeerstechniek;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -70,8 +72,7 @@ public class FXMLDashboardController extends BorderPane
     {
         switcher.attitude();
     }
-    
-    
+ 
     @FXML
     public void evaluatie1()
     {
@@ -79,11 +80,13 @@ public class FXMLDashboardController extends BorderPane
        if (evaluatietest == null){
            Evaluatie nieuweEvaluatie = new Evaluatie();
            Rijtechniek rijtechniek  = new Rijtechniek();
-           //rijtechniek.setId(1);
            RijtechniekDAO.getInstance().addRijtechniek(rijtechniek);
+           Verkeerstechniek verkeerstechniek = new Verkeerstechniek();
+           VerkeerstechniekDAO.getInstance().addVerkeerstechniek(verkeerstechniek);
            nieuweEvaluatie.setRijtechniek(rijtechniek);
            nieuweEvaluatie.setLeerling(Configuratie.leerling);
-           nieuweEvaluatie.setVolgNummer(1);
+           nieuweEvaluatie.setVolgNummer(1); 
+           nieuweEvaluatie.setVerkeerstechniek(verkeerstechniek);
            EvaluatieDAO.getInstance().addEvaluatie(nieuweEvaluatie);
            evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, 1);
        } 

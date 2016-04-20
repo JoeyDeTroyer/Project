@@ -15,9 +15,6 @@ import static org.eclipse.persistence.expressions.ExpressionOperator.NotNull;
 @NamedQuery(name = "Leerling.findAll", query = "SELECT l FROM Leerling l")
 })
 public class Leerling {
-    
-    
-    
     private String voorNaam;
     private String naam;
     private String email;
@@ -28,7 +25,6 @@ public class Leerling {
     public int getInschrijvingsNr() {
         return inschrijvingsNr;
     }
-    
     
     public void setInschrijvingsNr(int inschrijvingsNr) {
         this.inschrijvingsNr = inschrijvingsNr;
@@ -56,7 +52,6 @@ public class Leerling {
     public void setEmail(String email) {
         this.email = email;
     }
-    
     
     public String getNaamVoornaam(){
     return this.inschrijvingsNr + " - " + this.voorNaam + " " + this.naam;
