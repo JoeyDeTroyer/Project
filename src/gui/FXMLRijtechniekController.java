@@ -1,13 +1,18 @@
 package gui;
 
+import Models.Configuratie;
+import Models.Leerling;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class FXMLRijtechniekController extends BorderPane 
 {
+    @FXML
+    Label lblNaamLeerling;
     @FXML
     Button btnHome, btnZithouding, btnKijktechniek, btnSchakeltechniek, btnStuurtechniek, btnRemtechniek, 
             btnKoppeling, btnHelling, btnParkeren, btnKeren;
@@ -26,6 +31,8 @@ public class FXMLRijtechniekController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        Leerling leerling = Configuratie.getLeerling();
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
     @FXML

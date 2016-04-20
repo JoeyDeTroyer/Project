@@ -1,38 +1,40 @@
 package DAO;
 
-import Models.Rijtechniek.Rijtechniek;
-import java.util.List;
+import Models.Evaluatie;
+import Models.Leerling;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
-
-public class RijtechniekDAO {
+public class EvaluatieDAO {
     
-    public List<Rijtechniek> findAllRijtechnieken() {
+    public Evaluatie findAllByLeerling(Leerling l, int volgNummer) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
-            List<Rijtechniek> results = em.createNamedQuery("Rijtechniek.findAll", Rijtechniek.class).getResultList();
-            return results;
-        } finally {
+            TypedQuery<Evaluatie> q = em.createNamedQuery("Evaluatie.findAllByLeerling", Evaluatie.class);
+            q.setParameter("leerling", l);
+            q.setParameter("volgnummer", volgNummer);
+            return q.getSingleResult();
+        } catch (NoResultException ex) {
+            return null;
+        }finally {
             if (em != null) {
                 em.close();
             }
             emf.close();
         }
-        
-        
     }
-    
-        public void addRijtechniek(Rijtechniek r)  {
+        public void addEvaluatie(Evaluatie e)  {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             em.getTransaction().begin();
-            em.persist(r);        
+            em.persist(e);        
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -42,15 +44,10 @@ public class RijtechniekDAO {
         }
     }
     
-    private RijtechniekDAO() {
-            
-        }
-    
-    private static final RijtechniekDAO instance = new RijtechniekDAO();
+    private static final EvaluatieDAO instance = new EvaluatieDAO();
 
-    public static RijtechniekDAO getInstance() {
+    public static EvaluatieDAO getInstance() {
         return instance;
     }
-    
     
 }

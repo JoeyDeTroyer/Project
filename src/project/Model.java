@@ -17,6 +17,7 @@ public class Model {
         rijtechnieken = FXCollections.observableArrayList(RijtechniekDAO.getInstance().findAllRijtechnieken());
         leerlingen = FXCollections.observableArrayList(LeerlingDAO.getInstance().findAllLeerlingen());
         verkeerstechnieken = FXCollections.observableArrayList(VerkeerstechniekDAO.getInstance().findAllVerkeerstechnieken()); 
+        
     }
     
     private ObservableList<Rijtechniek> rijtechnieken;

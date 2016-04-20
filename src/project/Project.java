@@ -9,11 +9,14 @@ import DAO.LeerlingDAO;
 import Models.Leerling;
 import gui.ScreenSwitcher;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
 public class Project extends Application {
+    
+    public int idProject;
     
     @Override
     public void start(Stage primaryStage) 
@@ -21,7 +24,7 @@ public class Project extends Application {
       Model.getInstance().initialize();
       primaryStage.setTitle("Rijschool Paul");
       ScreenSwitcher screen = new ScreenSwitcher();
-      screen.dashboard();
+      screen.logout();
       Scene scene = new Scene(screen);
       primaryStage.setScene(scene);
       primaryStage.show();
