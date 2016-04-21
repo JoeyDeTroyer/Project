@@ -22,6 +22,5 @@ public class Rijtechniek_Koppeling {
     public Rijtechniek_Koppeling(int koppeling) 
     {
         this.koppeling = koppeling;
-    }
-    
+    }   
 }

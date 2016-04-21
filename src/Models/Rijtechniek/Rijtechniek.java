@@ -17,7 +17,6 @@ import javax.persistence.Table;
 })
 public class Rijtechniek {
     //Zo dat de attributen van de verschillende subklassen in de tabel kunnen gezet worden
-
     @Embedded
     private Rijtechniek_Balanceren balanceren;
     @Embedded
@@ -46,6 +45,7 @@ public class Rijtechniek {
     //Dit geeft een autonummering als primaire sleutel in de tabel Rijtechniek
     @Id @GeneratedValue
     private long id;
+    
     /*public Rijtechniek(int kerenID, Rijtechniek_Kijktechniek kijkTechniek, Rijtechniek_Koppeling koppeling, Rijtechniek_Parkeren parkeren, Rijtechniek_Remtechniek remTechniek, Rijtechniek_Schakeltechniek schakelTechniek, Rijtechniek_Stuurtechniek stuurTechniek, Rijtechniek_Zithouding zithouding) {
         this.kerenID = kerenID;
         this.kijkTechniek = kijkTechniek;

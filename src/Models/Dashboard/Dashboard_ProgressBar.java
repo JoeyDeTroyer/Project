@@ -13,8 +13,5 @@ public class Dashboard_ProgressBar {
 
     public void setProgressBar(int progressBar) {
         this.progressBar = progressBar;
-    }
-    
-    
-    
+    }  
 }

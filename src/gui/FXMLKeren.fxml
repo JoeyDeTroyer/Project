@@ -39,7 +39,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" prefHeight="35.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="eenbeweging1" mnemonicParsing="false" prefHeight="35.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <toggleGroup>
                         <ToggleGroup fx:id="In_1_beweging" />
                      </toggleGroup>
@@ -47,11 +47,11 @@
                         <Font size="24.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="eenbeweging" mnemonicParsing="false" toggleGroup="$In_1_beweging" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="eenbeweging2" mnemonicParsing="false" toggleGroup="$In_1_beweging" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$In_1_beweging" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="eenbeweging3" mnemonicParsing="false" toggleGroup="$In_1_beweging" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>

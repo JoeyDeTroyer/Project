@@ -4,9 +4,9 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Models.Rijtechniek.Rijtechniek</class>
     <class>Models.Leerling</class>
-    <class>Models.Verkeerstechniek.Verkeerstechniek</class>
     <class>Models.Dashboard.Dashboard</class>
     <class>Models.Evaluatie</class>
+    <class>Models.Verkeerstechniek.Verkeerstechniek</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/tilt"/>
       <property name="javax.persistence.jdbc.user" value="tilt"/>

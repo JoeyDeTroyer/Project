@@ -1,6 +1,7 @@
 package Models;
 
 import Models.Rijtechniek.Rijtechniek;
+import Models.Verkeerstechniek.Verkeerstechniek;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,14 +15,18 @@ import javax.persistence.OneToOne;
 @NamedQuery(name = "Evaluatie.findAllByLeerling", query = "SELECT e FROM Evaluatie e WHERE e.leerling = :leerling AND e.volgNummer = :volgnummer")
 })
 public class Evaluatie {
+    
     @Id @GeneratedValue
     private int evaluatieId;
-    
+    //Relatie met Leerling leggen
     @ManyToOne
     private Leerling leerling;
-    
+    //Relatie met Rijtechniek
     @OneToOne
     private Rijtechniek rijtechniek;
+    //Relatie met Verkeerstechniek
+    @OneToOne 
+    private Verkeerstechniek verkeerstechniek;
     
     private int volgNummer;
 
@@ -57,6 +62,11 @@ public class Evaluatie {
         this.rijtechniek = rijtechniek;
     }
     
-    
-    
+    public Verkeerstechniek getVerkeerstechniek() {
+        return verkeerstechniek;
+    }
+
+    public void setVerkeerstechniek(Verkeerstechniek verkeerstechniek) {
+        this.verkeerstechniek = verkeerstechniek;
+    }
 }

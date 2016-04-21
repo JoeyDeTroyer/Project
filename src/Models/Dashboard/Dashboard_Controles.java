@@ -31,8 +31,5 @@ public class Dashboard_Controles {
 
     public void setBanden(int banden) {
         this.banden = banden;
-    }
-    
-    
-    
+    }  
 }

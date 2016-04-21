@@ -40,8 +40,5 @@ public class Dashboard_TypesOpenbareWeg {
 
     public void setAutosnelweg(int autosnelweg) {
         this.autosnelweg = autosnelweg;
-    }
-    
-    
-    
+    }  
 }

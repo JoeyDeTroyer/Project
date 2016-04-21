@@ -5,8 +5,8 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Verkeerstechniek_RechtsAfslaan
 {
-    private int opstelling;
-    private int uitvoering;
+    private int opstellingRechts;
+    private int uitvoeringRechts;
     private int rechtsAfslaanAndere;
 
     public Verkeerstechniek_RechtsAfslaan() 
@@ -14,28 +14,30 @@ public class Verkeerstechniek_RechtsAfslaan
         
     }
 
-    public Verkeerstechniek_RechtsAfslaan(int opstelling, int uitvoering, int rechtsAfslaanAndere) {
-        this.opstelling = opstelling;
-        this.uitvoering = uitvoering;
-        this.rechtsAfslaanAndere = rechtsAfslaanAndere;
-    }
+//    public Verkeerstechniek_RechtsAfslaan(int opstelling, int uitvoering, int rechtsAfslaanAndere) {
+//        this.opstelling = opstelling;
+//        this.uitvoering = uitvoering;
+//        this.rechtsAfslaanAndere = rechtsAfslaanAndere;
+//    }
     
 
-    public int getOpstelling() {
-        return opstelling;
+    public int getOpstellingRechts() {
+        return opstellingRechts;
     }
 
-    public void setOpstelling(int opstelling) {
-        this.opstelling = opstelling;
+    public void setOpstellingRechts(int opstellingRechts) {
+        this.opstellingRechts = opstellingRechts;
     }
 
-    public int getUitvoering() {
-        return uitvoering;
+    public int getUitvoeringRechts() {
+        return uitvoeringRechts;
     }
 
-    public void setUitvoering(int uitvoering) {
-        this.uitvoering = uitvoering;
+    public void setUitvoeringRechts(int uitvoeringRechts) {
+        this.uitvoeringRechts = uitvoeringRechts;
     }
+
+    
 
     public int getRechtsAfslaanAndere() {
         return rechtsAfslaanAndere;

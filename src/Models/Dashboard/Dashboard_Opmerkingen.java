@@ -14,6 +14,4 @@ public class Dashboard_Opmerkingen {
     public void setOpmerkingen(String[] opmerkingen) {
         this.opmerkingen = opmerkingen;
     }
-    
-    
 }
