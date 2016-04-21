@@ -1,9 +1,11 @@
 package gui;
 
+import DAO.DashboardDAO;
 import DAO.EvaluatieDAO;
 import DAO.RijtechniekDAO;
 import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
+import Models.Dashboard.Dashboard;
 import Models.Evaluatie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek;
@@ -83,10 +85,13 @@ public class FXMLDashboardController extends BorderPane
            RijtechniekDAO.getInstance().addRijtechniek(rijtechniek);
            Verkeerstechniek verkeerstechniek = new Verkeerstechniek();
            VerkeerstechniekDAO.getInstance().addVerkeerstechniek(verkeerstechniek);
+           Dashboard dashboard = new Dashboard();
+           DashboardDAO.getInstance().addDashboard(dashboard);
            nieuweEvaluatie.setRijtechniek(rijtechniek);
            nieuweEvaluatie.setLeerling(Configuratie.leerling);
            nieuweEvaluatie.setVolgNummer(1); 
            nieuweEvaluatie.setVerkeerstechniek(verkeerstechniek);
+           nieuweEvaluatie.setDashboard(dashboard);
            EvaluatieDAO.getInstance().addEvaluatie(nieuweEvaluatie);
            evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, 1);
        } 

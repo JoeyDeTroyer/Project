@@ -2,6 +2,7 @@ package Models.Dashboard;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -23,7 +24,58 @@ public class Dashboard {
     @Embedded
     private Dashboard_Opmerkingen opmerkingen;
     
-    @Id
-    private long id;
+    @Id @GeneratedValue
+    private long idDashboard;
+
+    public Dashboard_TankenGpsNoodstop getTankenGpsNoodstop() {
+        return tankenGpsNoodstop;
+    }
+
+    public void setTankenGpsNoodstop(Dashboard_TankenGpsNoodstop tankenGpsNoodstop) {
+        this.tankenGpsNoodstop = tankenGpsNoodstop;
+    }
+
+    public Dashboard_Controles getControles() {
+        return controles;
+    }
+
+    public void setControles(Dashboard_Controles controles) {
+        this.controles = controles;
+    }
+
+    public Dashboard_TypesOpenbareWeg getOpenbareWeg() {
+        return openbareWeg;
+    }
+
+    public void setOpenbareWeg(Dashboard_TypesOpenbareWeg openbareWeg) {
+        this.openbareWeg = openbareWeg;
+    }
+
+    public Dashboard_ProgressBar getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Dashboard_ProgressBar progress) {
+        this.progress = progress;
+    }
+
+    public Dashboard_Opmerkingen getOpmerkingen() {
+        return opmerkingen;
+    }
+
+    public void setOpmerkingen(Dashboard_Opmerkingen opmerkingen) {
+        this.opmerkingen = opmerkingen;
+    }
+
+    public long getIdDashboard() {
+        return idDashboard;
+    }
+
+    public void setIdDashboard(long idDashboard) {
+        this.idDashboard = idDashboard;
+    }
+    
+    
+    
    
 }

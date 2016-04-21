@@ -23,6 +23,22 @@ public class DashboardDAO {
         }    
     }
     
+    public void addDashboard(Dashboard d)  {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.persist(d);        
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
+    
     private DashboardDAO() {}
     
     private static final DashboardDAO instance = new DashboardDAO();
