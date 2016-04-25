@@ -90,3 +90,12 @@
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
+
+
+.logo
+{
+ -fx-background-image: url("logo.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;   
+}
