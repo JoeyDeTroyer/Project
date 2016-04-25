@@ -6,21 +6,21 @@
 }
 
 .achteruit{
-    -fx-background-image: url("achteruit.png");
+    -fx-background-image: url("achteruit_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
 .garage{
-    -fx-background-image: url("garage.png");
+    -fx-background-image: url("garage_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
 .keren{
-    -fx-background-image: url("keren.png");
+    -fx-background-image: url("keren_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
@@ -34,14 +34,14 @@
 }
 
 .koppeling{
-    -fx-background-image: url("koppeling.png");
+    -fx-background-image: url("koppeling_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
 
 .parkeren{
-    -fx-background-image: url("parkeren.png");
+    -fx-background-image: url("parkeren_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
@@ -69,7 +69,7 @@
 }
 
 .stuuroefeningen{
-    -fx-background-image: url("stuuroefeningen.png");
+    -fx-background-image: url("stuuroefeningen_1.png");
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
