@@ -9,7 +9,6 @@ import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek;
 import Models.Verkeerstechniek.Verkeerstechniek;
 import java.io.IOException;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,12 +17,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import project.Model;
 
 public class FXMLDashboardController extends BorderPane
 {

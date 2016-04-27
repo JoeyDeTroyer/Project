@@ -4,7 +4,11 @@ import DAO.LeerlingDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
@@ -13,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import project.Model;
@@ -25,9 +30,16 @@ public class FXMLInlogschermController extends BorderPane
     @FXML
     private ListView<Leerling> lstGebruikers;
     
+    @FXML
+    private TextField txtNaam, txtInschrijving;
+    
+    private LeerlingDAO leerlingdao;
+
+    ObservableList <Leerling> leerlingen = FXCollections.observableArrayList();    
+    
     
     ScreenSwitcher switcher;
-    
+
     public FXMLInlogschermController(ScreenSwitcher switcher)
     {
         this.switcher = switcher;
@@ -40,6 +52,8 @@ public class FXMLInlogschermController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        
     }
     
     @FXML
@@ -85,11 +99,12 @@ public class FXMLInlogschermController extends BorderPane
             }
             else
             {
-
+                 
             }
         }
     }
     
+    @FXML
     public void initialize() 
     {
         
@@ -107,4 +122,44 @@ public class FXMLInlogschermController extends BorderPane
         }
         
     }
+
+    @FXML
+    public void zoeken()
+    {
+        
+        
+        if(txtNaam.getText().isEmpty() || txtNaam.getText() == null || "".equals(txtNaam.getText()))
+        {
+         //reset list to show all items
+         leerlingen.addAll( Model.getInstance().getLeerlingen());
+         ObservableList<Leerling> resultaatZoeken = FXCollections.observableArrayList();
+         
+         leerlingen.stream().forEach((l) -> {
+             resultaatZoeken.add(l);
+            });
+         lstGebruikers.getItems().clear();
+         lstGebruikers.setItems(resultaatZoeken);
+         lstGebruikers.setCellFactory((ListView<Leerling> p) -> new LeerlingCell());
+         
+        }
+        else
+        {
+        // reset list in case of mistake and searching again, otherwhise only searches in previous search results
+            
+            leerlingen.addAll(Model.getInstance().getLeerlingen());
+       
+       
+            ObservableList<Leerling> resultaatZoeken = FXCollections.observableArrayList();
+       
+            leerlingen.stream().filter((l) -> (l.getNaamVoornaam().toLowerCase().contains(txtNaam.getText().toLowerCase().trim()))).forEach((l) -> {
+                resultaatZoeken.add(l);
+            });
+            lstGebruikers.getItems().clear();
+            lstGebruikers.setItems(resultaatZoeken);
+            lstGebruikers.setCellFactory((ListView<Leerling> p) -> new LeerlingCell());
+        
+    }
+    }
+    
+    
 }

@@ -1,18 +1,13 @@
 package Models;
 
-import java.awt.Image;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.TableGenerator;
-import static javax.swing.text.StyleConstants.Size;
-import static org.eclipse.persistence.expressions.ExpressionOperator.NotNull;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = "Leerling.findAll", query = "SELECT l FROM Leerling l")
+@NamedQuery(name = "Leerling.findAll", query = "SELECT l FROM Leerling l")  
 })
 public class Leerling {
     private String voorNaam;
