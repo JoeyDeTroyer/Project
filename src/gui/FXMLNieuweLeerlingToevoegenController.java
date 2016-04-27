@@ -2,20 +2,13 @@ package gui;
 
 import DAO.LeerlingDAO;
 import Models.Leerling;
-import gui.LeerlingCell;
-import gui.FXMLInlogschermController;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.LabelBuilder;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.util.Callback;
 import project.Model;
 
 public class FXMLNieuweLeerlingToevoegenController extends BorderPane

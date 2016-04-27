@@ -2,10 +2,11 @@ package DAO;
 
 import Models.Leerling;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceException;
 
 public class LeerlingDAO {
     
@@ -23,7 +24,7 @@ public class LeerlingDAO {
             emf.close();
         }    
     }
-    
+      
     public void addLeerling(Leerling l)  {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
