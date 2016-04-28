@@ -144,8 +144,7 @@ public class FXMLInlogschermController extends BorderPane
         }
         else
         {
-        // reset list in case of mistake and searching again, otherwhise only searches in previous search results
-            
+            // reset list in case of mistake and searching again         
             leerlingen.addAll(Model.getInstance().getLeerlingen());
        
        

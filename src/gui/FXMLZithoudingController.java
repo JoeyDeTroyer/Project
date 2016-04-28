@@ -1,15 +1,20 @@
 package gui;
 
+import Models.Configuratie;
+import Models.Leerling;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class FXMLZithoudingController extends BorderPane
 {
     @FXML
     Button btnTerug;
+    @FXML
+    Label lblNaamLeerling;
     
     ScreenSwitcher switcher;
     
@@ -25,6 +30,8 @@ public class FXMLZithoudingController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        Leerling leerling = Configuratie.getLeerling();
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
     @FXML
