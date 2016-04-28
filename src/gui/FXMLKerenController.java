@@ -2,6 +2,7 @@ package gui;
 
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
+import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Keren;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;
@@ -9,6 +10,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
@@ -24,6 +26,9 @@ public class FXMLKerenController extends BorderPane {
 
     @FXML
     ToggleGroup In_1_beweging;
+    
+    @FXML
+    Label lblNaamLeerling;
 
     ScreenSwitcher switcher;
 
@@ -78,8 +83,12 @@ public class FXMLKerenController extends BorderPane {
                     // Do something here with the userData of newly selected radioButton
 
 //                }
+            
             }
         });
+        Leerling leerling = Configuratie.getLeerling();
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
+    
     }
     @FXML
     public void rijtechniek() {

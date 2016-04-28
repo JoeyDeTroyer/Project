@@ -1,5 +1,7 @@
 package gui;
 
+import Models.Configuratie;
+import Models.Leerling;
 import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -23,6 +26,9 @@ public class FXMLAttitudeController extends BorderPane
     ListView listView1, listView2;
     @FXML
     TextField txtToevoegen;
+    
+    @FXML
+    Label lblNaamLeerling;
     
     ScreenSwitcher switcher;
     
@@ -42,6 +48,8 @@ public class FXMLAttitudeController extends BorderPane
         }
         
         listView1.setItems(FXCollections.observableList(values));
+        Leerling leerling = Configuratie.getLeerling();
+        lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
     @FXML
