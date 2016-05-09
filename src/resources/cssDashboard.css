@@ -99,3 +99,24 @@
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;   
 }
+
+.attitude{
+    -fx-background-image: url("attitude.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;   
+}
+
+.back{
+    -fx-background-image: url("back.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;   
+}
+
+.logout{
+    -fx-background-image: url("logout.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;   
+}

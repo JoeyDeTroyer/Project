@@ -19,7 +19,7 @@
                   <Font size="20.0" />
                </font></Label>
             <TextArea layoutX="196.0" layoutY="69.0" prefHeight="259.0" prefWidth="673.0" />
-            <Button fx:id="btnHome" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="100.0" prefWidth="120.0" text="Home">
+            <Button fx:id="btnHome" layoutX="890.0" layoutY="633.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="122.0" prefWidth="120.0" styleClass="back" stylesheets="@../resources/cssDashboard.css">
                <font>
                   <Font size="24.0" />
                </font></Button>

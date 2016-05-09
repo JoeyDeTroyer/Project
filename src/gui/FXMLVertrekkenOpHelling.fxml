@@ -24,7 +24,7 @@
                   <Font size="20.0" />
                </font></Label>
             <TextArea layoutX="14.0" layoutY="555.0" prefHeight="200.0" prefWidth="850.0" />
-            <Button fx:id="btnTerug" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="100.0" prefWidth="120.0" text="Terug" />
+            <Button fx:id="btnTerug" layoutX="890.0" layoutY="636.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="119.0" prefWidth="120.0" styleClass="back" stylesheets="@../resources/cssDashboard.css" />
             <Label layoutX="14.0" layoutY="510.0" text="Opmerkingen:">
                <font>
                   <Font size="24.0" />
