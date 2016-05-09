@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgRijtechniek" stylesheets="@../resources/cssRijtechniek.css" BorderPane.alignment="CENTER">
 
@@ -20,7 +16,7 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Button fx:id="btnHome" layoutX="890.0" layoutY="655.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="100.0" prefWidth="120.0" text="Home" />
+            <Button fx:id="btnHome" layoutX="890.0" layoutY="636.0" mnemonicParsing="false" onAction="#dashboard" prefHeight="119.0" prefWidth="120.0" styleClass="back" stylesheets="@../resources/cssDashboard.css" />
             <Button fx:id="btnKoppeling" layoutX="210.0" layoutY="143.0" mnemonicParsing="false" onAction="#koppeling" prefHeight="104.0" prefWidth="107.0" styleClass="koppeling" stylesheets="@../resources/cssRijtechniek.css" />
             <Button fx:id="btnRemtechniek" layoutX="372.0" layoutY="68.0" mnemonicParsing="false" onAction="#remtechniek" prefHeight="103.0" prefWidth="106.0" styleClass="rem" />
             <Button fx:id="btnStuurtechniek" layoutX="524.0" layoutY="65.0" mnemonicParsing="false" onAction="#stuurtechniek" prefHeight="108.0" prefWidth="108.0" styleClass="sturen" />
