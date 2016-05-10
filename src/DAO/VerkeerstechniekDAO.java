@@ -1,4 +1,5 @@
 package DAO;
+import Models.Rijtechniek.Rijtechniek;
 import Models.Verkeerstechniek.Verkeerstechniek;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -29,6 +30,22 @@ public class VerkeerstechniekDAO {
             em = emf.createEntityManager();
             em.getTransaction().begin();
             em.persist(v);        
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
+    
+    public void updateVerkeerstechniek(Verkeerstechniek v){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.merge(v);        
             em.getTransaction().commit();
         } finally {
             if (em != null) {

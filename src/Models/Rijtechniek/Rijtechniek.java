@@ -39,6 +39,26 @@ public class Rijtechniek {
     private Rijtechniek_Zithouding zithouding;
     @Embedded
     private Rijtechniek_Stuuroefening stuuroefening;
+    @Embedded
+    private Rijtechniek_Achteruitrijden achteruitrijden;
+    @Embedded 
+    private Rijtechniek_Garage garage;
+
+    public Rijtechniek_Garage getGarage() {
+        return garage;
+    }
+
+    public void setGarage(Rijtechniek_Garage garage) {
+        this.garage = garage;
+    }
+
+    public Rijtechniek_Achteruitrijden getAchteruitrijden() {
+        return achteruitrijden;
+    }
+
+    public void setAchteruitrijden(Rijtechniek_Achteruitrijden achteruitrijden) {
+        this.achteruitrijden = achteruitrijden;
+    }
 
     public Rijtechniek_Stuuroefening getStuuroefening() {
         return stuuroefening;

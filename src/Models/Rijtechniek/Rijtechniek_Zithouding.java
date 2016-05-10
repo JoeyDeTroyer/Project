@@ -9,6 +9,15 @@ public class Rijtechniek_Zithouding {
     private int zithoudingSpiegels;
     private int zithoudingHandrem;
     private int zithoudingAndere;
+    private String zithoudingOpm;
+
+    public String getZithoudingOpm() {
+        return zithoudingOpm;
+    }
+
+    public void setZithoudingOpm(String zithoudingOpm) {
+        this.zithoudingOpm = zithoudingOpm;
+    }
 
     public int getZithouding() {
         return zithouding;
