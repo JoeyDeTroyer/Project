@@ -4,23 +4,72 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Koppeling {
-    private int koppeling;
+   private int koppelingDosering;
+   private int koppelingVolledig;
+   private int koppelingVoetAf;
+   private int koppelingBedieningAndere;
+   
+   private int koppelingOnnodig;
+   private int koppelingBocht;
+   private int koppelingGebruikAndere;
 
-    public int getKoppeling() {
-        return koppeling;
+    public int getKoppelingDosering() {
+        return koppelingDosering;
     }
 
-    public void setKoppeling(int koppeling) {
-        this.koppeling = koppeling;
+    public void setKoppelingDosering(int koppelingDosering) {
+        this.koppelingDosering = koppelingDosering;
     }
 
-    public Rijtechniek_Koppeling() 
-    {
-        
+    public int getKoppelingVolledig() {
+        return koppelingVolledig;
     }
 
-    public Rijtechniek_Koppeling(int koppeling) 
-    {
-        this.koppeling = koppeling;
-    }   
+    public void setKoppelingVolledig(int koppelingVolledig) {
+        this.koppelingVolledig = koppelingVolledig;
+    }
+
+    public int getKoppelingVoetAf() {
+        return koppelingVoetAf;
+    }
+
+    public void setKoppelingVoetAf(int koppelingVoetAf) {
+        this.koppelingVoetAf = koppelingVoetAf;
+    }
+
+    public int getKoppelingBedieningAndere() {
+        return koppelingBedieningAndere;
+    }
+
+    public void setKoppelingBedieningAndere(int koppelingBedieningAndere) {
+        this.koppelingBedieningAndere = koppelingBedieningAndere;
+    }
+
+    public int getKoppelingOnnodig() {
+        return koppelingOnnodig;
+    }
+
+    public void setKoppelingOnnodig(int koppelingOnnodig) {
+        this.koppelingOnnodig = koppelingOnnodig;
+    }
+
+    public int getKoppelingBocht() {
+        return koppelingBocht;
+    }
+
+    public void setKoppelingBocht(int koppelingBocht) {
+        this.koppelingBocht = koppelingBocht;
+    }
+
+    public int getKoppelingGebruikAndere() {
+        return koppelingGebruikAndere;
+    }
+
+    public void setKoppelingGebruikAndere(int koppelingGebruikAndere) {
+        this.koppelingGebruikAndere = koppelingGebruikAndere;
+    }
+   
+   
+  
+     
 }

@@ -4,23 +4,33 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Stuurtechniek {
-    private int stuurTechniek;
+    private int stuurtechniekDosering;
+    private int stuurtechniekHouding;
+    private int stuurtechniekAndere;
 
-    public int getStuurTechniek() {
-        return stuurTechniek;
+    public int getStuurtechniekDosering() {
+        return stuurtechniekDosering;
     }
 
-    public void setStuurTechniek(int stuurTechniek) {
-        this.stuurTechniek = stuurTechniek;
-    }   
-
-    public Rijtechniek_Stuurtechniek() 
-    {
-        
+    public void setStuurtechniekDosering(int stuurtechniekDosering) {
+        this.stuurtechniekDosering = stuurtechniekDosering;
     }
 
-    public Rijtechniek_Stuurtechniek(int stuurTechniek) 
-    {
-        this.stuurTechniek = stuurTechniek;
+    public int getStuurtechniekHouding() {
+        return stuurtechniekHouding;
     }
+
+    public void setStuurtechniekHouding(int stuurtechniekHouding) {
+        this.stuurtechniekHouding = stuurtechniekHouding;
+    }
+
+    public int getStuurtechniekAndere() {
+        return stuurtechniekAndere;
+    }
+
+    public void setStuurtechniekAndere(int stuurtechniekAndere) {
+        this.stuurtechniekAndere = stuurtechniekAndere;
+    }
+    
+    
 }

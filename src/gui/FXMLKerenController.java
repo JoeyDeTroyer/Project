@@ -43,22 +43,24 @@ public class FXMLKerenController extends BorderPane {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        Rijtechniek_Keren keren = new Rijtechniek_Keren();
-        
         eenbeweging1.setToggleGroup(In_1_beweging);
-        eenbeweging2.setToggleGroup(In_1_beweging);
         eenbeweging3.setToggleGroup(In_1_beweging);
+        eenbeweging2.setToggleGroup(In_1_beweging);
+        try {
+        int getalKeren = Configuratie.evaluatie.getRijtechniek().getKeren().getKeren();
         
-//        switch(keren.getKeren()) {
-//            case 1:
-//                 In_1_beweging.selectToggle(eenbeweging1);
-//            case 2:
-//                 In_1_beweging.selectToggle(eenbeweging2);
-//            case 3:
-//                 In_1_beweging.selectToggle(eenbeweging3);
-//            default:
-//                In_1_beweging.selectToggle(eenbeweging1);}
-         
+        if (getalKeren == 1){
+            eenbeweging1.setSelected(true);
+        } else if (getalKeren == 2){
+            eenbeweging2.setSelected(true);
+        } else if (getalKeren == 3){
+            eenbeweging3.setSelected(true);   
+        }
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+        }
+        
+        Rijtechniek_Keren keren = new Rijtechniek_Keren();
         
         In_1_beweging.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -67,23 +69,13 @@ public class FXMLKerenController extends BorderPane {
                 if (eenbeweging1.isSelected() == true){
                     keren.setKeren(1);
                 } else if (eenbeweging2.isSelected() == true) {
-                    keren.setKeren(2);  
+                    keren.setKeren(2); 
                 } else {
                     keren.setKeren(3);
                 }
                 
                 Configuratie.evaluatie.getRijtechniek().setKeren(keren);
-//                System.out.println(Configuratie.evaluatie.getRijtechniek().getKeren().getKeren());
-                RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-                        
-//              System.out.println(In_1_beweging.getSelectedToggle().getToggleGroup().getSelectedToggle().toString());
-//              if (In_1_beweging.getSelectedToggle() != null) {
-
-//                    System.out.println(In_1_beweging.getSelectedToggle().getUserData().toString());
-                    // Do something here with the userData of newly selected radioButton
-
-//                }
-            
+                RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());    
             }
         });
         Leerling leerling = Configuratie.getLeerling();
