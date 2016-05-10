@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgDashboard" stylesheets="@../resources/cssDashboard.css">
          <children>
@@ -36,11 +41,11 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="btnEvaluatie2" layoutX="877.0" layoutY="86.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 2">
+            <Button fx:id="btnEvaluatie2" layoutX="877.0" layoutY="86.0" mnemonicParsing="false" onAction="#evaluatie2" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 2">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="btnEvaluatie3" layoutX="877.0" layoutY="144.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 3">
+            <Button fx:id="btnEvaluatie3" layoutX="877.0" layoutY="144.0" mnemonicParsing="false" onAction="#evaluatie3" prefHeight="45.0" prefWidth="125.0" text="Evaluatie 3">
                <font>
                   <Font size="18.0" />
                </font></Button>

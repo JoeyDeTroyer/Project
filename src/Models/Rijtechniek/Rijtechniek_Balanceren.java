@@ -6,6 +6,25 @@ import javax.persistence.Embeddable;
 public class Rijtechniek_Balanceren {
     
     private int balanceren;
+    private int voetrem;
+    private int handrem;
+
+    public int getVoetrem() {
+        return voetrem;
+    }
+
+    public void setVoetrem(int voetrem) {
+        this.voetrem = voetrem;
+    }
+
+    public int getHandrem() {
+        return handrem;
+    }
+
+    public void setHandrem(int handrem) {
+        this.handrem = handrem;
+    }
+    
 
     public int getBalanceren() {
         return balanceren;

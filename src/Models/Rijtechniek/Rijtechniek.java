@@ -33,16 +33,32 @@ public class Rijtechniek {
     private Rijtechniek_Schakeltechniek schakelTechniek;
     @Embedded
     private Rijtechniek_Stuurtechniek stuurTechniek;
-    @Embedded
-    private Rijtechniek_VertrekkenHandrem vertrekkenHandrem;
     @Embedded 
     private Rijtechniek_VertrekkenHelling vertrekkenHelling;
-    @Embedded
-    private Rijtechniek_VertrekkenVoetrem vertrekkenVoetrem;
     @Embedded
     private Rijtechniek_Zithouding zithouding;
     @Embedded
     private Rijtechniek_Stuuroefening stuuroefening;
+    @Embedded
+    private Rijtechniek_Achteruitrijden achteruitrijden;
+    @Embedded 
+    private Rijtechniek_Garage garage;
+
+    public Rijtechniek_Garage getGarage() {
+        return garage;
+    }
+
+    public void setGarage(Rijtechniek_Garage garage) {
+        this.garage = garage;
+    }
+
+    public Rijtechniek_Achteruitrijden getAchteruitrijden() {
+        return achteruitrijden;
+    }
+
+    public void setAchteruitrijden(Rijtechniek_Achteruitrijden achteruitrijden) {
+        this.achteruitrijden = achteruitrijden;
+    }
 
     public Rijtechniek_Stuuroefening getStuuroefening() {
         return stuuroefening;
@@ -131,28 +147,12 @@ public class Rijtechniek {
         this.stuurTechniek = stuurTechniek;
     }
 
-    public Rijtechniek_VertrekkenHandrem getVertrekkenHandrem() {
-        return vertrekkenHandrem;
-    }
-
-    public void setVertrekkenHandrem(Rijtechniek_VertrekkenHandrem vertrekkenHandrem) {
-        this.vertrekkenHandrem = vertrekkenHandrem;
-    }
-
     public Rijtechniek_VertrekkenHelling getVertrekkenHelling() {
         return vertrekkenHelling;
     }
 
     public void setVertrekkenHelling(Rijtechniek_VertrekkenHelling vertrekkenHelling) {
         this.vertrekkenHelling = vertrekkenHelling;
-    }
-
-    public Rijtechniek_VertrekkenVoetrem getVertrekkenVoetrem() {
-        return vertrekkenVoetrem;
-    }
-
-    public void setVertrekkenVoetrem(Rijtechniek_VertrekkenVoetrem vertrekkenVoetrem) {
-        this.vertrekkenVoetrem = vertrekkenVoetrem;
     }
 
     public Rijtechniek_Zithouding getZithouding() {

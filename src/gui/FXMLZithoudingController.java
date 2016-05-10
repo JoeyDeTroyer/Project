@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -29,6 +30,9 @@ public class FXMLZithoudingController extends BorderPane
 
     @FXML
     ToggleGroup zithoudingGroep, gordelGroep, spiegelsGroep, handremGroep, andereGroep;
+    
+    @FXML
+    TextArea zithoudingOpmerking;
     
     ScreenSwitcher switcher;
     
@@ -69,9 +73,15 @@ public class FXMLZithoudingController extends BorderPane
         andere1.setToggleGroup(andereGroep);
         andere2.setToggleGroup(andereGroep);
         andere3.setToggleGroup(andereGroep);
-        
+        try {
+                String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
+        zithoudingOpmerking.setText(text);
+            } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+        }
         //Zithouding controle
         try {
+        
         int getalZithouding = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithouding();
         System.out.println("ZITHOUDING " + getalZithouding);
         if (getalZithouding == 1){
@@ -255,7 +265,8 @@ public class FXMLZithoudingController extends BorderPane
     public void rijtechniek()
     {
         switcher.rijtechniek();
-        
+       
+        Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpm(zithoudingOpmerking.getText());
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());    
 
         
