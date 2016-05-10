@@ -41,6 +41,16 @@ public class Rijtechniek {
     private Rijtechniek_VertrekkenVoetrem vertrekkenVoetrem;
     @Embedded
     private Rijtechniek_Zithouding zithouding;
+    @Embedded
+    private Rijtechniek_Stuuroefening stuuroefening;
+
+    public Rijtechniek_Stuuroefening getStuuroefening() {
+        return stuuroefening;
+    }
+
+    public void setStuuroefening(Rijtechniek_Stuuroefening stuuroefening) {
+        this.stuuroefening = stuuroefening;
+    }
     
     //Dit geeft een autonummering als primaire sleutel in de tabel Rijtechniek
     @Id @GeneratedValue

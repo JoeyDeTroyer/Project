@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgRijtechniek" stylesheets="@../resources/cssRijtechniek.css" BorderPane.alignment="CENTER">
 
@@ -27,8 +32,9 @@
             <Button layoutX="522.0" layoutY="601.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="111.0" styleClass="garage" />
             <Button fx:id="btnKeren" layoutX="670.0" layoutY="550.0" mnemonicParsing="false" onAction="#keren" prefHeight="122.0" prefWidth="117.0" styleClass="keren" />
             <Button fx:id="btnParkeren" layoutX="767.0" layoutY="424.0" mnemonicParsing="false" onAction="#parkeren" prefHeight="114.0" prefWidth="113.0" styleClass="parkeren" />
-            <Button layoutX="216.0" layoutY="532.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="127.0" styleClass="stuuroefeningen" />
+            <Button fx:id="btnStuuroefening" layoutX="216.0" layoutY="532.0" mnemonicParsing="false" onAction="#stuuroef" prefHeight="127.0" prefWidth="127.0" styleClass="stuuroefeningen" />
             <Button fx:id="btnHelling" layoutX="106.0" layoutY="432.0" mnemonicParsing="false" onAction="#helling" prefHeight="106.0" prefWidth="104.0" styleClass="vertrekkenHelling" />
+            <Circle fx:id="stuuroefening" fill="#1f93ff00" layoutX="237.0" layoutY="551.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
 
          </children>
       </Pane>

@@ -6,10 +6,8 @@ import javax.persistence.Embeddable;
 public class Rijtechniek_Remtechniek {
     private int remtechniekDosering;
     private int remtechniekVolgorde;
-    private int remtechniekBedieningAndere;
     
     private int remtechniekTeLaat;
-    private int remtechniekAfremmenMotor;
     private int remtechniekGebruikAndere;
 
     public int getRemtechniekDosering() {
@@ -28,28 +26,12 @@ public class Rijtechniek_Remtechniek {
         this.remtechniekVolgorde = remtechniekVolgorde;
     }
 
-    public int getRemtechniekBedieningAndere() {
-        return remtechniekBedieningAndere;
-    }
-
-    public void setRemtechniekBedieningAndere(int remtechniekBedieningAndere) {
-        this.remtechniekBedieningAndere = remtechniekBedieningAndere;
-    }
-
     public int getRemtechniekTeLaat() {
         return remtechniekTeLaat;
     }
 
     public void setRemtechniekTeLaat(int remtechniekTeLaat) {
         this.remtechniekTeLaat = remtechniekTeLaat;
-    }
-
-    public int getRemtechniekAfremmenMotor() {
-        return remtechniekAfremmenMotor;
-    }
-
-    public void setRemtechniekAfremmenMotor(int remtechniekAfremmenMotor) {
-        this.remtechniekAfremmenMotor = remtechniekAfremmenMotor;
     }
 
     public int getRemtechniekGebruikAndere() {
@@ -59,6 +41,8 @@ public class Rijtechniek_Remtechniek {
     public void setRemtechniekGebruikAndere(int remtechniekGebruikAndere) {
         this.remtechniekGebruikAndere = remtechniekGebruikAndere;
     }
+
+    
     
     
 }
