@@ -45,7 +45,6 @@ public class FXMLRijtechniekController extends BorderPane
     @FXML
     public void dashboard()
     {
-        RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
 
         switcher.dashboard();
     }
@@ -107,45 +106,56 @@ public class FXMLRijtechniekController extends BorderPane
     @FXML
     public void stuuroef()
     {     
+        
+        Rijtechniek_Stuuroefening rStuuroefening = new Rijtechniek_Stuuroefening();    
+//        int getal = 0;
+        if(stuuroefening.getFill() == Color.WHITE)
+        {
+            stuuroefening.setFill(Color.ORANGE);
+            rStuuroefening.setStuuroefening(1);
+            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
+//            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
+            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+            System.out.println("    Het getal is" + " 1");
+        }
+        else if (stuuroefening.getFill() == Color.ORANGE)
+        {
+//            getal = 2;
+            stuuroefening.setFill(Color.GREEN);
+            rStuuroefening.setStuuroefening(2);
+            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
+//            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
+            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+//            System.out.println("getalstuuroef is " + rStuuroefening.toString());
+            System.out.println("    Het getal is" + " 2");
+
+        } else
+        {
+//            getal = 3;
+            rStuuroefening.setStuuroefening(3);
+            stuuroefening.setFill(Color.WHITE);
+            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
+//            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
+            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+            System.out.println("    Het getal is" + " 3");
+
+        }   
+        
         try {
             int getalStuuroefening = Configuratie.evaluatie.getRijtechniek().getStuuroefening().getStuuroefening();            
         if (getalStuuroefening == 1){
             stuuroefening.setFill(Color.ORANGE);
+            System.out.println("getalstuuroef is " + getalStuuroefening);
         } else if (getalStuuroefening == 2){
             stuuroefening.setFill(Color.GREEN);
+            System.out.println("getalstuuroef is " + getalStuuroefening);
+
         } else if (getalStuuroefening == 3)
             stuuroefening.setFill(Color.WHITE);
+            System.out.println("getalstuuroef is " + getalStuuroefening);
+
         } catch (NullPointerException ex) {
             System.out.println("BESTAAT NOG NIET");
         } 
-//        Rijtechniek_Stuuroefening rStuuroefening = new Rijtechniek_Stuuroefening();    
-        int getal = 0;
-        if(stuuroefening.getFill() == Color.WHITE)
-        {
-            stuuroefening.setFill(Color.ORANGE);
-            getal =1;
-//            rStuuroefening.setStuuroefening(1);
-//            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
-            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
-            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-        }
-        else if (stuuroefening.getFill() == Color.ORANGE)
-        {
-            getal = 2;
-            stuuroefening.setFill(Color.GREEN);
-//            rStuuroefening.setStuuroefening(2);
-//            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
-            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
-            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-//            System.out.println("getalstuuroef is " + rStuuroefening.toString());
-        } else
-        {
-            getal = 3;
-//            rStuuroefening.setStuuroefening(3);
-            stuuroefening.setFill(Color.WHITE);
-//            Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
-            Configuratie.evaluatie.getRijtechniek().getStuuroefening().setStuuroefening(getal);
-            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-        }     
     }
 }
