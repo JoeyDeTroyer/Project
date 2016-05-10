@@ -42,17 +42,17 @@ public class Rijtechniek_Keren {
         this.kerenAchterwaarts = kerenAchterwaarts;
     }
 
-//    public Rijtechniek_Keren() 
-//    {
-//        
-//    }
-//
-//    public Rijtechniek_Keren(int keren, int kerenEenBeweging, int kerenDrieBewegingen, int kerenAchterwaarts) 
-//    {
-//        this.keren = keren;
-//        this.kerenEenBeweging = kerenEenBeweging;
-//        this.kerenDrieBewegingen = kerenDrieBewegingen;
-//        this.kerenAchterwaarts = kerenAchterwaarts;
-//    }
+    public Rijtechniek_Keren() 
+    {
+        
+    }
+
+    public Rijtechniek_Keren(int keren, int kerenEenBeweging, int kerenDrieBewegingen, int kerenAchterwaarts) 
+    {
+        this.keren = keren;
+        this.kerenEenBeweging = kerenEenBeweging;
+        this.kerenDrieBewegingen = kerenDrieBewegingen;
+        this.kerenAchterwaarts = kerenAchterwaarts;
+    }
     
 }

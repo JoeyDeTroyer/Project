@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +22,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
          <children>
@@ -46,19 +53,19 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="Dosering" />
-                     </toggleGroup>
+                  <RadioButton fx:id="rij1Kolom1" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rij1Groep" />
+                     </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Dosering" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="rij1Kolom2" mnemonicParsing="false" toggleGroup="$rij1Groep" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Dosering" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="rij1Kolom3" mnemonicParsing="false" toggleGroup="$rij1Groep" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
@@ -83,19 +90,19 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="Volgorde" />
-                     </toggleGroup>
+                  <RadioButton fx:id="rij2Kolom1" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rij2Groep" />
+                     </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Volgorde" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="rij2Kolom2" mnemonicParsing="false" toggleGroup="$rij2Groep" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Volgorde" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <RadioButton fx:id="rij2Kolom3" mnemonicParsing="false" toggleGroup="$rij2Groep" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
@@ -118,34 +125,34 @@
                      <font>
                         <Font size="20.0" />
                      </font></Label>
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="Te_Laat" />
-                     </toggleGroup>
+                  <RadioButton fx:id="rij3Kolom1" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                      <font>
                         <Font size="24.0" />
                      </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Te_Laat" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="24.0" />
-                     </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Te_Laat" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="24.0" />
-                     </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
                      <toggleGroup>
-                        <ToggleGroup fx:id="Andere" />
+                        <ToggleGroup fx:id="rij3Groep" />
                      </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rij3Kolom2" mnemonicParsing="false" toggleGroup="$rij3Groep" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                  <RadioButton fx:id="rij3Kolom3" mnemonicParsing="false" toggleGroup="$rij3Groep" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
-                  <RadioButton mnemonicParsing="false" toggleGroup="$Andere" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                  <RadioButton fx:id="rij4Kolom1" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rij4Groep" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="rij4Kolom2" mnemonicParsing="false" toggleGroup="$rij4Groep" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="24.0" />
+                     </font></RadioButton>
+                  <RadioButton fx:id="rij4Kolom3" mnemonicParsing="false" toggleGroup="$rij4Groep" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5">
                      <font>
                         <Font size="24.0" />
                      </font></RadioButton>
