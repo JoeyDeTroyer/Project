@@ -89,7 +89,7 @@ public class FXMLRijtechniekController extends BorderPane {
         } catch (NullPointerException ex) {
             System.out.println("BESTAAT NOG NIET");
         }
-        
+
         //Controle voor keren selectie
         try {
             int getalKeren = Configuratie.evaluatie.getRijtechniek().getKeren().getKeren();
@@ -153,26 +153,26 @@ public class FXMLRijtechniekController extends BorderPane {
 
     @FXML
     public void keren() {
-        
+
         Rijtechniek_Keren kerenR = new Rijtechniek_Keren();
         if (kerenBol.getFill() == Color.WHITE) {
             kerenBol.setFill(Color.ORANGE);
             kerenR.setKeren(1);
             Configuratie.evaluatie.getRijtechniek().setKeren(kerenR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else if (kerenBol.getFill() == Color.ORANGE) {
             kerenBol.setFill(Color.GREEN);
             kerenR.setKeren(2);
             Configuratie.evaluatie.getRijtechniek().setKeren(kerenR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else {
             kerenR.setKeren(3);
             kerenBol.setFill(Color.WHITE);
             Configuratie.evaluatie.getRijtechniek().setKeren(kerenR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-        }    
+        }
     }
 
     @FXML
@@ -184,7 +184,7 @@ public class FXMLRijtechniekController extends BorderPane {
             rStuuroefening.setStuuroefening(1);
             Configuratie.evaluatie.getRijtechniek().setStuuroefening(rStuuroefening);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else if (stuuroefening.getFill() == Color.ORANGE) {
             stuuroefening.setFill(Color.GREEN);
             rStuuroefening.setStuuroefening(2);
@@ -208,22 +208,22 @@ public class FXMLRijtechniekController extends BorderPane {
             achteruitR.setAchteruitRijden(1);
             Configuratie.evaluatie.getRijtechniek().setAchteruitrijden(achteruitR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else if (achteruit.getFill() == Color.ORANGE) {
             achteruit.setFill(Color.GREEN);
             achteruitR.setAchteruitRijden(2);
             Configuratie.evaluatie.getRijtechniek().setAchteruitrijden(achteruitR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else {
             achteruitR.setAchteruitRijden(3);
             achteruit.setFill(Color.WHITE);
             Configuratie.evaluatie.getRijtechniek().setAchteruitrijden(achteruitR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
         }
-        
-        
+
     }
+
     @FXML
     public void garage() {
 
@@ -233,18 +233,18 @@ public class FXMLRijtechniekController extends BorderPane {
             garageR.setGarage(1);
             Configuratie.evaluatie.getRijtechniek().setGarage(garageR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else if (garageBol.getFill() == Color.ORANGE) {
             garageBol.setFill(Color.GREEN);
             garageR.setGarage(2);
             Configuratie.evaluatie.getRijtechniek().setGarage(garageR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-            
+
         } else {
             garageR.setGarage(3);
             garageBol.setFill(Color.WHITE);
             Configuratie.evaluatie.getRijtechniek().setGarage(garageR);
             RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
         }
-}
+    }
 }

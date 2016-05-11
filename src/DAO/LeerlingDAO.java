@@ -9,7 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class LeerlingDAO {
-    
+
     public List<Leerling> findAllLeerlingen() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
@@ -22,16 +22,16 @@ public class LeerlingDAO {
                 em.close();
             }
             emf.close();
-        }    
+        }
     }
-      
-    public void addLeerling(Leerling l)  {
+
+    public void addLeerling(Leerling l) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             em.getTransaction().begin();
-            em.persist(l);        
+            em.persist(l);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -40,9 +40,8 @@ public class LeerlingDAO {
             emf.close();
         }
     }
-    
-    public void verwijderLeerling(int id)
-    {
+
+    public void verwijderLeerling(int id) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
@@ -59,12 +58,13 @@ public class LeerlingDAO {
             emf.close();
         }
     }
-    
-    private LeerlingDAO() {}
-    
+
+    private LeerlingDAO() {
+    }
+
     private static final LeerlingDAO instance = new LeerlingDAO();
 
     public static LeerlingDAO getInstance() {
         return instance;
-    }  
+    }
 }

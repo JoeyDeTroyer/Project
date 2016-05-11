@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DashboardDAO {
-    
+
     public List<Dashboard> findAllDashboards() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
@@ -20,14 +20,15 @@ public class DashboardDAO {
                 em.close();
             }
             emf.close();
-        }    
+        }
     }
-    
-    private DashboardDAO() {}
-    
+
+    private DashboardDAO() {
+    }
+
     private static final DashboardDAO instance = new DashboardDAO();
 
     public static DashboardDAO getInstance() {
         return instance;
-    } 
+    }
 }

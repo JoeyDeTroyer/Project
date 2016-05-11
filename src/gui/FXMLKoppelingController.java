@@ -4,7 +4,6 @@ import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Koppeling;
-import Models.Rijtechniek.Rijtechniek_Stuurtechniek;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -322,8 +321,7 @@ public class FXMLKoppelingController extends BorderPane
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
     
-    
-    
+  
     @FXML
     public void rijtechniek()
     {
