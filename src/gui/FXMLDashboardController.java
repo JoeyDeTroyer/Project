@@ -6,6 +6,10 @@ import DAO.RijtechniekDAO;
 import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
 import Models.Dashboard.Dashboard;
+import Models.Dashboard.Dashboard_Autosnelweg;
+import Models.Dashboard.Dashboard_Rijstroken;
+import Models.Dashboard.Dashboard_Rotonde;
+import Models.Dashboard.Dashboard_Stad;
 import Models.Evaluatie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek;
@@ -22,14 +26,16 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import project.Model;
 
 public class FXMLDashboardController extends BorderPane {
 
     @FXML
-    Label lblNaamLeerling;
+    Label lblNaamLeerling, lblEvaluatie;
 
     @FXML
-    Button btnRijtechniek, btnAttitude, btnVerkeerstechniek, btnLogout, btnEvaluatie1, btnEvaluatie2, btnEvaluatie3, btnMin, btnPlus;
+    Button btnRijtechniek, btnAttitude, btnVerkeerstechniek, btnLogout, btnEvaluatie1, btnEvaluatie2,
+            btnEvaluatie3, btnMin, btnPlus;
 
     @FXML
     ToggleButton btnBanden, btnTanken, btnNoodstop, btnGPS, btnVloeistoffen, btnSchakelaars;
@@ -38,7 +44,8 @@ public class FXMLDashboardController extends BorderPane {
     TextArea txtOpmerkingen;
 
     @FXML
-    Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS, circleNoodstop, circleAutostrade, circleStad, circleRijstroken, circleRotonde;
+    Circle circleSchakelaars, circleVloeistoffen, circleBanden, circleTanken, circleGPS,
+            circleNoodstop, circleAutostrade, circleStad, circleRijstroken, circleRotonde;
 
     @FXML
     ProgressBar progressbar;
@@ -62,6 +69,7 @@ public class FXMLDashboardController extends BorderPane {
         progressbar.setProgress(0);
         btnMin.setDisable(true);
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
+        ophalenGegevens();
 
     }
 
@@ -73,12 +81,15 @@ public class FXMLDashboardController extends BorderPane {
     @FXML
     public void evaluatie1() {
         evaluatieselecteren(1);
+        lblEvaluatie.setText("Evaluatie 1");
 //        test();
     }
 
     @FXML
     public void evaluatie2() {
         evaluatieselecteren(2);
+        lblEvaluatie.setText("Evaluatie 2");
+
 //        test();
     }
 
@@ -86,6 +97,7 @@ public class FXMLDashboardController extends BorderPane {
     public void evaluatie3() {
 
         evaluatieselecteren(3);
+        lblEvaluatie.setText("Evaluatie 3");
 //        test();
     }
 
@@ -96,6 +108,88 @@ public class FXMLDashboardController extends BorderPane {
         } catch (NullPointerException ex) {
             System.out.println("BESTAAT NOG NIET");
         }
+    }
+
+    public void ophalenGegevens() {
+
+        //Controle voor Stuuroefening selectie
+        try {
+            int getalRotonde = Configuratie.evaluatie.getDashboard().getRotonde().getRotonde();
+            if (getalRotonde == 1) {
+                circleRotonde.setFill(Color.RED);
+            } else if (getalRotonde == 2) {
+                circleRotonde.setFill(Color.ORANGE);
+            } else if (getalRotonde == 3) {
+                circleRotonde.setFill(Color.GREEN);
+            } else {
+                circleRotonde.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleRotonde.setFill(Color.WHITE);
+        }
+
+        //Controle voor Rijstroken selectie
+        try {
+            int getalRijstroken = Configuratie.evaluatie.getDashboard().getRijstroken().getRijstroken();
+            if (getalRijstroken == 1) {
+                circleRijstroken.setFill(Color.RED);
+            } else if (getalRijstroken == 2) {
+                circleRijstroken.setFill(Color.ORANGE);
+            } else if (getalRijstroken == 3) {
+                circleRijstroken.setFill(Color.GREEN);
+
+            } else {
+                circleRijstroken.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleRijstroken.setFill(Color.WHITE);
+
+        }
+
+        //Controle voor Stad selectie
+        try {
+            int getalStad = Configuratie.evaluatie.getDashboard().getStad().getStad();
+            if (getalStad == 1) {
+                circleStad.setFill(Color.RED);
+            } else if (getalStad == 2) {
+                circleStad.setFill(Color.ORANGE);
+            } else if (getalStad == 3) {
+                circleStad.setFill(Color.GREEN);
+
+            } else {
+                circleStad.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleStad.setFill(Color.WHITE);
+
+        }
+        
+        //Controle voor Autostrade selectie
+        try {
+            int getalAutosnelweg = Configuratie.evaluatie.getDashboard().getAutosnelweg().getAutosnelweg();
+            if (getalAutosnelweg == 1) {
+                circleAutostrade.setFill(Color.RED);
+            } else if (getalAutosnelweg == 2) {
+                circleAutostrade.setFill(Color.ORANGE);
+            } else if (getalAutosnelweg == 3) {
+                circleAutostrade.setFill(Color.GREEN);
+
+            } else {
+                circleAutostrade.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleAutostrade.setFill(Color.WHITE);
+
+        }
+
     }
 
     public void evaluatieselecteren(int evaluatie) {
@@ -115,9 +209,13 @@ public class FXMLDashboardController extends BorderPane {
             nieuweEvaluatie.setDashboard(dashboard);
             EvaluatieDAO.getInstance().addEvaluatie(nieuweEvaluatie);
             evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, evaluatie);
+            ophalenGegevens();
         }
+
         Configuratie.setEvaluatie(evaluatietest);
         System.out.println(evaluatietest.getLeerling().getNaamVoornaam());
+        ophalenGegevens();
+
     }
 
     @FXML
@@ -217,53 +315,120 @@ public class FXMLDashboardController extends BorderPane {
 
     @FXML
     public void rotonde() {
+        Dashboard_Rotonde rotonde = new Dashboard_Rotonde();
         if (circleRotonde.getFill() == Color.WHITE) {
             circleRotonde.setFill(Color.RED);
+            rotonde.setRotonde(1);
+            Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleRotonde.getFill() == Color.RED) {
             circleRotonde.setFill(Color.ORANGE);
+            rotonde.setRotonde(2);
+            Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleRotonde.getFill() == Color.ORANGE) {
             circleRotonde.setFill(Color.GREEN);
+            rotonde.setRotonde(3);
+            Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            rotonde.setRotonde(3);
             circleRotonde.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void rijstroken() {
+
+        Dashboard_Rijstroken rijstroken = new Dashboard_Rijstroken();
         if (circleRijstroken.getFill() == Color.WHITE) {
             circleRijstroken.setFill(Color.RED);
+            rijstroken.setRijstroken(1);
+            Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleRijstroken.getFill() == Color.RED) {
             circleRijstroken.setFill(Color.ORANGE);
+            rijstroken.setRijstroken(2);
+            Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleRijstroken.getFill() == Color.ORANGE) {
             circleRijstroken.setFill(Color.GREEN);
+            rijstroken.setRijstroken(3);
+            Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            rijstroken.setRijstroken(3);
             circleRijstroken.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void stad() {
+
+        Dashboard_Stad stad = new Dashboard_Stad();
         if (circleStad.getFill() == Color.WHITE) {
             circleStad.setFill(Color.RED);
+            stad.setStad(1);
+            Configuratie.evaluatie.getDashboard().setStad(stad);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleStad.getFill() == Color.RED) {
             circleStad.setFill(Color.ORANGE);
+            stad.setStad(2);
+            Configuratie.evaluatie.getDashboard().setStad(stad);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleStad.getFill() == Color.ORANGE) {
             circleStad.setFill(Color.GREEN);
+            stad.setStad(3);
+            Configuratie.evaluatie.getDashboard().setStad(stad);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            stad.setStad(4);
             circleStad.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setStad(stad);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
+
     }
 
     @FXML
     public void autostrade() {
+         Dashboard_Autosnelweg autosnelweg = new Dashboard_Autosnelweg();
         if (circleAutostrade.getFill() == Color.WHITE) {
             circleAutostrade.setFill(Color.RED);
+            autosnelweg.setAutosnelweg(1);
+            Configuratie.evaluatie.getDashboard().setAutosnelweg(autosnelweg);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleAutostrade.getFill() == Color.RED) {
             circleAutostrade.setFill(Color.ORANGE);
+            autosnelweg.setAutosnelweg(2);
+            Configuratie.evaluatie.getDashboard().setAutosnelweg(autosnelweg);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         } else if (circleAutostrade.getFill() == Color.ORANGE) {
             circleAutostrade.setFill(Color.GREEN);
+            autosnelweg.setAutosnelweg(3);
+            Configuratie.evaluatie.getDashboard().setAutosnelweg(autosnelweg);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            autosnelweg.setAutosnelweg(4);
             circleAutostrade.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setAutosnelweg(autosnelweg);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 

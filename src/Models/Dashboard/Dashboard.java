@@ -18,9 +18,13 @@ public class Dashboard {
     @Embedded 
     private Dashboard_Controles controles;
     @Embedded
-    private Dashboard_TypesOpenbareWeg openbareWegKeuzes;
-
-    
+    private Dashboard_Autosnelweg autosnelweg;
+    @Embedded
+    private Dashboard_Rijstroken rijstroken;
+    @Embedded
+    private Dashboard_Rotonde rotonde;
+    @Embedded
+    private Dashboard_Stad stad;
     @Embedded
     private Dashboard_ProgressBar progress;
 //    @Embedded
@@ -43,16 +47,7 @@ public class Dashboard {
 
     public void setControles(Dashboard_Controles controles) {
         this.controles = controles;
-    }
-
-    public Dashboard_TypesOpenbareWeg getOpenbareWegKeuzes() {
-        return openbareWegKeuzes;
-    }
-
-    public void setOpenbareWegKeuzes(Dashboard_TypesOpenbareWeg openbareWegKeuzes) {
-        this.openbareWegKeuzes = openbareWegKeuzes;
-    }
-    
+    }    
 
     public Dashboard_ProgressBar getProgress() {
         return progress;
@@ -61,6 +56,39 @@ public class Dashboard {
     public void setProgress(Dashboard_ProgressBar progress) {
         this.progress = progress;
     }
+
+    public Dashboard_Autosnelweg getAutosnelweg() {
+        return autosnelweg;
+    }
+
+    public void setAutosnelweg(Dashboard_Autosnelweg autosnelweg) {
+        this.autosnelweg = autosnelweg;
+    }
+
+    public Dashboard_Rijstroken getRijstroken() {
+        return rijstroken;
+    }
+
+    public void setRijstroken(Dashboard_Rijstroken rijstroken) {
+        this.rijstroken = rijstroken;
+    }
+
+    public Dashboard_Rotonde getRotonde() {
+        return rotonde;
+    }
+
+    public void setRotonde(Dashboard_Rotonde rotonde) {
+        this.rotonde = rotonde;
+    }
+
+    public Dashboard_Stad getStad() {
+        return stad;
+    }
+
+    public void setStad(Dashboard_Stad stad) {
+        this.stad = stad;
+    }
+    
 
     public long getId() {
         return id;
