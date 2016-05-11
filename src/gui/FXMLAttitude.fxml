@@ -12,7 +12,7 @@
 
 <fx:root prefHeight="768.0" prefWidth="1024.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgSubPage" stylesheets="@../resources/cssDashboard.css">
          <children>
             <Label fx:id="lblNaamLeerling" alignment="CENTER" layoutX="871.0" layoutY="31.0" prefHeight="30.0" prefWidth="143.0" text="Naam Leerling">
                <font>
