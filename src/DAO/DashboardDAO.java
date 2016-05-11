@@ -22,6 +22,38 @@ public class DashboardDAO {
             emf.close();
         }
     }
+    
+    public void addDashboard(Dashboard d) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.persist(d);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
+    
+    public void updateDashboard(Dashboard d) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.merge(d);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
 
     private DashboardDAO() {
     }

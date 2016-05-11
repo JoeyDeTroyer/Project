@@ -1,5 +1,6 @@
 package Models;
 
+import Models.Dashboard.Dashboard;
 import Models.Rijtechniek.Rijtechniek;
 import Models.Verkeerstechniek.Verkeerstechniek;
 import javax.persistence.Entity;
@@ -27,6 +28,10 @@ public class Evaluatie {
     //Relatie met Verkeerstechniek
     @OneToOne 
     private Verkeerstechniek verkeerstechniek;
+    @OneToOne
+    private Dashboard dashboard;
+
+    
     
     private int volgNummer;
 
@@ -37,7 +42,14 @@ public class Evaluatie {
     public void setEvaluatieId(int evaluatieId) {
         this.evaluatieId = evaluatieId;
     }
+    
+    public Dashboard getDashboard() {
+        return dashboard;
+    }
 
+    public void setDashboard(Dashboard dashboard) {
+        this.dashboard = dashboard;
+    }
     public Leerling getLeerling() {
         return leerling;
     }
