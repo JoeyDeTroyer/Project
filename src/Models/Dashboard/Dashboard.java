@@ -9,14 +9,22 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = "Dashboard.findAll", query = "SELECT d FROM Dashboard d")
+    @NamedQuery(name = "Dashboard.findAll", query = "SELECT d FROM Dashboard d")
 })
 public class Dashboard {
-    
+
     @Embedded
-    private Dashboard_TankenGpsNoodstop tankenGpsNoodstop;
-    @Embedded 
-    private Dashboard_Controles controles;
+    private Dashboard_GPS gps;
+    @Embedded
+    private Dashboard_Noodstop noodstop;
+    @Embedded
+    private Dashboard_Tanken tanken;
+    @Embedded
+    private Dashboard_Banden banden;
+    @Embedded
+    private Dashboard_Schakelaars schakelaars;
+    @Embedded
+    private Dashboard_Vloeistoffen vloeistoffen;
     @Embedded
     private Dashboard_Autosnelweg autosnelweg;
     @Embedded
@@ -29,25 +37,10 @@ public class Dashboard {
     private Dashboard_ProgressBar progress;
 //    @Embedded
 //    private Dashboard_Opmerkingen opmerkingen;
-    
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue
     private long id;
-
-    public Dashboard_TankenGpsNoodstop getTankenGpsNoodstop() {
-        return tankenGpsNoodstop;
-    }
-
-    public void setTankenGpsNoodstop(Dashboard_TankenGpsNoodstop tankenGpsNoodstop) {
-        this.tankenGpsNoodstop = tankenGpsNoodstop;
-    }
-
-    public Dashboard_Controles getControles() {
-        return controles;
-    }
-
-    public void setControles(Dashboard_Controles controles) {
-        this.controles = controles;
-    }    
 
     public Dashboard_ProgressBar getProgress() {
         return progress;
@@ -81,6 +74,30 @@ public class Dashboard {
         this.rotonde = rotonde;
     }
 
+    public Dashboard_Banden getBanden() {
+        return banden;
+    }
+
+    public void setBanden(Dashboard_Banden banden) {
+        this.banden = banden;
+    }
+
+    public Dashboard_Schakelaars getSchakelaars() {
+        return schakelaars;
+    }
+
+    public void setSchakelaars(Dashboard_Schakelaars schakelaars) {
+        this.schakelaars = schakelaars;
+    }
+
+    public Dashboard_Vloeistoffen getVloeistoffen() {
+        return vloeistoffen;
+    }
+
+    public void setVloeistoffen(Dashboard_Vloeistoffen vloeistoffen) {
+        this.vloeistoffen = vloeistoffen;
+    }
+
     public Dashboard_Stad getStad() {
         return stad;
     }
@@ -88,7 +105,30 @@ public class Dashboard {
     public void setStad(Dashboard_Stad stad) {
         this.stad = stad;
     }
-    
+
+    public Dashboard_GPS getGps() {
+        return gps;
+    }
+
+    public void setGps(Dashboard_GPS gps) {
+        this.gps = gps;
+    }
+
+    public Dashboard_Noodstop getNoodstop() {
+        return noodstop;
+    }
+
+    public void setNoodstop(Dashboard_Noodstop noodstop) {
+        this.noodstop = noodstop;
+    }
+
+    public Dashboard_Tanken getTanken() {
+        return tanken;
+    }
+
+    public void setTanken(Dashboard_Tanken tanken) {
+        this.tanken = tanken;
+    }
 
     public long getId() {
         return id;
@@ -97,7 +137,5 @@ public class Dashboard {
     public void setId(long id) {
         this.id = id;
     }
-    
-    
-   
+
 }

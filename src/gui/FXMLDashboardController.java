@@ -7,9 +7,15 @@ import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
 import Models.Dashboard.Dashboard;
 import Models.Dashboard.Dashboard_Autosnelweg;
+import Models.Dashboard.Dashboard_Banden;
+import Models.Dashboard.Dashboard_GPS;
+import Models.Dashboard.Dashboard_Noodstop;
 import Models.Dashboard.Dashboard_Rijstroken;
 import Models.Dashboard.Dashboard_Rotonde;
+import Models.Dashboard.Dashboard_Schakelaars;
 import Models.Dashboard.Dashboard_Stad;
+import Models.Dashboard.Dashboard_Tanken;
+import Models.Dashboard.Dashboard_Vloeistoffen;
 import Models.Evaluatie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek;
@@ -26,7 +32,6 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import project.Model;
 
 public class FXMLDashboardController extends BorderPane {
 
@@ -112,7 +117,7 @@ public class FXMLDashboardController extends BorderPane {
 
     public void ophalenGegevens() {
 
-        //Controle voor Stuuroefening selectie
+        //Controle voor rotonde selectie
         try {
             int getalRotonde = Configuratie.evaluatie.getDashboard().getRotonde().getRotonde();
             if (getalRotonde == 1) {
@@ -169,7 +174,7 @@ public class FXMLDashboardController extends BorderPane {
             circleStad.setFill(Color.WHITE);
 
         }
-        
+
         //Controle voor Autostrade selectie
         try {
             int getalAutosnelweg = Configuratie.evaluatie.getDashboard().getAutosnelweg().getAutosnelweg();
@@ -187,6 +192,121 @@ public class FXMLDashboardController extends BorderPane {
         } catch (NullPointerException ex) {
             System.out.println("BESTAAT NOG NIET");
             circleAutostrade.setFill(Color.WHITE);
+
+        }
+
+        //Controle voor Tanken selectie
+        try {
+            int getalTanken = Configuratie.evaluatie.getDashboard().getTanken().getTanken();
+            if (getalTanken == 1) {
+                circleTanken.setFill(Color.RED);
+            } else if (getalTanken == 2) {
+                circleTanken.setFill(Color.ORANGE);
+            } else if (getalTanken == 3) {
+                circleTanken.setFill(Color.GREEN);
+
+            } else {
+                circleTanken.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleTanken.setFill(Color.WHITE);
+
+        }
+
+        //Controle voor GPS selectie
+        try {
+            int getalGPS = Configuratie.evaluatie.getDashboard().getGps().getGps();
+            if (getalGPS == 1) {
+                circleGPS.setFill(Color.RED);
+            } else if (getalGPS == 2) {
+                circleGPS.setFill(Color.ORANGE);
+            } else if (getalGPS == 3) {
+                circleGPS.setFill(Color.GREEN);
+            } else {
+                circleGPS.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleGPS.setFill(Color.WHITE);
+
+        }
+        
+        //Controle voor Noodstop selectie
+        try {
+            int getalNoodstop = Configuratie.evaluatie.getDashboard().getNoodstop().getNoodstop();
+            if (getalNoodstop == 1) {
+                circleNoodstop.setFill(Color.RED);
+            } else if (getalNoodstop == 2) {
+                circleNoodstop.setFill(Color.ORANGE);
+            } else if (getalNoodstop == 3) {
+                circleNoodstop.setFill(Color.GREEN);
+            } else {
+                circleNoodstop.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleNoodstop.setFill(Color.WHITE);
+
+        }
+        
+        //Controle voor Noodstop selectie
+        try {
+            int getalSchakelaars = Configuratie.evaluatie.getDashboard().getSchakelaars().getSchakelaars();
+            if (getalSchakelaars == 1) {
+                circleSchakelaars.setFill(Color.RED);
+            } else if (getalSchakelaars == 2) {
+                circleSchakelaars.setFill(Color.ORANGE);
+            } else if (getalSchakelaars == 3) {
+                circleSchakelaars.setFill(Color.GREEN);
+            } else {
+                circleSchakelaars.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleSchakelaars.setFill(Color.WHITE);
+
+        }
+        
+        //Controle voor Noodstop selectie
+        try {
+            int getalVloeistoffen = Configuratie.evaluatie.getDashboard().getVloeistoffen().getVloeistoffen();
+            if (getalVloeistoffen == 1) {
+                circleVloeistoffen.setFill(Color.RED);
+            } else if (getalVloeistoffen == 2) {
+                circleVloeistoffen.setFill(Color.ORANGE);
+            } else if (getalVloeistoffen == 3) {
+                circleVloeistoffen.setFill(Color.GREEN);
+            } else {
+                circleVloeistoffen.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleVloeistoffen.setFill(Color.WHITE);
+
+        }
+        
+        //Controle voor Noodstop selectie
+        try {
+            int getalBanden = Configuratie.evaluatie.getDashboard().getBanden().getBanden();
+            if (getalBanden == 1) {
+                circleBanden.setFill(Color.RED);
+            } else if (getalBanden == 2) {
+                circleBanden.setFill(Color.ORANGE);
+            } else if (getalBanden == 3) {
+                circleBanden.setFill(Color.GREEN);
+            } else {
+                circleBanden.setFill(Color.WHITE);
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            circleBanden.setFill(Color.WHITE);
 
         }
 
@@ -235,56 +355,175 @@ public class FXMLDashboardController extends BorderPane {
 
     @FXML
     public void schakelaars() {
+        Dashboard_Schakelaars schakelaar = new Dashboard_Schakelaars();
         if (circleSchakelaars.getFill() == Color.WHITE) {
+            circleSchakelaars.setFill(Color.RED);
+            schakelaar.setSchakelaars(1);
+            Configuratie.evaluatie.getDashboard().setSchakelaars(schakelaar);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleSchakelaars.getFill() == Color.RED) {
+            circleSchakelaars.setFill(Color.ORANGE);
+            schakelaar.setSchakelaars(2);
+            Configuratie.evaluatie.getDashboard().setSchakelaars(schakelaar);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleSchakelaars.getFill() == Color.ORANGE) {
             circleSchakelaars.setFill(Color.GREEN);
+            schakelaar.setSchakelaars(3);
+            Configuratie.evaluatie.getDashboard().setSchakelaars(schakelaar);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            schakelaar.setSchakelaars(4);
             circleSchakelaars.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setSchakelaars(schakelaar);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void vloeistoffen() {
+        Dashboard_Vloeistoffen vloeistof = new Dashboard_Vloeistoffen();
         if (circleVloeistoffen.getFill() == Color.WHITE) {
-            circleVloeistoffen.setFill(Color.GREEN);
+            circleVloeistoffen.setFill(Color.RED);
+            vloeistof.setVloeistoffen(1);
+            Configuratie.evaluatie.getDashboard().setVloeistoffen(vloeistof);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
 
+        } else if (circleVloeistoffen.getFill() == Color.RED) {
+            circleVloeistoffen.setFill(Color.ORANGE);
+            vloeistof.setVloeistoffen(2);
+            Configuratie.evaluatie.getDashboard().setVloeistoffen(vloeistof);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleVloeistoffen.getFill() == Color.ORANGE) {
+            circleVloeistoffen.setFill(Color.GREEN);
+            vloeistof.setVloeistoffen(3);
+            Configuratie.evaluatie.getDashboard().setVloeistoffen(vloeistof);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            vloeistof.setVloeistoffen(4);
             circleVloeistoffen.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setVloeistoffen(vloeistof);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void banden() {
+        Dashboard_Banden band = new Dashboard_Banden();
         if (circleBanden.getFill() == Color.WHITE) {
+            circleBanden.setFill(Color.RED);
+            band.setBanden(1);
+            Configuratie.evaluatie.getDashboard().setBanden(band);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleBanden.getFill() == Color.RED) {
+            circleBanden.setFill(Color.ORANGE);
+            band.setBanden(2);
+            Configuratie.evaluatie.getDashboard().setBanden(band);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleBanden.getFill() == Color.ORANGE) {
             circleBanden.setFill(Color.GREEN);
+            band.setBanden(3);
+            Configuratie.evaluatie.getDashboard().setBanden(band);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            band.setBanden(4);
             circleBanden.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setBanden(band);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void tanken() {
+        Dashboard_Tanken tanken = new Dashboard_Tanken();
         if (circleTanken.getFill() == Color.WHITE) {
+            circleTanken.setFill(Color.RED);
+            tanken.setTanken(1);
+            Configuratie.evaluatie.getDashboard().setTanken(tanken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleTanken.getFill() == Color.RED) {
+            circleTanken.setFill(Color.ORANGE);
+            tanken.setTanken(2);
+            Configuratie.evaluatie.getDashboard().setTanken(tanken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleTanken.getFill() == Color.ORANGE) {
             circleTanken.setFill(Color.GREEN);
+            tanken.setTanken(3);
+            Configuratie.evaluatie.getDashboard().setTanken(tanken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            tanken.setTanken(4);
             circleTanken.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setTanken(tanken);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void gps() {
+        Dashboard_GPS gps = new Dashboard_GPS();
         if (circleGPS.getFill() == Color.WHITE) {
+            circleGPS.setFill(Color.RED);
+            gps.setGps(1);
+            Configuratie.evaluatie.getDashboard().setGps(gps);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleGPS.getFill() == Color.RED) {
+            circleGPS.setFill(Color.ORANGE);
+            gps.setGps(2);
+            Configuratie.evaluatie.getDashboard().setGps(gps);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleGPS.getFill() == Color.ORANGE) {
             circleGPS.setFill(Color.GREEN);
+            gps.setGps(3);
+            Configuratie.evaluatie.getDashboard().setGps(gps);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            gps.setGps(4);
             circleGPS.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setGps(gps);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
     @FXML
     public void noodstop() {
+        Dashboard_Noodstop nood = new Dashboard_Noodstop();
         if (circleNoodstop.getFill() == Color.WHITE) {
+            circleNoodstop.setFill(Color.RED);
+            nood.setNoodstop(1);
+            Configuratie.evaluatie.getDashboard().setNoodstop(nood);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleNoodstop.getFill() == Color.RED) {
+            circleNoodstop.setFill(Color.ORANGE);
+            nood.setNoodstop(2);
+            Configuratie.evaluatie.getDashboard().setNoodstop(nood);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
+        } else if (circleNoodstop.getFill() == Color.ORANGE) {
             circleNoodstop.setFill(Color.GREEN);
+            nood.setNoodstop(3);
+            Configuratie.evaluatie.getDashboard().setNoodstop(nood);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
+            nood.setNoodstop(4);
             circleNoodstop.setFill(Color.WHITE);
+            Configuratie.evaluatie.getDashboard().setNoodstop(nood);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+
         }
     }
 
@@ -334,7 +573,7 @@ public class FXMLDashboardController extends BorderPane {
             Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
             DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
-            rotonde.setRotonde(3);
+            rotonde.setRotonde(4);
             circleRotonde.setFill(Color.WHITE);
             Configuratie.evaluatie.getDashboard().setRotonde(rotonde);
             DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
@@ -364,7 +603,7 @@ public class FXMLDashboardController extends BorderPane {
             Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
             DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
         } else {
-            rijstroken.setRijstroken(3);
+            rijstroken.setRijstroken(4);
             circleRijstroken.setFill(Color.WHITE);
             Configuratie.evaluatie.getDashboard().setRijstroken(rijstroken);
             DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
@@ -405,7 +644,7 @@ public class FXMLDashboardController extends BorderPane {
 
     @FXML
     public void autostrade() {
-         Dashboard_Autosnelweg autosnelweg = new Dashboard_Autosnelweg();
+        Dashboard_Autosnelweg autosnelweg = new Dashboard_Autosnelweg();
         if (circleAutostrade.getFill() == Color.WHITE) {
             circleAutostrade.setFill(Color.RED);
             autosnelweg.setAutosnelweg(1);
