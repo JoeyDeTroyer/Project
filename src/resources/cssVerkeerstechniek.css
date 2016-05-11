@@ -75,3 +75,11 @@
     -fx-background-repeat: no-repeat;
     -fx-background-color: transparent;
 }
+
+.bgSubPage{
+    
+    -fx-background-image: url("bgSubpages.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
