@@ -22,26 +22,24 @@ import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import project.Model;
 
-public class FXMLInlogschermController extends BorderPane 
-{
+public class FXMLInlogschermController extends BorderPane {
+
     @FXML
-    private Button btnNieuw, btnVerwijder, btnZoeken, btnLogin;       
-   
+    private Button btnNieuw, btnVerwijder, btnZoeken, btnLogin;
+
     @FXML
     private ListView<Leerling> lstGebruikers;
-    
+
     @FXML
     private TextField txtNaam, txtInschrijving;
-    
+
     private LeerlingDAO leerlingdao;
 
-    ObservableList <Leerling> leerlingen = FXCollections.observableArrayList();    
-    
-    
+    ObservableList<Leerling> leerlingen = FXCollections.observableArrayList();
+
     ScreenSwitcher switcher;
 
-    public FXMLInlogschermController(ScreenSwitcher switcher)
-    {
+    public FXMLInlogschermController(ScreenSwitcher switcher) {
         this.switcher = switcher;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLInlogscherm.fxml"));
         loader.setRoot(this);
@@ -52,38 +50,31 @@ public class FXMLInlogschermController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        
-        
+
     }
-    
+
     @FXML
-    public void nieuw()
-    {
+    public void nieuw() {
         switcher.nieuw();
         btnVerwijder.setDisable(false);
     }
-    
-    public void login() 
-    {
+
+    public void login() {
         Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
         Configuratie.setLeerling(l);
         switcher.dashboard();
-        
+
     }
-    
+
     @FXML
-    public void verwijder()
-    {
-        if(lstGebruikers.getSelectionModel().getSelectedItem() == null)
-        {
+    public void verwijder() {
+        if (lstGebruikers.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Opgelet");
             alert.setHeaderText(null);
             alert.setContentText("U heeft niemand geselecteerd.");
             alert.showAndWait();
-        }
-        else
-        {
+        } else {
             Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Leerling verwijderen");
@@ -91,23 +82,19 @@ public class FXMLInlogschermController extends BorderPane
             alert.setContentText("Wilt u " + l.getNaamVoornaam() + " verwijderen?");
 
             Optional<ButtonType> result = alert.showAndWait();
-            if(result.get() == ButtonType.OK)
-            {
+            if (result.get() == ButtonType.OK) {
                 Model.getInstance().getLeerlingen().remove(l);
                 LeerlingDAO.getInstance().verwijderLeerling(l.getInschrijvingsNr());
                 initialize();
-            }
-            else
-            {
-                 
+            } else {
+
             }
         }
     }
-    
+
     @FXML
-    public void initialize() 
-    {
-        
+    public void initialize() {
+
         lstGebruikers.setItems(Model.getInstance().getLeerlingen());
         lstGebruikers.setCellFactory(new Callback<ListView<Leerling>, ListCell<Leerling>>() {
             @Override
@@ -115,50 +102,42 @@ public class FXMLInlogschermController extends BorderPane
                 return new LeerlingCell();
             }
         });
-        
-        if(Model.getInstance().getLeerlingen().isEmpty())
-        {
+
+        if (Model.getInstance().getLeerlingen().isEmpty()) {
             btnVerwijder.setDisable(true);
         }
-        
+
     }
 
     @FXML
-    public void zoeken()
-    {
-        
-        
-        if(txtNaam.getText().isEmpty() || txtNaam.getText() == null || "".equals(txtNaam.getText()))
-        {
-         //reset list to show all items
-         leerlingen.addAll( Model.getInstance().getLeerlingen());
-         ObservableList<Leerling> resultaatZoeken = FXCollections.observableArrayList();
-         
-         leerlingen.stream().forEach((l) -> {
-             resultaatZoeken.add(l);
+    public void zoeken() {
+
+        if (txtNaam.getText().isEmpty() || txtNaam.getText() == null || "".equals(txtNaam.getText())) {
+            //reset list to show all items
+            leerlingen.addAll(Model.getInstance().getLeerlingen());
+            ObservableList<Leerling> resultaatZoeken = FXCollections.observableArrayList();
+
+            leerlingen.stream().forEach((l) -> {
+                resultaatZoeken.add(l);
             });
-         lstGebruikers.getItems().clear();
-         lstGebruikers.setItems(resultaatZoeken);
-         lstGebruikers.setCellFactory((ListView<Leerling> p) -> new LeerlingCell());
-         
-        }
-        else
-        {
+            lstGebruikers.getItems().clear();
+            lstGebruikers.setItems(resultaatZoeken);
+            lstGebruikers.setCellFactory((ListView<Leerling> p) -> new LeerlingCell());
+
+        } else {
             // reset list in case of mistake and searching again         
             leerlingen.addAll(Model.getInstance().getLeerlingen());
-       
-       
+
             ObservableList<Leerling> resultaatZoeken = FXCollections.observableArrayList();
-       
+
             leerlingen.stream().filter((l) -> (l.getNaamVoornaam().toLowerCase().contains(txtNaam.getText().toLowerCase().trim()))).forEach((l) -> {
                 resultaatZoeken.add(l);
             });
             lstGebruikers.getItems().clear();
             lstGebruikers.setItems(resultaatZoeken);
             lstGebruikers.setCellFactory((ListView<Leerling> p) -> new LeerlingCell());
-        
+
+        }
     }
-    }
-    
-    
+
 }

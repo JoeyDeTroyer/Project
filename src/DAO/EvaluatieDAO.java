@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 public class EvaluatieDAO {
-    
+
     public Evaluatie findAllByLeerling(Leerling l, int volgNummer) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
@@ -21,21 +21,21 @@ public class EvaluatieDAO {
             return q.getSingleResult();
         } catch (NoResultException ex) {
             return null;
-        }finally {
+        } finally {
             if (em != null) {
                 em.close();
             }
             emf.close();
         }
     }
-    
-        public void addEvaluatie(Evaluatie e)  {
+
+    public void addEvaluatie(Evaluatie e) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             em.getTransaction().begin();
-            em.persist(e);        
+            em.persist(e);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -44,10 +44,10 @@ public class EvaluatieDAO {
             emf.close();
         }
     }
-    
+
     private static final EvaluatieDAO instance = new EvaluatieDAO();
 
     public static EvaluatieDAO getInstance() {
         return instance;
-    }  
+    }
 }

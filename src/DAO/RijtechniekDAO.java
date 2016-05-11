@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class RijtechniekDAO {
+
     public List<Rijtechniek> findAllRijtechnieken() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
@@ -19,16 +20,16 @@ public class RijtechniekDAO {
                 em.close();
             }
             emf.close();
-        } 
+        }
     }
-    
-        public void addRijtechniek(Rijtechniek r)  {
+
+    public void addRijtechniek(Rijtechniek r) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             em.getTransaction().begin();
-            em.persist(r);        
+            em.persist(r);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -37,14 +38,14 @@ public class RijtechniekDAO {
             emf.close();
         }
     }
-        
-        public void updateRijtechniek(Rijtechniek r){
+
+    public void updateRijtechniek(Rijtechniek r) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             em.getTransaction().begin();
-            em.merge(r);        
+            em.merge(r);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -53,12 +54,13 @@ public class RijtechniekDAO {
             emf.close();
         }
     }
-    
-    private RijtechniekDAO() {}
-    
+
+    private RijtechniekDAO() {
+    }
+
     private static final RijtechniekDAO instance = new RijtechniekDAO();
 
     public static RijtechniekDAO getInstance() {
         return instance;
-    }   
+    }
 }

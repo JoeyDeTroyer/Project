@@ -3,31 +3,30 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_LinksAfslaan 
-{
-    private int opstelling;
-    private int uitvoering;
+public class Verkeerstechniek_LinksAfslaan {
+
+    private int opstellingLinks;
+    private int uitvoeringLinks;
     private int linksAfslaanAndere;
 
-    public Verkeerstechniek_LinksAfslaan() 
-    {
-        
+    public Verkeerstechniek_LinksAfslaan() {
+
     }
 
-    public int getOpstelling() {
-        return opstelling;
+    public int getOpstellingLinks() {
+        return opstellingLinks;
     }
 
-    public void setOpstelling(int opstelling) {
-        this.opstelling = opstelling;
+    public void setOpstellingLinks(int opstellingLinks) {
+        this.opstellingLinks = opstellingLinks;
     }
 
-    public int getUitvoering() {
-        return uitvoering;
+    public int getUitvoeringLinks() {
+        return uitvoeringLinks;
     }
 
-    public void setUitvoering(int uitvoering) {
-        this.uitvoering = uitvoering;
+    public void setUitvoeringLinks(int uitvoeringLinks) {
+        this.uitvoeringLinks = uitvoeringLinks;
     }
 
     public int getLinksAfslaanAndere() {
@@ -37,6 +36,4 @@ public class Verkeerstechniek_LinksAfslaan
     public void setLinksAfslaanAndere(int linksAfslaanAndere) {
         this.linksAfslaanAndere = linksAfslaanAndere;
     }
-
-    
 }

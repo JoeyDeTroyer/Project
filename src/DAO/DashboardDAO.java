@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class DashboardDAO {
-    
+
     public List<Dashboard> findAllDashboards() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
         EntityManager em = null;
@@ -20,14 +20,47 @@ public class DashboardDAO {
                 em.close();
             }
             emf.close();
-        }    
+        }
     }
     
-    private DashboardDAO() {}
+    public void addDashboard(Dashboard d) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.persist(d);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
     
+    public void updateDashboard(Dashboard d) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.merge(d);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
+
+    private DashboardDAO() {
+    }
+
     private static final DashboardDAO instance = new DashboardDAO();
 
     public static DashboardDAO getInstance() {
         return instance;
-    } 
+    }
 }

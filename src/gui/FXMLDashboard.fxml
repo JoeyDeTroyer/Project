@@ -56,16 +56,21 @@
                </font></Button>
             <Button fx:id="btnPlus" layoutX="811.0" layoutY="708.0" mnemonicParsing="false" onAction="#pbPlus" prefHeight="25.0" prefWidth="50.0" text="+" />
             <Button fx:id="btnMin" layoutX="40.0" layoutY="708.0" mnemonicParsing="false" onAction="#pbMin" prefHeight="25.0" prefWidth="50.0" text="-" />
-            <Circle fx:id="circleSchakelaars" fill="WHITE" layoutX="46.0" layoutY="318.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleVloeistoffen" fill="WHITE" layoutX="40.0" layoutY="407.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleBanden" fill="WHITE" layoutX="40.0" layoutY="499.0" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleTanken" fill="WHITE" layoutX="820.0" layoutY="323.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleGPS" fill="WHITE" layoutX="825.0" layoutY="412.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleNoodstop" fill="WHITE" layoutX="827.0" layoutY="509.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleRotonde" fill="WHITE" layoutX="178.0" layoutY="246.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleRijstroken" fill="WHITE" layoutX="304.0" layoutY="247.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleAutostrade" fill="WHITE" layoutX="610.0" layoutY="246.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fx:id="circleStad" fill="WHITE" layoutX="480.0" layoutY="248.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleRotonde" fill="WHITE" layoutX="180.0" layoutY="246.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleRijstroken" fill="WHITE" layoutX="305.0" layoutY="244.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleStad" fill="WHITE" layoutX="482.0" layoutY="244.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleAutostrade" fill="WHITE" layoutX="609.0" layoutY="244.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleTanken" fill="WHITE" layoutX="823.0" layoutY="328.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleGPS" fill="WHITE" layoutX="825.0" layoutY="416.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleNoodstop" fill="WHITE" layoutX="825.0" layoutY="510.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleSchakelaars" fill="WHITE" layoutX="41.0" layoutY="317.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleVloeistoffen" fill="WHITE" layoutX="40.0" layoutY="408.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleBanden" fill="WHITE" layoutX="41.0" layoutY="499.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="lblEvaluatie" alignment="CENTER" layoutX="701.0" layoutY="244.0" prefHeight="26.0" prefWidth="301.0" text="Naam Leerling" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>

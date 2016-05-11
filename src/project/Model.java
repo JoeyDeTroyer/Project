@@ -1,9 +1,11 @@
 package project;
 
+import DAO.DashboardDAO;
 import DAO.LeerlingDAO;
 import Models.Rijtechniek.Rijtechniek; 
 import DAO.RijtechniekDAO;
 import DAO.VerkeerstechniekDAO;
+import Models.Dashboard.Dashboard;
 import Models.Leerling;
 import Models.Verkeerstechniek.Verkeerstechniek;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class Model {
         rijtechnieken = FXCollections.observableArrayList(RijtechniekDAO.getInstance().findAllRijtechnieken());
         leerlingen = FXCollections.observableArrayList(LeerlingDAO.getInstance().findAllLeerlingen());
         verkeerstechnieken = FXCollections.observableArrayList(VerkeerstechniekDAO.getInstance().findAllVerkeerstechnieken()); 
-        
+        dashboards = FXCollections.observableArrayList(DashboardDAO.getInstance().findAllDashboards()); 
     }
     
     private ObservableList<Rijtechniek> rijtechnieken;
@@ -36,6 +38,12 @@ public class Model {
 
     public ObservableList<Verkeerstechniek> getVerkeerstechnieken() {
         return verkeerstechnieken;
+    }
+    
+    private ObservableList<Dashboard> dashboards;
+
+    public ObservableList<Dashboard> getDashboards() {
+        return dashboards;
     }
     
     private Model() {}

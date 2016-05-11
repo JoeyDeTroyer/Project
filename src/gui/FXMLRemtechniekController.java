@@ -4,7 +4,6 @@ import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Remtechniek;
-import Models.Rijtechniek.Rijtechniek_Schakeltechniek;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -86,7 +85,7 @@ public class FXMLRemtechniekController extends BorderPane
             System.out.println("BESTAAT NOG NIET");
         }
         
-        //Controle tweede groep (Andere)
+        //Controle tweede groep (Volgorde)
         try {
             
         int getalGroep2 = Configuratie.evaluatie.getRijtechniek().getRemTechniek().getRemtechniekVolgorde();
@@ -102,7 +101,7 @@ public class FXMLRemtechniekController extends BorderPane
             System.out.println("BESTAAT NOG NIET");
         }
         
-        //Controle derde groep (Aangepast)
+        //Controle derde groep (Te Laat)
         try {
             
         int getalGroep3 = Configuratie.evaluatie.getRijtechniek().getRemTechniek().getRemtechniekTeLaat();
@@ -118,7 +117,7 @@ public class FXMLRemtechniekController extends BorderPane
             System.out.println("BESTAAT NOG NIET");
         }
         
-        //Controle vierde groep (Motorrem)
+        //Controle vierde groep (Gebruik Andere)
         try {
             
         int getalGroep4 = Configuratie.evaluatie.getRijtechniek().getRemTechniek().getRemtechniekGebruikAndere();
@@ -151,7 +150,7 @@ public class FXMLRemtechniekController extends BorderPane
                 Configuratie.evaluatie.getRijtechniek().setRemTechniek(remtechniek);
             }});
         
-         //Controle voor Andere(Groep 2)
+         //Controle voor Volgorde (Groep 2)
         rij2Groep.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
@@ -167,7 +166,7 @@ public class FXMLRemtechniekController extends BorderPane
             }
         });
         
-        //Controle voor Aangepast(Groep 3)
+        //Controle voor Te Laat (Groep 3)
         rij3Groep.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
@@ -184,7 +183,7 @@ public class FXMLRemtechniekController extends BorderPane
             }
         });
         
-        //Controle voor Motorrem (Groep 4)
+        //Controle voor Gebruik Andere (Groep 4)
         rij4Groep.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
