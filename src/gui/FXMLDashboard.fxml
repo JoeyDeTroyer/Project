@@ -23,7 +23,10 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <TextArea fx:id="txtOpmerkingen" layoutX="39.0" layoutY="24.0" prefHeight="168.0" prefWidth="806.0" promptText="Opmerkingen" />
+            <TextArea fx:id="txtOpmerkingen" layoutX="39.0" layoutY="24.0" prefHeight="168.0" prefWidth="806.0" promptText="Opmerkingen" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
             <Button fx:id="btnAttitude" layoutX="355.0" layoutY="561.0" mnemonicParsing="false" onAction="#attitude" prefHeight="132.0" prefWidth="198.0" styleClass="attitude" />
             <Button fx:id="btnRijtechniek" layoutX="146.0" layoutY="390.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="242.0" prefWidth="242.0" styleClass="stuur" />
             <Button fx:id="btnVerkeerstechniek" layoutX="492.0" layoutY="400.0" mnemonicParsing="false" onAction="#verkeerstechniek" prefHeight="227.0" prefWidth="227.0" styleClass="rotonde" />

@@ -20,7 +20,7 @@ import javafx.scene.layout.BorderPane;
 public class FXMLZithoudingController extends BorderPane {
 
     @FXML
-    Button btnTerug;
+    Button btnTerug, btnOpmerking;
     @FXML
     Label lblNaamLeerling;
     @FXML
@@ -258,6 +258,16 @@ public class FXMLZithoudingController extends BorderPane {
 
         Leerling leerling = Configuratie.getLeerling();
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
+    }
+    
+    @FXML
+    public void opmerkingOpslaan() {
+        
+        Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpmInt(1);
+        System.out.println("Opmerking wordt opgeslaan " + Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpmInt());
+
+        
+    
     }
 
     @FXML

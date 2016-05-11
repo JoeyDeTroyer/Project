@@ -10,6 +10,7 @@ import Models.Dashboard.Dashboard_Autosnelweg;
 import Models.Dashboard.Dashboard_Banden;
 import Models.Dashboard.Dashboard_GPS;
 import Models.Dashboard.Dashboard_Noodstop;
+import Models.Dashboard.Dashboard_ProgressBar;
 import Models.Dashboard.Dashboard_Rijstroken;
 import Models.Dashboard.Dashboard_Rotonde;
 import Models.Dashboard.Dashboard_Schakelaars;
@@ -71,10 +72,9 @@ public class FXMLDashboardController extends BorderPane {
             ex.printStackTrace();
         }
         Leerling leerling = Configuratie.getLeerling();
-        progressbar.setProgress(0);
+//        progressbar.setProgress(0);
         btnMin.setDisable(true);
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
-        ophalenGegevens();
 
     }
 
@@ -108,6 +108,7 @@ public class FXMLDashboardController extends BorderPane {
 
     public void test() {
         try {
+            
             String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
             txtOpmerkingen.setText("ZithoudingOPMERKING: " + text);
         } catch (NullPointerException ex) {
@@ -308,6 +309,27 @@ public class FXMLDashboardController extends BorderPane {
             System.out.println("BESTAAT NOG NIET");
             circleBanden.setFill(Color.WHITE);
 
+        }
+        try {
+            double getalProgress = Configuratie.evaluatie.getDashboard().getProgress().getProgressBar();
+            if (getalProgress == 0.1) {
+                progressbar.setProgress(0.1);
+            } else if (getalProgress == 0.2) {
+                progressbar.setProgress(0.2);
+            } else if (getalProgress == 0.3) {
+                progressbar.setProgress(0.3);
+            } else if (getalProgress == 0.4) {
+                progressbar.setProgress(0.4);
+            } else if (getalProgress == 0.5) {
+                progressbar.setProgress(0.5);
+            } else if (getalProgress == 0.6) {
+                progressbar.setProgress(0.6);
+            } else if (getalProgress == 0.7) {
+                progressbar.setProgress(0.7);   
+            }
+
+        } catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
         }
 
     }
@@ -542,14 +564,30 @@ public class FXMLDashboardController extends BorderPane {
     @FXML
     public void pbPlus() {
         btnMin.setDisable(false);
-
+        
+        try {
+         double getalProgress = Configuratie.evaluatie.getDashboard().getProgress().getProgressBar();
         if (progressbar.getProgress() >= 0.899) {
-            //kan niet hoger dan 1
             progressbar.setProgress(1);
+            getalProgress = 1 ;
+            Configuratie.evaluatie.getDashboard().getProgress().setProgressBar(getalProgress);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
             btnPlus.setDisable(true);
         } else {
             progressbar.setProgress(progressbar.getProgress() + 0.1);
+            getalProgress = getalProgress + 0.1;
+            Configuratie.evaluatie.getDashboard().getProgress().setProgressBar(getalProgress);
+            DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
+            System.out.println("Het getal is " + getalProgress) ;
+   
         }
+        }catch (NullPointerException ex) {
+            System.out.println("BESTAAT NOG NIET");
+            
+//            Configuratie.evaluatie.getDashboard().getProgress().setProgressBar(0.1);
+            ophalenGegevens();  }
+            ophalenGegevens();   
+        
     }
 
     @FXML

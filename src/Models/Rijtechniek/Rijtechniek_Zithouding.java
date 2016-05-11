@@ -10,6 +10,7 @@ public class Rijtechniek_Zithouding {
     private int zithoudingHandrem;
     private int zithoudingAndere;
     private String zithoudingOpm;
+    private int zithoudingOpmInt;
 
     public String getZithoudingOpm() {
         return zithoudingOpm;
@@ -58,6 +59,16 @@ public class Rijtechniek_Zithouding {
     public void setZithoudingAndere(int zithoudingAndere) {
         this.zithoudingAndere = zithoudingAndere;
     }
+
+    public int getZithoudingOpmInt() {
+        return zithoudingOpmInt;
+    }
+
+    public void setZithoudingOpmInt(int zithoudingOpmInt) {
+        this.zithoudingOpmInt = zithoudingOpmInt;
+    }
+    
+    
 
     public Rijtechniek_Zithouding() 
     {

@@ -183,6 +183,7 @@
                   <Circle fill="#29e100" radius="20.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
                </children>
             </GridPane>
+            <Button fx:id="btnOpmerking" layoutX="232.0" layoutY="500.0" mnemonicParsing="false" onAction="#opmerkingOpslaan" prefHeight="49.0" prefWidth="179.0" text="Opmerking hoofdmenu" />
          </children>
       </Pane>
    </center>
