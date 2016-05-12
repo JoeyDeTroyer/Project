@@ -33,10 +33,10 @@
             <ToggleButton fx:id="btnBanden" cache="true" layoutX="25.0" layoutY="485.0" mnemonicParsing="false" onAction="#banden" prefHeight="96.0" prefWidth="98.0" styleClass="banden" stylesheets="@../resources/cssDashboard.css" />
             <ToggleButton fx:id="btnVloeistoffen" layoutX="22.0" layoutY="387.0" mnemonicParsing="false" onAction="#vloeistoffen" prefHeight="98.0" prefWidth="104.0" styleClass="vloeistoffen" />
             <ToggleButton fx:id="btnSchakelaars" layoutX="25.0" layoutY="300.0" mnemonicParsing="false" onAction="#schakelaars" prefHeight="98.0" prefWidth="99.0" styleClass="schakelaars" />
-            <ToggleButton layoutX="162.0" layoutY="229.0" mnemonicParsing="false" onAction="#rotonde" prefHeight="103.0" prefWidth="104.0" styleClass="rotondeKlein" />
-            <ToggleButton layoutX="288.0" layoutY="231.0" mnemonicParsing="false" onAction="#rijstroken" prefHeight="100.0" prefWidth="100.0" styleClass="rijstroken" />
-            <ToggleButton layoutX="464.0" layoutY="233.0" mnemonicParsing="false" onAction="#stad" prefHeight="96.0" prefWidth="97.0" styleClass="stad" />
-            <ToggleButton layoutX="595.0" layoutY="231.0" mnemonicParsing="false" onAction="#autostrade" prefHeight="100.0" prefWidth="98.0" styleClass="autostrade" />
+            <ToggleButton fx:id="btnRotonde" layoutX="162.0" layoutY="229.0" mnemonicParsing="false" onAction="#rotonde" prefHeight="103.0" prefWidth="104.0" styleClass="rotondeKlein" />
+            <ToggleButton fx:id="btnRijstroken" layoutX="288.0" layoutY="231.0" mnemonicParsing="false" onAction="#rijstroken" prefHeight="100.0" prefWidth="100.0" styleClass="rijstroken" />
+            <ToggleButton fx:id="btnStad" layoutX="464.0" layoutY="233.0" mnemonicParsing="false" onAction="#stad" prefHeight="96.0" prefWidth="97.0" styleClass="stad" />
+            <ToggleButton fx:id="btnAutostrade" layoutX="595.0" layoutY="231.0" mnemonicParsing="false" onAction="#autostrade" prefHeight="100.0" prefWidth="98.0" styleClass="autostrade" />
             <ToggleButton fx:id="btnTanken" layoutX="735.0" layoutY="299.0" mnemonicParsing="false" onAction="#tanken" prefHeight="101.0" prefWidth="103.0" styleClass="tanken" />
             <ToggleButton fx:id="btnGPS" layoutX="745.0" layoutY="396.0" mnemonicParsing="false" onAction="#gps" prefHeight="92.0" prefWidth="93.0" styleClass="gps" />
             <ToggleButton fx:id="btnNoodstop" layoutX="749.0" layoutY="495.0" mnemonicParsing="false" onAction="#noodstop" prefHeight="89.0" prefWidth="92.0" styleClass="noodstop" />

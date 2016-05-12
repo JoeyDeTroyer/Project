@@ -1,21 +1,27 @@
 package gui;
 
+import DAO.EvaluatieDAO;
+import DAO.LeerlingDAO;
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Zithouding;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
+import project.Model;
 
 public class FXMLZithoudingController extends BorderPane {
 
@@ -76,13 +82,11 @@ public class FXMLZithoudingController extends BorderPane {
             String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
             zithoudingOpmerking.setText(text);
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
         //Zithouding controle
         try {
 
             int getalZithouding = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithouding();
-            System.out.println("ZITHOUDING " + getalZithouding);
             if (getalZithouding == 1) {
                 zithoudingZelf1.setSelected(true);
             } else if (getalZithouding == 2) {
@@ -91,7 +95,6 @@ public class FXMLZithoudingController extends BorderPane {
                 zithoudingZelf3.setSelected(true);
             }
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
 
         //Gordel controle
@@ -107,7 +110,6 @@ public class FXMLZithoudingController extends BorderPane {
                 gordel3.setSelected(true);
             }
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
 
         //Spiegels controle
@@ -123,7 +125,6 @@ public class FXMLZithoudingController extends BorderPane {
                 spiegels3.setSelected(true);
             }
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
 
         //Handrem controle
@@ -139,7 +140,6 @@ public class FXMLZithoudingController extends BorderPane {
                 handrem3.setSelected(true);
             }
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
 
         //Andere controle
@@ -155,7 +155,6 @@ public class FXMLZithoudingController extends BorderPane {
                 andere3.setSelected(true);
             }
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
 
         //Controle voor Zithouding
@@ -259,21 +258,28 @@ public class FXMLZithoudingController extends BorderPane {
         Leerling leerling = Configuratie.getLeerling();
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
-    
+
     @FXML
     public void opmerkingOpslaan() {
-        
-        Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpmInt(1);
-        System.out.println("Opmerking wordt opgeslaan " + Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpmInt());
 
-        
-    
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Opmerking opslaan");
+        alert.setHeaderText(null);
+        alert.setContentText("Wilt u deze opmerking op het Dashboard bijhouden?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Configuratie.evaluatie.setOpmerkingen("Zithouding: " + zithoudingOpmerking.getText() + "\n");
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
+
+        } else {
+
+        }
+
     }
 
     @FXML
     public void rijtechniek() {
         switcher.rijtechniek();
-
         Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpm(zithoudingOpmerking.getText());
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
 
