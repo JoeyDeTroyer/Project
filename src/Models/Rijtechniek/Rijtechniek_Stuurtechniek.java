@@ -7,6 +7,8 @@ public class Rijtechniek_Stuurtechniek {
     private int stuurtechniekDosering;
     private int stuurtechniekHouding;
     private int stuurtechniekAndere;
+    private String stuurtechniekOpm;
+    
 
     public int getStuurtechniekDosering() {
         return stuurtechniekDosering;
@@ -31,6 +33,16 @@ public class Rijtechniek_Stuurtechniek {
     public void setStuurtechniekAndere(int stuurtechniekAndere) {
         this.stuurtechniekAndere = stuurtechniekAndere;
     }
+
+    public String getStuurtechniekOpm() {
+        return stuurtechniekOpm;
+    }
+
+    public void setStuurtechniekOpm(String stuurtechniekOpm) {
+        this.stuurtechniekOpm = stuurtechniekOpm;
+    }
+    
+    
     
     
 }

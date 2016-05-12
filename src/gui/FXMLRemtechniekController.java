@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -31,6 +32,8 @@ public class FXMLRemtechniekController extends BorderPane
     @FXML
     ToggleGroup rij1Groep, rij2Groep, rij3Groep, rij4Groep;
     
+     @FXML
+    TextArea remtechniekOpmerking;
     ScreenSwitcher switcher;
     
     public FXMLRemtechniekController(ScreenSwitcher switcher)
@@ -65,6 +68,13 @@ public class FXMLRemtechniekController extends BorderPane
         rij4Kolom1.setToggleGroup(rij4Groep);
         rij4Kolom2.setToggleGroup(rij4Groep);
         rij4Kolom3.setToggleGroup(rij4Groep);
+        
+        
+        try {
+            String text = Configuratie.evaluatie.getRijtechniek().getRemTechniek().getRemtechniekOpm();
+            remtechniekOpmerking.setText(text);
+        } catch (NullPointerException ex) {
+        }
         
         
         //CONTROLES SELECTIE BUTTONS//
@@ -207,6 +217,7 @@ public class FXMLRemtechniekController extends BorderPane
     @FXML
     public void rijtechniek()
     {
+        Configuratie.evaluatie.getRijtechniek().getRemTechniek().setRemtechniekOpm(remtechniekOpmerking.getText());
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
         switcher.rijtechniek();
     }

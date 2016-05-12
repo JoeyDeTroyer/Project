@@ -274,7 +274,6 @@ public class FXMLZithoudingController extends BorderPane {
         }
 
     
-
     @FXML
     public void rijtechniek() {
         switcher.rijtechniek();
