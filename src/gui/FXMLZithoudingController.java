@@ -78,6 +78,7 @@ public class FXMLZithoudingController extends BorderPane {
         andere1.setToggleGroup(andereGroep);
         andere2.setToggleGroup(andereGroep);
         andere3.setToggleGroup(andereGroep);
+        
         try {
             String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
             zithoudingOpmerking.setText(text);
@@ -268,14 +269,11 @@ public class FXMLZithoudingController extends BorderPane {
         alert.setContentText("Wilt u deze opmerking op het Dashboard bijhouden?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            Configuratie.evaluatie.setOpmerkingen("Zithouding: " + zithoudingOpmerking.getText() + "\n");
-            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
-
-        } else {
-
+            Configuratie.evaluatie.setOpmerkingen(zithoudingOpmerking.getText());
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);}
         }
 
-    }
+    
 
     @FXML
     public void rijtechniek() {

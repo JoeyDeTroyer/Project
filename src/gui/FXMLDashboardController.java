@@ -77,6 +77,7 @@ public class FXMLDashboardController extends BorderPane {
 //        progressbar.setProgress(0);
         btnMin.setDisable(true);
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
+        
         try {
         if (Configuratie.evaluatie.getVolgNummer() == 1 ){
             lblEvaluatie.setText("Evaluatie 1");
@@ -98,7 +99,7 @@ public class FXMLDashboardController extends BorderPane {
         }
         
        ophalenGegevens();
-//        opmerkingVullen();
+       opmerkingVullen();
 
     }
 
@@ -130,14 +131,14 @@ public class FXMLDashboardController extends BorderPane {
 //        test();
     }
 
-//    public void opmerkingVullen() {
-//        try {
-//
-//            String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
-//            txtOpmerkingen.setText(text);
-//        } catch (NullPointerException ex) {
-//        }
-//    }
+    public void opmerkingVullen() {
+        try {
+
+            String text = Configuratie.evaluatie.getOpmerkingen();
+            txtOpmerkingen.setText(text);
+        } catch (NullPointerException ex) {
+        }
+    }
 
     public void ophalenGegevens() {
         
@@ -354,6 +355,7 @@ public class FXMLDashboardController extends BorderPane {
             evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, evaluatie);
             ophalenGegevens();
             dashboardActiveren();
+            dashboardLeegmaken();
         }
         
         if (evaluatie == 0) {
@@ -367,9 +369,10 @@ public class FXMLDashboardController extends BorderPane {
         } catch (NullPointerException ex) {
 
         }
+        dashboardLeegmaken();
         ophalenGegevens();
         dashboardActiveren();
-//        opmerkingVullen();
+        opmerkingVullen();
 
     }
 
@@ -728,6 +731,7 @@ public class FXMLDashboardController extends BorderPane {
         circleSchakelaars.setFill(Color.WHITE);
         circleVloeistoffen.setFill(Color.WHITE);
         circleBanden.setFill(Color.WHITE);
+        progressbar.setProgress(0);
     }
     
     public void dashboardActiveren()
