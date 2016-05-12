@@ -5,13 +5,13 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Dashboard_ProgressBar {
     
-    private int progressBar;
+    private double progressBar;
 
-    public int getProgressBar() {
+    public double getProgressBar() {
         return progressBar;
     }
 
-    public void setProgressBar(int progressBar) {
+    public void setProgressBar(double progressBar) {
         this.progressBar = progressBar;
     }  
 }

@@ -57,10 +57,10 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane {
                 lblFoutmelding.setText("Er bestaat al een leerling met dit inschrijvingsnummer!");
             }
         }
-        if (txtNaam.getText().trim().length() == 0) {
+        if (txtNaam.getText().trim().length() < 2) {
             lblFoutmelding.setText("Naam is niet ingevuld!");
         }
-        if (txtVoornaam.getText().trim().length() == 0) {
+        if (txtVoornaam.getText().trim().length() < 2) {
             lblFoutmelding.setText("Voornaam is niet ingevuld!");
         }
         if (txtEmail.getText().trim().length() == 0) {

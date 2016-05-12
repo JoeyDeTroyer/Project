@@ -34,6 +34,19 @@ public class Evaluatie {
     
     
     private int volgNummer;
+    
+    private Double progress;
+    private String opmerkingen;
+    
+    public Double getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Double progress) {
+        this.progress = progress;
+    }
+    
+    
 
     public int getEvaluatieId() {
         return evaluatieId;
@@ -81,4 +94,14 @@ public class Evaluatie {
     public void setVerkeerstechniek(Verkeerstechniek verkeerstechniek) {
         this.verkeerstechniek = verkeerstechniek;
     }
+
+    public String getOpmerkingen() {
+        return opmerkingen;
+    }
+
+    public void setOpmerkingen(String opmerkingen) {
+        this.opmerkingen = opmerkingen;
+    }
+    
+    
 }

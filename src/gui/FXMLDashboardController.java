@@ -10,6 +10,7 @@ import Models.Dashboard.Dashboard_Autosnelweg;
 import Models.Dashboard.Dashboard_Banden;
 import Models.Dashboard.Dashboard_GPS;
 import Models.Dashboard.Dashboard_Noodstop;
+import Models.Dashboard.Dashboard_ProgressBar;
 import Models.Dashboard.Dashboard_Rijstroken;
 import Models.Dashboard.Dashboard_Rotonde;
 import Models.Dashboard.Dashboard_Schakelaars;
@@ -43,7 +44,8 @@ public class FXMLDashboardController extends BorderPane {
             btnEvaluatie3, btnMin, btnPlus;
 
     @FXML
-    ToggleButton btnBanden, btnTanken, btnNoodstop, btnGPS, btnVloeistoffen, btnSchakelaars;
+    ToggleButton btnBanden, btnTanken, btnNoodstop, btnGPS, btnVloeistoffen, btnSchakelaars,
+            btnRotonde, btnRijstroken, btnStad, btnAutostrade;
 
     @FXML
     TextArea txtOpmerkingen;
@@ -56,6 +58,7 @@ public class FXMLDashboardController extends BorderPane {
     ProgressBar progressbar;
 
     ScreenSwitcher switcher;
+    private int evaluatieGekozen;
     private ObservableList<Evaluatie> evaluatie;
     private Evaluatie evaluatietest;
 
@@ -71,10 +74,32 @@ public class FXMLDashboardController extends BorderPane {
             ex.printStackTrace();
         }
         Leerling leerling = Configuratie.getLeerling();
-        progressbar.setProgress(0);
+//        progressbar.setProgress(0);
         btnMin.setDisable(true);
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
-        ophalenGegevens();
+        
+        try {
+        if (Configuratie.evaluatie.getVolgNummer() == 1 ){
+            lblEvaluatie.setText("Evaluatie 1");
+            dashboardActiveren();            
+        } else if (Configuratie.evaluatie.getVolgNummer() == 2 ) {
+            lblEvaluatie.setText("Evaluatie 2");
+            dashboardActiveren();
+        }  else if (Configuratie.evaluatie.getVolgNummer() == 3 ) {
+            lblEvaluatie.setText("Evaluatie 3");
+            dashboardActiveren();
+        } else {
+            lblEvaluatie.setText("Gelieve een Evaluatie te selecteren");
+            dashboardDeactiveren();
+        }
+
+        } catch (NullPointerException ex) {
+            lblEvaluatie.setText("Gelieve een Evaluatie te selecteren");
+            dashboardDeactiveren();
+        }
+        
+       ophalenGegevens();
+       opmerkingVullen();
 
     }
 
@@ -106,16 +131,18 @@ public class FXMLDashboardController extends BorderPane {
 //        test();
     }
 
-    public void test() {
+    public void opmerkingVullen() {
         try {
-            String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
-            txtOpmerkingen.setText("ZithoudingOPMERKING: " + text);
+
+            String text = Configuratie.evaluatie.getOpmerkingen();
+            txtOpmerkingen.setText(text);
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
         }
     }
 
     public void ophalenGegevens() {
+        
+        
 
         //Controle voor rotonde selectie
         try {
@@ -131,7 +158,6 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleRotonde.setFill(Color.WHITE);
         }
 
@@ -150,7 +176,6 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleRijstroken.setFill(Color.WHITE);
 
         }
@@ -170,7 +195,6 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleStad.setFill(Color.WHITE);
 
         }
@@ -190,7 +214,6 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleAutostrade.setFill(Color.WHITE);
 
         }
@@ -210,7 +233,6 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleTanken.setFill(Color.WHITE);
 
         }
@@ -229,11 +251,10 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleGPS.setFill(Color.WHITE);
 
         }
-        
+
         //Controle voor Noodstop selectie
         try {
             int getalNoodstop = Configuratie.evaluatie.getDashboard().getNoodstop().getNoodstop();
@@ -248,11 +269,10 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleNoodstop.setFill(Color.WHITE);
 
         }
-        
+
         //Controle voor Noodstop selectie
         try {
             int getalSchakelaars = Configuratie.evaluatie.getDashboard().getSchakelaars().getSchakelaars();
@@ -267,11 +287,10 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleSchakelaars.setFill(Color.WHITE);
 
         }
-        
+
         //Controle voor Noodstop selectie
         try {
             int getalVloeistoffen = Configuratie.evaluatie.getDashboard().getVloeistoffen().getVloeistoffen();
@@ -286,11 +305,10 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleVloeistoffen.setFill(Color.WHITE);
 
         }
-        
+
         //Controle voor Noodstop selectie
         try {
             int getalBanden = Configuratie.evaluatie.getDashboard().getBanden().getBanden();
@@ -305,10 +323,16 @@ public class FXMLDashboardController extends BorderPane {
             }
 
         } catch (NullPointerException ex) {
-            System.out.println("BESTAAT NOG NIET");
             circleBanden.setFill(Color.WHITE);
 
         }
+        try {
+            progressbar.setProgress(Configuratie.getEvaluatie().getProgress());
+        } catch (NullPointerException ex) {
+       
+        }
+
+        
 
     }
 
@@ -330,11 +354,25 @@ public class FXMLDashboardController extends BorderPane {
             EvaluatieDAO.getInstance().addEvaluatie(nieuweEvaluatie);
             evaluatietest = EvaluatieDAO.getInstance().findAllByLeerling(Configuratie.leerling, evaluatie);
             ophalenGegevens();
+            dashboardActiveren();
+            dashboardLeegmaken();
+        }
+        
+        if (evaluatie == 0) {
+            dashboardLeegmaken();
         }
 
         Configuratie.setEvaluatie(evaluatietest);
         System.out.println(evaluatietest.getLeerling().getNaamVoornaam());
+        try {
+            progressbar.setProgress(Configuratie.getEvaluatie().getProgress());
+        } catch (NullPointerException ex) {
+
+        }
+        dashboardLeegmaken();
         ophalenGegevens();
+        dashboardActiveren();
+        opmerkingVullen();
 
     }
 
@@ -350,7 +388,9 @@ public class FXMLDashboardController extends BorderPane {
 
     @FXML
     public void logout() {
+        evaluatieselecteren(0);
         switcher.logout();
+        
     }
 
     @FXML
@@ -537,6 +577,8 @@ public class FXMLDashboardController extends BorderPane {
         } else {
             progressbar.setProgress(progressbar.getProgress() - 0.1);
         }
+        Configuratie.evaluatie.setProgress(progressbar.getProgress());
+        EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
     }
 
     @FXML
@@ -547,9 +589,13 @@ public class FXMLDashboardController extends BorderPane {
             //kan niet hoger dan 1
             progressbar.setProgress(1);
             btnPlus.setDisable(true);
+
         } else {
             progressbar.setProgress(progressbar.getProgress() + 0.1);
         }
+        Configuratie.evaluatie.setProgress(progressbar.getProgress());
+
+        EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
     }
 
     @FXML
@@ -669,6 +715,66 @@ public class FXMLDashboardController extends BorderPane {
             DashboardDAO.getInstance().updateDashboard(Configuratie.evaluatie.getDashboard());
 
         }
+    }
+    
+    @FXML
+    public void dashboardLeegmaken()
+    {
+        txtOpmerkingen.clear();
+        circleRotonde.setFill(Color.WHITE);
+        circleRijstroken.setFill(Color.WHITE);
+        circleStad.setFill(Color.WHITE);
+        circleAutostrade.setFill(Color.WHITE);
+        circleTanken.setFill(Color.WHITE);
+        circleGPS.setFill(Color.WHITE);
+        circleNoodstop.setFill(Color.WHITE);
+        circleSchakelaars.setFill(Color.WHITE);
+        circleVloeistoffen.setFill(Color.WHITE);
+        circleBanden.setFill(Color.WHITE);
+        progressbar.setProgress(0);
+    }
+    
+    public void dashboardActiveren()
+    {
+        //Buttons activeren
+        btnRijtechniek.setDisable(false);
+        btnAttitude.setDisable(false); 
+        btnVerkeerstechniek.setDisable(false);
+        btnMin.setDisable(false); 
+        btnPlus.setDisable(false); 
+        btnBanden.setDisable(false);
+        btnTanken.setDisable(false); 
+        btnNoodstop.setDisable(false); 
+        btnGPS.setDisable(false); 
+        btnVloeistoffen.setDisable(false); 
+        btnSchakelaars.setDisable(false);
+        btnRotonde.setDisable(false);
+        btnRijstroken.setDisable(false); 
+        btnStad.setDisable(false);
+        btnAutostrade.setDisable(false);
+        
+        //Andere dingen activeren
+        txtOpmerkingen.setDisable(false);
+        
+    }
+    public void dashboardDeactiveren()
+    {
+        btnRijtechniek.setDisable(true);
+        btnAttitude.setDisable(true); 
+        btnVerkeerstechniek.setDisable(true);
+        btnMin.setDisable(true); 
+        btnPlus.setDisable(true);
+        btnBanden.setDisable(true);
+        btnTanken.setDisable(true); 
+        btnNoodstop.setDisable(true); 
+        btnGPS.setDisable(true); 
+        btnVloeistoffen.setDisable(true); 
+        btnSchakelaars.setDisable(true);
+        btnRotonde.setDisable(true);
+        btnRijstroken.setDisable(true); 
+        btnStad.setDisable(true);
+        btnAutostrade.setDisable(true);
+        
     }
 
 }

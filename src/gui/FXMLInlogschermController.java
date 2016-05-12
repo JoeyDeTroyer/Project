@@ -25,7 +25,7 @@ import project.Model;
 public class FXMLInlogschermController extends BorderPane {
 
     @FXML
-    private Button btnNieuw, btnVerwijder, btnZoeken, btnLogin;
+    private Button btnNieuw, btnZoeken, btnLogin;
 
     @FXML
     private ListView<Leerling> lstGebruikers;
@@ -51,12 +51,13 @@ public class FXMLInlogschermController extends BorderPane {
             ex.printStackTrace();
         }
 
+        LeerlingDAO.getInstance().findAllLeerlingen();
+        Model.getInstance().initialize();
     }
-
     @FXML
     public void nieuw() {
         switcher.nieuw();
-        btnVerwijder.setDisable(false);
+//        btnVerwijder.setDisable(false);
     }
 
     public void login() {
@@ -66,31 +67,31 @@ public class FXMLInlogschermController extends BorderPane {
 
     }
 
-    @FXML
-    public void verwijder() {
-        if (lstGebruikers.getSelectionModel().getSelectedItem() == null) {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Opgelet");
-            alert.setHeaderText(null);
-            alert.setContentText("U heeft niemand geselecteerd.");
-            alert.showAndWait();
-        } else {
-            Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Leerling verwijderen");
-            alert.setHeaderText(null);
-            alert.setContentText("Wilt u " + l.getNaamVoornaam() + " verwijderen?");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                Model.getInstance().getLeerlingen().remove(l);
-                LeerlingDAO.getInstance().verwijderLeerling(l.getInschrijvingsNr());
-                initialize();
-            } else {
-
-            }
-        }
-    }
+//    @FXML
+//    public void verwijder() {
+//        if (lstGebruikers.getSelectionModel().getSelectedItem() == null) {
+//            Alert alert = new Alert(AlertType.INFORMATION);
+//            alert.setTitle("Opgelet");
+//            alert.setHeaderText(null);
+//            alert.setContentText("U heeft niemand geselecteerd.");
+//            alert.showAndWait();
+//        } else {
+//            Leerling l = lstGebruikers.getSelectionModel().getSelectedItem();
+//            Alert alert = new Alert(AlertType.CONFIRMATION);
+//            alert.setTitle("Leerling verwijderen");
+//            alert.setHeaderText(null);
+//            alert.setContentText("Wilt u " + l.getNaamVoornaam() + " verwijderen?");
+//
+//            Optional<ButtonType> result = alert.showAndWait();
+//            if (result.get() == ButtonType.OK) {
+//                Model.getInstance().getLeerlingen().remove(l);
+//                LeerlingDAO.getInstance().verwijderLeerling(l.getInschrijvingsNr());
+//                initialize();
+//            } else {
+//
+//            }
+//        }
+//    }
 
     @FXML
     public void initialize() {
@@ -103,9 +104,9 @@ public class FXMLInlogschermController extends BorderPane {
             }
         });
 
-        if (Model.getInstance().getLeerlingen().isEmpty()) {
-            btnVerwijder.setDisable(true);
-        }
+//        if (Model.getInstance().getLeerlingen().isEmpty()) {
+//            btnVerwijder.setDisable(true);
+//        }
 
     }
 

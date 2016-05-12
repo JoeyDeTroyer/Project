@@ -44,6 +44,22 @@ public class EvaluatieDAO {
             emf.close();
         }
     }
+    
+                    public void updateEvaluatie(Evaluatie e){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ProjectPU");
+        EntityManager em = null;
+        try {
+            em = emf.createEntityManager();
+            em.getTransaction().begin();
+            em.merge(e);        
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+            emf.close();
+        }
+    }
 
     private static final EvaluatieDAO instance = new EvaluatieDAO();
 

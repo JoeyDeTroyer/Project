@@ -12,6 +12,8 @@ public class Rijtechniek_Koppeling {
    private int koppelingOnnodig;
    private int koppelingBocht;
    private int koppelingGebruikAndere;
+   private String koppelingOpm;
+   
 
     public int getKoppelingDosering() {
         return koppelingDosering;
@@ -32,6 +34,15 @@ public class Rijtechniek_Koppeling {
     public int getKoppelingVoetAf() {
         return koppelingVoetAf;
     }
+
+    public String getKoppelingOpm() {
+        return koppelingOpm;
+    }
+
+    public void setKoppelingOpm(String koppelingOpm) {
+        this.koppelingOpm = koppelingOpm;
+    }
+    
 
     public void setKoppelingVoetAf(int koppelingVoetAf) {
         this.koppelingVoetAf = koppelingVoetAf;

@@ -57,8 +57,8 @@ public class Rijtechniek_Zithouding {
 
     public void setZithoudingAndere(int zithoudingAndere) {
         this.zithoudingAndere = zithoudingAndere;
-    }
-
+    }    
+    
     public Rijtechniek_Zithouding() 
     {
         
