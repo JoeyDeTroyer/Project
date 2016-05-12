@@ -94,7 +94,7 @@ public class FXMLDashboardController extends BorderPane {
         }
 
         } catch (NullPointerException ex) {
-            lblEvaluatie.setText("Gelieve een Evaluatie te selecteren");
+            lblEvaluatie.setText("Kies een Evaluatie");
             dashboardDeactiveren();
         }
         

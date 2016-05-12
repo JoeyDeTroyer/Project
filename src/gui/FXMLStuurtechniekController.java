@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -29,6 +30,8 @@ public class FXMLStuurtechniekController extends BorderPane {
 
     @FXML
     ToggleGroup rij1Groep, rij2Groep, rij3Groep;
+    @FXML
+    TextArea stuurtechniekOpmerking;
 
     ScreenSwitcher switcher;
 
@@ -49,7 +52,7 @@ public class FXMLStuurtechniekController extends BorderPane {
         rij1Kolom2.setToggleGroup(rij1Groep);
         rij1Kolom3.setToggleGroup(rij1Groep);
 
-        //Tweede groep aanmake (Houding)
+        //Tweede groep aanmaken (Houding)
         rij2Kolom1.setToggleGroup(rij2Groep);
         rij2Kolom2.setToggleGroup(rij2Groep);
         rij2Kolom3.setToggleGroup(rij2Groep);
@@ -58,6 +61,12 @@ public class FXMLStuurtechniekController extends BorderPane {
         rij3Kolom1.setToggleGroup(rij3Groep);
         rij3Kolom2.setToggleGroup(rij3Groep);
         rij3Kolom3.setToggleGroup(rij3Groep);
+        
+        try {
+            String text = Configuratie.evaluatie.getRijtechniek().getStuurTechniek().getStuurtechniekOpm();
+            stuurtechniekOpmerking.setText(text);
+        } catch (NullPointerException ex) {
+        }
 
         //Controle eerste groep (Dosering)
         try {
@@ -179,6 +188,8 @@ public class FXMLStuurtechniekController extends BorderPane {
 
     @FXML
     public void rijtechniek() {
+        Configuratie.evaluatie.getRijtechniek().getStuurTechniek().setStuurtechniekOpm(stuurtechniekOpmerking.getText());
+
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
 
         switcher.rijtechniek();

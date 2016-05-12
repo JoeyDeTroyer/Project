@@ -10,6 +10,7 @@ public class Rijtechniek_Schakeltechniek {
     private int schakeltechniekAangepast;
     private int schakeltechniekMotorrem;
     private int schakeltechniekGebruikAndere;
+    private String schakeltechniekOpm;
 
     public int getSchakeltechniekDosering() {
         return schakeltechniekDosering;
@@ -26,6 +27,16 @@ public class Rijtechniek_Schakeltechniek {
     public void setSchakeltechniekBedieningAndere(int schakeltechniekBedieningAndere) {
         this.schakeltechniekBedieningAndere = schakeltechniekBedieningAndere;
     }
+
+    public String getSchakeltechniekOpm() {
+        return schakeltechniekOpm;
+    }
+
+    public void setSchakeltechniekOpm(String schakeltechniekOpm) {
+        this.schakeltechniekOpm = schakeltechniekOpm;
+    }
+    
+    
 
     public int getSchakeltechniekAangepast() {
         return schakeltechniekAangepast;
