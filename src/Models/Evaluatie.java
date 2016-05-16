@@ -13,11 +13,12 @@ import javax.persistence.OneToOne;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = "Evaluatie.findAllByLeerling", query = "SELECT e FROM Evaluatie e WHERE e.leerling = :leerling AND e.volgNummer = :volgnummer")
+    @NamedQuery(name = "Evaluatie.findAllByLeerling", query = "SELECT e FROM Evaluatie e WHERE e.leerling = :leerling AND e.volgNummer = :volgnummer")
 })
 public class Evaluatie {
-    
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue
     private int evaluatieId;
     //Relatie met Leerling leggen
     @ManyToOne
@@ -26,18 +27,16 @@ public class Evaluatie {
     @OneToOne
     private Rijtechniek rijtechniek;
     //Relatie met Verkeerstechniek
-    @OneToOne 
+    @OneToOne
     private Verkeerstechniek verkeerstechniek;
     @OneToOne
     private Dashboard dashboard;
 
-    
-    
     private int volgNummer;
-    
+
     private Double progress;
     private String opmerkingen;
-    
+
     public Double getProgress() {
         return progress;
     }
@@ -45,8 +44,6 @@ public class Evaluatie {
     public void setProgress(Double progress) {
         this.progress = progress;
     }
-    
-    
 
     public int getEvaluatieId() {
         return evaluatieId;
@@ -55,7 +52,7 @@ public class Evaluatie {
     public void setEvaluatieId(int evaluatieId) {
         this.evaluatieId = evaluatieId;
     }
-    
+
     public Dashboard getDashboard() {
         return dashboard;
     }
@@ -63,6 +60,7 @@ public class Evaluatie {
     public void setDashboard(Dashboard dashboard) {
         this.dashboard = dashboard;
     }
+
     public Leerling getLeerling() {
         return leerling;
     }
@@ -86,7 +84,7 @@ public class Evaluatie {
     public void setRijtechniek(Rijtechniek rijtechniek) {
         this.rijtechniek = rijtechniek;
     }
-    
+
     public Verkeerstechniek getVerkeerstechniek() {
         return verkeerstechniek;
     }
@@ -102,6 +100,5 @@ public class Evaluatie {
     public void setOpmerkingen(String opmerkingen) {
         this.opmerkingen = opmerkingen;
     }
-    
-    
+
 }

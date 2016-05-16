@@ -1,21 +1,19 @@
 package Models.Rijtechniek;
 
-import Models.Evaluatie;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-@NamedQuery(name = "Rijtechniek.findById", query = "SELECT g FROM Rijtechniek g WHERE g.id = :id"),
-@NamedQuery(name = "Rijtechniek.findAll", query = "SELECT r FROM Rijtechniek r")
+    @NamedQuery(name = "Rijtechniek.findById", query = "SELECT g FROM Rijtechniek g WHERE g.id = :id"),
+    @NamedQuery(name = "Rijtechniek.findAll", query = "SELECT r FROM Rijtechniek r")
 })
 public class Rijtechniek {
+
     //Zo dat de attributen van de verschillende subklassen in de tabel kunnen gezet worden
     @Embedded
     private Rijtechniek_Balanceren balanceren;
@@ -33,7 +31,7 @@ public class Rijtechniek {
     private Rijtechniek_Schakeltechniek schakelTechniek;
     @Embedded
     private Rijtechniek_Stuurtechniek stuurTechniek;
-    @Embedded 
+    @Embedded
     private Rijtechniek_VertrekkenHelling vertrekkenHelling;
     @Embedded
     private Rijtechniek_Zithouding zithouding;
@@ -41,7 +39,7 @@ public class Rijtechniek {
     private Rijtechniek_Stuuroefening stuuroefening;
     @Embedded
     private Rijtechniek_Achteruitrijden achteruitrijden;
-    @Embedded 
+    @Embedded
     private Rijtechniek_Garage garage;
 
     public Rijtechniek_Garage getGarage() {
@@ -67,21 +65,11 @@ public class Rijtechniek {
     public void setStuuroefening(Rijtechniek_Stuuroefening stuuroefening) {
         this.stuuroefening = stuuroefening;
     }
-    
+
     //Dit geeft een autonummering als primaire sleutel in de tabel Rijtechniek
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
-    
-    /*public Rijtechniek(int kerenID, Rijtechniek_Kijktechniek kijkTechniek, Rijtechniek_Koppeling koppeling, Rijtechniek_Parkeren parkeren, Rijtechniek_Remtechniek remTechniek, Rijtechniek_Schakeltechniek schakelTechniek, Rijtechniek_Stuurtechniek stuurTechniek, Rijtechniek_Zithouding zithouding) {
-        this.kerenID = kerenID;
-        this.kijkTechniek = kijkTechniek;
-        this.koppeling = koppeling;
-        this.parkeren = parkeren;
-        this.remTechniek = remTechniek;
-        this.schakelTechniek = schakelTechniek;
-        this.stuurTechniek = stuurTechniek;
-        this.zithouding = zithouding;
-    }*/
 
     public Rijtechniek_Balanceren getBalanceren() {
         return balanceren;
@@ -170,7 +158,5 @@ public class Rijtechniek {
     public void setId(long id) {
         this.id = id;
     }
-    
-    
-    
+
 }

@@ -35,8 +35,6 @@ public class Dashboard {
     private Dashboard_Stad stad;
     @Embedded
     private Dashboard_ProgressBar progress;
-//    @Embedded
-//    private Dashboard_Opmerkingen opmerkingen;
 
     @Id
     @GeneratedValue

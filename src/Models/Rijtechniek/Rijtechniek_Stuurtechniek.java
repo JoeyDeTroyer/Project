@@ -4,11 +4,11 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Stuurtechniek {
+
     private int stuurtechniekDosering;
     private int stuurtechniekHouding;
     private int stuurtechniekAndere;
     private String stuurtechniekOpm;
-    
 
     public int getStuurtechniekDosering() {
         return stuurtechniekDosering;
@@ -41,8 +41,5 @@ public class Rijtechniek_Stuurtechniek {
     public void setStuurtechniekOpm(String stuurtechniekOpm) {
         this.stuurtechniekOpm = stuurtechniekOpm;
     }
-    
-    
-    
-    
+
 }

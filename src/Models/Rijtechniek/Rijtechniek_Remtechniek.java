@@ -4,9 +4,10 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Remtechniek {
+
     private int remtechniekDosering;
     private int remtechniekVolgorde;
-    
+
     private int remtechniekTeLaat;
     private int remtechniekGebruikAndere;
     private String remtechniekOpm;
@@ -38,8 +39,6 @@ public class Rijtechniek_Remtechniek {
     public void setRemtechniekOpm(String remtechniekOpm) {
         this.remtechniekOpm = remtechniekOpm;
     }
-    
-    
 
     public void setRemtechniekTeLaat(int remtechniekTeLaat) {
         this.remtechniekTeLaat = remtechniekTeLaat;
@@ -53,7 +52,4 @@ public class Rijtechniek_Remtechniek {
         this.remtechniekGebruikAndere = remtechniekGebruikAndere;
     }
 
-    
-    
-    
 }

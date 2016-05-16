@@ -3,24 +3,11 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_Volgafstand 
-{
+public class Verkeerstechniek_Volgafstand {
+
     private int volgafstand;
     private int zijdelings;
     private int volgafstandAndere;
-
-    public Verkeerstechniek_Volgafstand() 
-    {
-        
-    }
-
-    public Verkeerstechniek_Volgafstand(int volgafstand, int zijdelings, int volgafstandAndere) {
-        this.volgafstand = volgafstand;
-        this.zijdelings = zijdelings;
-        this.volgafstandAndere = volgafstandAndere;
-    }
-    
-    
 
     public int getVolgafstand() {
         return volgafstand;
@@ -46,5 +33,4 @@ public class Verkeerstechniek_Volgafstand
         this.volgafstandAndere = volgafstandAndere;
     }
 
-    
 }

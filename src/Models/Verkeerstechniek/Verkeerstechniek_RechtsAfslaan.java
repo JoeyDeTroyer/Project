@@ -3,23 +3,15 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_RechtsAfslaan
-{
+public class Verkeerstechniek_RechtsAfslaan {
+
     private int opstellingRechts;
     private int uitvoeringRechts;
     private int rechtsAfslaanAndere;
 
-    public Verkeerstechniek_RechtsAfslaan() 
-    {
-        
-    }
+    public Verkeerstechniek_RechtsAfslaan() {
 
-//    public Verkeerstechniek_RechtsAfslaan(int opstelling, int uitvoering, int rechtsAfslaanAndere) {
-//        this.opstelling = opstelling;
-//        this.uitvoering = uitvoering;
-//        this.rechtsAfslaanAndere = rechtsAfslaanAndere;
-//    }
-    
+    }
 
     public int getOpstellingRechts() {
         return opstellingRechts;
@@ -37,8 +29,6 @@ public class Verkeerstechniek_RechtsAfslaan
         this.uitvoeringRechts = uitvoeringRechts;
     }
 
-    
-
     public int getRechtsAfslaanAndere() {
         return rechtsAfslaanAndere;
     }
@@ -47,5 +37,4 @@ public class Verkeerstechniek_RechtsAfslaan
         this.rechtsAfslaanAndere = rechtsAfslaanAndere;
     }
 
-   
 }

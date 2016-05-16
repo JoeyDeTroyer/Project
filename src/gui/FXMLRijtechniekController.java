@@ -6,7 +6,6 @@ import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Achteruitrijden;
 import Models.Rijtechniek.Rijtechniek_Garage;
 import Models.Rijtechniek.Rijtechniek_Keren;
-import Models.Rijtechniek.Rijtechniek_Remtechniek;
 import Models.Rijtechniek.Rijtechniek_Stuuroefening;
 import java.io.IOException;
 import javafx.fxml.FXML;

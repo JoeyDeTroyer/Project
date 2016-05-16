@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Garage {
-    
+
     private int garage;
 
     public int getGarage() {
@@ -14,6 +14,5 @@ public class Rijtechniek_Garage {
     public void setGarage(int garage) {
         this.garage = garage;
     }
-    
-    
+
 }

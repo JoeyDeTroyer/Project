@@ -1,15 +1,19 @@
 package gui;
 
+import DAO.EvaluatieDAO;
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Stuurtechniek;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -61,7 +65,7 @@ public class FXMLStuurtechniekController extends BorderPane {
         rij3Kolom1.setToggleGroup(rij3Groep);
         rij3Kolom2.setToggleGroup(rij3Groep);
         rij3Kolom3.setToggleGroup(rij3Groep);
-        
+
         try {
             String text = Configuratie.evaluatie.getRijtechniek().getStuurTechniek().getStuurtechniekOpm();
             stuurtechniekOpmerking.setText(text);
@@ -143,17 +147,13 @@ public class FXMLStuurtechniekController extends BorderPane {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
                 int getal = 0;
-//            Rijtechniek_Zithouding zithoudingGordels = new Rijtechniek_Zithouding();
                 if (rij2Kolom1.isSelected() == true) {
                     getal = 1;
-//                    zithoudingGordels.setZithoudingGordels(1);
 
                 } else if (rij2Kolom2.isSelected() == true) {
                     getal = 2;
-//                    zithoudingGordels.setZithoudingGordels(2);
                 } else {
                     getal = 3;
-//                    zithoudingGordels.setZithoudingGordels(3);
                 }
 
                 Configuratie.evaluatie.getRijtechniek().getStuurTechniek().setStuurtechniekHouding(getal);
@@ -165,17 +165,13 @@ public class FXMLStuurtechniekController extends BorderPane {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
                 int getal = 0;
-//            Rijtechniek_Zithouding zithoudingGordels = new Rijtechniek_Zithouding();
                 if (rij3Kolom1.isSelected() == true) {
                     getal = 1;
-//                    zithoudingGordels.setZithoudingGordels(1);
 
                 } else if (rij3Kolom2.isSelected() == true) {
                     getal = 2;
-//                    zithoudingGordels.setZithoudingGordels(2);
                 } else {
                     getal = 3;
-//                    zithoudingGordels.setZithoudingGordels(3);
                 }
 
                 Configuratie.evaluatie.getRijtechniek().getStuurTechniek().setStuurtechniekAndere(getal);
@@ -185,13 +181,29 @@ public class FXMLStuurtechniekController extends BorderPane {
         Leerling leerling = Configuratie.getLeerling();
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
+    
+    @FXML
+    public void opmerkingOpslaan() {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Opmerking opslaan");
+        alert.setHeaderText(null);
+        alert.setContentText("Wilt u deze opmerking op het Dashboard bijhouden?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Configuratie.evaluatie.setOpmerkingen(stuurtechniekOpmerking.getText());
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);}
+        }
 
     @FXML
     public void rijtechniek() {
+        try {
         Configuratie.evaluatie.getRijtechniek().getStuurTechniek().setStuurtechniekOpm(stuurtechniekOpmerking.getText());
 
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
-
+        }catch(NullPointerException ex) {
+            
+        }
         switcher.rijtechniek();
     }
 }

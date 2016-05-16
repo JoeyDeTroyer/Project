@@ -4,12 +4,14 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Kijktechniek {
+
     private int kijkTechniekVergewissen;
     private int kijkTechniekSpiegels;
     private int kijkTechniekDodeHoek;
     private int kijkTechniekVerGenoeg;
     private int kijkTechniekSelecteren;
     private int kijkTechniekAndere;
+    private String kijkTechniekOpm;
 
     public int getKijkTechniekVergewissen() {
         return kijkTechniekVergewissen;
@@ -25,6 +27,14 @@ public class Rijtechniek_Kijktechniek {
 
     public void setKijkTechniekSpiegels(int kijkTechniekSpiegels) {
         this.kijkTechniekSpiegels = kijkTechniekSpiegels;
+    }
+
+    public String getKijkTechniekOpm() {
+        return kijkTechniekOpm;
+    }
+
+    public void setKijkTechniekOpm(String kijkTechniekOpm) {
+        this.kijkTechniekOpm = kijkTechniekOpm;
     }
 
     public int getKijkTechniekDodeHoek() {
@@ -59,17 +69,7 @@ public class Rijtechniek_Kijktechniek {
         this.kijkTechniekAndere = kijkTechniekAndere;
     }
 
-    public Rijtechniek_Kijktechniek() 
-    {
-        
-    }
+    public Rijtechniek_Kijktechniek() {
 
-    public Rijtechniek_Kijktechniek(int kijkTechniekVergewissen, int kijkTechniekSpiegels, int kijkTechniekDodeHoek, int kijkTechniekVerGenoeg, int kijkTechniekSelecteren, int kijkTechniekAndere) {
-        this.kijkTechniekVergewissen = kijkTechniekVergewissen;
-        this.kijkTechniekSpiegels = kijkTechniekSpiegels;
-        this.kijkTechniekDodeHoek = kijkTechniekDodeHoek;
-        this.kijkTechniekVerGenoeg = kijkTechniekVerGenoeg;
-        this.kijkTechniekSelecteren = kijkTechniekSelecteren;
-        this.kijkTechniekAndere = kijkTechniekAndere;
     }
 }

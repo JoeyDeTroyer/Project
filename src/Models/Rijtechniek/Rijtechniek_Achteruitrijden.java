@@ -1,11 +1,10 @@
-
 package Models.Rijtechniek;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Achteruitrijden {
-    
+
     private int achteruitRijden;
 
     public int getAchteruitRijden() {
@@ -15,7 +14,5 @@ public class Rijtechniek_Achteruitrijden {
     public void setAchteruitRijden(int achteruitRijden) {
         this.achteruitRijden = achteruitRijden;
     }
-    
-    
-    
+
 }

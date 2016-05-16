@@ -350,10 +350,13 @@ public class FXMLKoppelingController extends BorderPane
   
     @FXML
     public void rijtechniek()
-    {
+    {   try {
         Configuratie.evaluatie.getRijtechniek().getKoppeling().setKoppelingOpm(koppelingOpmerking.getText());
 
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());    
+    }catch(NullPointerException ex) {
+        
+    }
 
         switcher.rijtechniek();
     }

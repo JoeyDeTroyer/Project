@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Zithouding {
+
     private int zithouding;
     private int zithoudingGordels;
     private int zithoudingSpiegels;
@@ -57,19 +58,10 @@ public class Rijtechniek_Zithouding {
 
     public void setZithoudingAndere(int zithoudingAndere) {
         this.zithoudingAndere = zithoudingAndere;
-    }    
-    
-    public Rijtechniek_Zithouding() 
-    {
-        
     }
 
-    public Rijtechniek_Zithouding(int zithouding, int zithoudingGordels, int zithoudingSpiegels, int zithoudingHandrem, int zithoudingAndere) 
-    {
-        this.zithouding = zithouding;
-        this.zithoudingGordels = zithoudingGordels;
-        this.zithoudingSpiegels = zithoudingSpiegels;
-        this.zithoudingHandrem = zithoudingHandrem;
-        this.zithoudingAndere = zithoudingAndere;
+    public Rijtechniek_Zithouding() {
+
     }
+
 }

@@ -3,23 +3,11 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_Verkeerstekens 
-{
+public class Verkeerstechniek_Verkeerstekens {
+
     private int verkeerstekens;
     private int bevelenBevoegden;
     private int verkeerstekensAndere;
-
-    public Verkeerstechniek_Verkeerstekens() 
-    {
-        
-    }
-
-    public Verkeerstechniek_Verkeerstekens(int verkeerstekens, int bevelenBevoegden, int verkeerstekensAndere) {
-        this.verkeerstekens = verkeerstekens;
-        this.bevelenBevoegden = bevelenBevoegden;
-        this.verkeerstekensAndere = verkeerstekensAndere;
-    }
-    
 
     public int getVerkeerstekens() {
         return verkeerstekens;
@@ -45,10 +33,4 @@ public class Verkeerstechniek_Verkeerstekens
         this.verkeerstekensAndere = verkeerstekensAndere;
     }
 
-    
-    
-    
-    
-    
-    
 }

@@ -1,16 +1,19 @@
 package gui;
 
+import DAO.EvaluatieDAO;
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
-import Models.Rijtechniek.Rijtechniek_Koppeling;
 import Models.Rijtechniek.Rijtechniek_Schakeltechniek;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -32,7 +35,7 @@ public class FXMLSchakeltechniekenController extends BorderPane {
 
     @FXML
     ToggleGroup rij1Groep, rij2Groep, rij3Groep, rij4Groep, rij5Groep;
-    
+
     @FXML
     TextArea schakeltechniekOpmerking;
 
@@ -74,7 +77,7 @@ public class FXMLSchakeltechniekenController extends BorderPane {
         rij5Kolom1.setToggleGroup(rij5Groep);
         rij5Kolom2.setToggleGroup(rij5Groep);
         rij5Kolom3.setToggleGroup(rij5Groep);
-        
+
         try {
             String text = Configuratie.evaluatie.getRijtechniek().getSchakelTechniek().getSchakeltechniekOpm();
             schakeltechniekOpmerking.setText(text);
@@ -251,10 +254,28 @@ public class FXMLSchakeltechniekenController extends BorderPane {
     }
 
     @FXML
-    public void rijtechniek() {
-        Configuratie.evaluatie.getRijtechniek().getSchakelTechniek().setSchakeltechniekOpm(schakeltechniekOpmerking.getText());
+    public void opmerkingOpslaan() {
 
-        RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Opmerking opslaan");
+        alert.setHeaderText(null);
+        alert.setContentText("Wilt u deze opmerking op het Dashboard bijhouden?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Configuratie.evaluatie.setOpmerkingen(schakeltechniekOpmerking.getText());
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
+        }
+    }
+
+    @FXML
+    public void rijtechniek() {
+        try {
+            Configuratie.evaluatie.getRijtechniek().getSchakelTechniek().setSchakeltechniekOpm(schakeltechniekOpmerking.getText());
+
+            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+        } catch (NullPointerException ex) {
+
+        }
         switcher.rijtechniek();
     }
 }

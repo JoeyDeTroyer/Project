@@ -4,7 +4,6 @@ import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Balanceren;
-import Models.Rijtechniek.Rijtechniek_Schakeltechniek;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

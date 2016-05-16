@@ -4,6 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_VertrekkenHelling {
+
     private int vertrekkenHelling;
 
     public int getVertrekkenHelling() {
@@ -14,13 +15,11 @@ public class Rijtechniek_VertrekkenHelling {
         this.vertrekkenHelling = vertrekkenHelling;
     }
 
-    public Rijtechniek_VertrekkenHelling() 
-    {
-        
+    public Rijtechniek_VertrekkenHelling() {
+
     }
 
-    public Rijtechniek_VertrekkenHelling(int vertrekkenHelling) 
-    {
+    public Rijtechniek_VertrekkenHelling(int vertrekkenHelling) {
         this.vertrekkenHelling = vertrekkenHelling;
-    }    
+    }
 }

@@ -3,7 +3,6 @@ package gui;
 import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
-import Models.Verkeerstechniek.Verkeerstechniek_PlaatsOpenbareWeg;
 import Models.Verkeerstechniek.Verkeerstechniek_Verkeerstekens;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;

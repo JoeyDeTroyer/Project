@@ -1,18 +1,22 @@
 package gui;
 
+import DAO.EvaluatieDAO;
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Rijtechniek.Rijtechniek_Kijktechniek;
-import Models.Rijtechniek.Rijtechniek_Koppeling;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -32,6 +36,8 @@ public class FXMLKijktechniekController extends BorderPane
     
     @FXML
     ToggleGroup rij1Groep, rij2Groep, rij3Groep, rij4Groep, rij5Groep, rij6Groep;
+    @FXML
+    TextArea kijktechniekOpmerking;
     
     ScreenSwitcher switcher;
     
@@ -46,6 +52,12 @@ public class FXMLKijktechniekController extends BorderPane
             loader.load();
         } catch (IOException ex) {
             ex.printStackTrace();
+        }
+        
+        try {
+            String text = Configuratie.evaluatie.getRijtechniek().getKijkTechniek().getKijkTechniekOpm();
+            kijktechniekOpmerking.setText(text);
+        } catch (NullPointerException ex) {
         }
         
         //TOGGLEGROUPS AANMAKEN//
@@ -284,10 +296,28 @@ public class FXMLKijktechniekController extends BorderPane
         Leerling leerling = Configuratie.getLeerling();
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
+    
+    @FXML
+    public void opmerkingOpslaan() {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Opmerking opslaan");
+        alert.setHeaderText(null);
+        alert.setContentText("Wilt u deze opmerking op het Dashboard bijhouden?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            Configuratie.evaluatie.setOpmerkingen(kijktechniekOpmerking.getText());
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);}
+        }
     @FXML
     public void rijtechniek()
     {
+         try {
+        Configuratie.evaluatie.getRijtechniek().getKijkTechniek().setKijkTechniekOpm((kijktechniekOpmerking.getText()));
         RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+        } catch(NullPointerException ex)  {
+            
+        }
         switcher.rijtechniek();
     }
 

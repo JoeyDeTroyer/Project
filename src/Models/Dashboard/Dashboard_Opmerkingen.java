@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Dashboard_Opmerkingen {
-    
+
     String[] opmerkingen = new String[30];
 
     public String[] getOpmerkingen() {

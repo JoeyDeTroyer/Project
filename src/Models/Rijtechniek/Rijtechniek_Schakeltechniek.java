@@ -4,9 +4,10 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Schakeltechniek {
+
     private int schakeltechniekDosering;
     private int schakeltechniekBedieningAndere;
-    
+
     private int schakeltechniekAangepast;
     private int schakeltechniekMotorrem;
     private int schakeltechniekGebruikAndere;
@@ -35,8 +36,6 @@ public class Rijtechniek_Schakeltechniek {
     public void setSchakeltechniekOpm(String schakeltechniekOpm) {
         this.schakeltechniekOpm = schakeltechniekOpm;
     }
-    
-    
 
     public int getSchakeltechniekAangepast() {
         return schakeltechniekAangepast;
@@ -61,6 +60,5 @@ public class Rijtechniek_Schakeltechniek {
     public void setSchakeltechniekGebruikAndere(int schakeltechniekGebruikAndere) {
         this.schakeltechniekGebruikAndere = schakeltechniekGebruikAndere;
     }
-    
-    
+
 }

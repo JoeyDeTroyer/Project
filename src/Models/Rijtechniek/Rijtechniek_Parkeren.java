@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Parkeren {
-    
+
     private int parkerenTweeVoertuigen;
     private int parkerenAchterVoertuigen;
     private int parkerenLinks;
@@ -33,15 +33,8 @@ public class Rijtechniek_Parkeren {
         this.parkerenLinks = parkerenLinks;
     }
 
-    public Rijtechniek_Parkeren() 
-    {
-        
+    public Rijtechniek_Parkeren() {
+
     }
 
-    public Rijtechniek_Parkeren(int parkerenTweeVoertuigen, int parkerenAchterVoertuigen, int parkerenLinks) 
-    {
-        this.parkerenTweeVoertuigen = parkerenTweeVoertuigen;
-        this.parkerenAchterVoertuigen = parkerenAchterVoertuigen;
-        this.parkerenLinks = parkerenLinks;
-    }   
 }

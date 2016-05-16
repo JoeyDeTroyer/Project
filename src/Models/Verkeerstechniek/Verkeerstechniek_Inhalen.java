@@ -3,15 +3,14 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_Inhalen 
-{
+public class Verkeerstechniek_Inhalen {
+
     private int inhalen;
     private int voorbijrijden;
     private int inhalenAndere;
 
-    public Verkeerstechniek_Inhalen() 
-    {
-        
+    public Verkeerstechniek_Inhalen() {
+
     }
 
     public int getInhalen() {
@@ -38,9 +37,4 @@ public class Verkeerstechniek_Inhalen
         this.inhalenAndere = inhalenAndere;
     }
 
-    
-    
-    
-    
-    
 }

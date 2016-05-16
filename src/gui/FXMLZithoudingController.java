@@ -1,7 +1,6 @@
 package gui;
 
 import DAO.EvaluatieDAO;
-import DAO.LeerlingDAO;
 import DAO.RijtechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
@@ -21,7 +20,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
-import project.Model;
 
 public class FXMLZithoudingController extends BorderPane {
 
@@ -78,7 +76,7 @@ public class FXMLZithoudingController extends BorderPane {
         andere1.setToggleGroup(andereGroep);
         andere2.setToggleGroup(andereGroep);
         andere3.setToggleGroup(andereGroep);
-        
+
         try {
             String text = Configuratie.evaluatie.getRijtechniek().getZithouding().getZithoudingOpm();
             zithoudingOpmerking.setText(text);
@@ -270,15 +268,19 @@ public class FXMLZithoudingController extends BorderPane {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             Configuratie.evaluatie.setOpmerkingen(zithoudingOpmerking.getText());
-            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);}
+            EvaluatieDAO.getInstance().updateEvaluatie(Configuratie.evaluatie);
         }
+    }
 
-    
     @FXML
     public void rijtechniek() {
+        try {
+            Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpm(zithoudingOpmerking.getText());
+            RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
+        } catch (NullPointerException ex) {
+
+        }
         switcher.rijtechniek();
-        Configuratie.evaluatie.getRijtechniek().getZithouding().setZithoudingOpm(zithoudingOpmerking.getText());
-        RijtechniekDAO.getInstance().updateRijtechniek(Configuratie.evaluatie.getRijtechniek());
 
     }
 }

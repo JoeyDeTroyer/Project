@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Stuuroefening {
-    
+
     private int stuuroefening;
 
     public int getStuuroefening() {
@@ -14,7 +14,5 @@ public class Rijtechniek_Stuuroefening {
     public void setStuuroefening(int stuuroefening) {
         this.stuuroefening = stuuroefening;
     }
-    
-    
-    
+
 }

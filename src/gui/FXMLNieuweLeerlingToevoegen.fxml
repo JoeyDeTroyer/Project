@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <right>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="bgSubPage" stylesheets="@../resources/cssDashboard.css" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +26,7 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
-            <Label layoutX="292.0" layoutY="225.0" prefHeight="17.0" prefWidth="258.0" text="Familienaam:">
+            <Label layoutX="292.0" layoutY="225.0" prefHeight="17.0" prefWidth="258.0" text="Naam:">
                <font>
                   <Font size="20.0" />
                </font></Label>
@@ -47,6 +47,11 @@
                <font>
                   <Font size="20.0" />
                </font></Label>
+            <Label alignment="CENTER" layoutX="292.0" layoutY="98.0" prefHeight="46.0" prefWidth="377.0" text="Nieuwe leerling toevoegen">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </right>

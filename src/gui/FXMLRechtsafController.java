@@ -4,7 +4,6 @@ import DAO.VerkeerstechniekDAO;
 import Models.Configuratie;
 import Models.Leerling;
 import Models.Verkeerstechniek.Verkeerstechniek_RechtsAfslaan;
-import Models.Verkeerstechniek.Verkeerstechniek_Richtingsaanwijzers;
 import java.io.IOException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

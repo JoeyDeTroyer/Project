@@ -3,22 +3,14 @@ package Models.Verkeerstechniek;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Verkeerstechniek_PlaatsOpenbareWeg 
-{
+public class Verkeerstechniek_PlaatsOpenbareWeg {
+
     private int plaatsOpDeWeg;
     private int Voorsorteren;
     private int plaatsOpenbarewegAndere;
 
-    public Verkeerstechniek_PlaatsOpenbareWeg() 
-    {
-        
-    }
+    public Verkeerstechniek_PlaatsOpenbareWeg() {
 
-    public Verkeerstechniek_PlaatsOpenbareWeg(int verkeerstechniekPlaatsOpDeWeg, int verkeerstechniekVoorsorteren, int verkeerstechniekAndere) 
-    {
-        this.plaatsOpDeWeg = plaatsOpDeWeg;
-        this.Voorsorteren = Voorsorteren;
-        this.plaatsOpenbarewegAndere = plaatsOpenbarewegAndere;
     }
 
     public int getPlaatsOpDeWeg() {
@@ -45,5 +37,4 @@ public class Verkeerstechniek_PlaatsOpenbareWeg
         this.plaatsOpenbarewegAndere = plaatsOpenbarewegAndere;
     }
 
-    
 }

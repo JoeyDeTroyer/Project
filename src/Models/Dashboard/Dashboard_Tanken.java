@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Dashboard_Tanken {
-    
+
     private int tanken;
 
     public int getTanken() {
@@ -14,7 +14,5 @@ public class Dashboard_Tanken {
     public void setTanken(int tanken) {
         this.tanken = tanken;
     }
-    
-    
-    
+
 }

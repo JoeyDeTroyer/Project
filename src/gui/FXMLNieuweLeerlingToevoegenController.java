@@ -3,9 +3,12 @@ package gui;
 import DAO.LeerlingDAO;
 import Models.Leerling;
 import java.io.IOException;
+import java.util.Optional;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -50,21 +53,40 @@ public class FXMLNieuweLeerlingToevoegenController extends BorderPane {
 
     public void saveAction() {
         if (txtInschrijvingsnummer.getText().trim().length() == 0) {
-            lblFoutmelding.setText("Inschrijvingsnummer is niet ingevuld!");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Inschrijvingsnummer is niet ingevuld");
+            alert.setHeaderText(null);
+            alert.setContentText("Het inschrijvingsnummer is niet ingevuld.");
+            Optional<ButtonType> result = alert.showAndWait();
         }
         for (Leerling l : LeerlingDAO.getInstance().findAllLeerlingen()) {
             if (l.getInschrijvingsNr() == Integer.parseInt(txtInschrijvingsnummer.getText().trim())) {
-                lblFoutmelding.setText("Er bestaat al een leerling met dit inschrijvingsnummer!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Inschrijvingsnummer bestaat al");
+                alert.setHeaderText(null);
+                alert.setContentText("Er bestaat al een leerling met dit inschrijvingsnummer.");
+                Optional<ButtonType> result = alert.showAndWait();
             }
         }
         if (txtNaam.getText().trim().length() < 2) {
-            lblFoutmelding.setText("Naam is niet ingevuld!");
-        }
-        if (txtVoornaam.getText().trim().length() < 2) {
-            lblFoutmelding.setText("Voornaam is niet ingevuld!");
-        }
-        if (txtEmail.getText().trim().length() == 0) {
-            lblFoutmelding.setText("Email adres is niet ingevuld!");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Niet alle gegevens zijn ingevuld");
+            alert.setHeaderText(null);
+            alert.setContentText("De naam is niet ingevuld");
+            Optional<ButtonType> result = alert.showAndWait();
+        } else if (txtVoornaam.getText().trim().length() < 2) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Niet alle gegevens zijn ingevuld");
+            alert.setHeaderText(null);
+            alert.setContentText("De voornaam is niet ingevuld");
+            Optional<ButtonType> result = alert.showAndWait();
+        } else if (txtEmail.getText().trim().length() == 0) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Niet alle gegevens zijn ingevuld");
+            alert.setHeaderText(null);
+            alert.setContentText("Het email adres i niet ingevuld..");
+            Optional<ButtonType> result = alert.showAndWait();
         } else {
             Leerling leerling = new Leerling();
             leerling.setInschrijvingsNr(Integer.parseInt(txtInschrijvingsnummer.getText()));

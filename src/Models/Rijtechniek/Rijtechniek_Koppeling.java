@@ -4,16 +4,16 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Koppeling {
-   private int koppelingDosering;
-   private int koppelingVolledig;
-   private int koppelingVoetAf;
-   private int koppelingBedieningAndere;
-   
-   private int koppelingOnnodig;
-   private int koppelingBocht;
-   private int koppelingGebruikAndere;
-   private String koppelingOpm;
-   
+
+    private int koppelingDosering;
+    private int koppelingVolledig;
+    private int koppelingVoetAf;
+    private int koppelingBedieningAndere;
+
+    private int koppelingOnnodig;
+    private int koppelingBocht;
+    private int koppelingGebruikAndere;
+    private String koppelingOpm;
 
     public int getKoppelingDosering() {
         return koppelingDosering;
@@ -42,7 +42,6 @@ public class Rijtechniek_Koppeling {
     public void setKoppelingOpm(String koppelingOpm) {
         this.koppelingOpm = koppelingOpm;
     }
-    
 
     public void setKoppelingVoetAf(int koppelingVoetAf) {
         this.koppelingVoetAf = koppelingVoetAf;
@@ -79,8 +78,5 @@ public class Rijtechniek_Koppeling {
     public void setKoppelingGebruikAndere(int koppelingGebruikAndere) {
         this.koppelingGebruikAndere = koppelingGebruikAndere;
     }
-   
-   
-  
-     
+
 }

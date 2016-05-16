@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Dashboard_Schakelaars {
-    
+
     private int schakelaars;
 
     public int getSchakelaars() {
@@ -14,7 +14,5 @@ public class Dashboard_Schakelaars {
     public void setSchakelaars(int schakelaars) {
         this.schakelaars = schakelaars;
     }
-    
-    
-    
+
 }

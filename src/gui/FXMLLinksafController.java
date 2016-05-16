@@ -16,25 +16,24 @@ import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 
-public class FXMLLinksafController extends BorderPane
-{
+public class FXMLLinksafController extends BorderPane {
+
     @FXML
     Button btnTerug;
     @FXML
     Label lblNaamLeerling;
-    
-     @FXML
+
+    @FXML
     RadioButton rij1Kolom1, rij1Kolom2, rij1Kolom3, rij2Kolom1, rij2Kolom2, rij2Kolom3,
             rij3Kolom1, rij3Kolom2, rij3Kolom3;
 
     @FXML
     ToggleGroup rij1Groep, rij2Groep, rij3Groep;
-    
+
     ScreenSwitcher switcher;
-    
-    public FXMLLinksafController(ScreenSwitcher switcher)
-    {
-         this.switcher = switcher;
+
+    public FXMLLinksafController(ScreenSwitcher switcher) {
+        this.switcher = switcher;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLLinksaf.fxml"));
         loader.setRoot(this);
         loader.setController(this);
@@ -44,8 +43,7 @@ public class FXMLLinksafController extends BorderPane
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        
-        
+
         //Toggle Group aanmaken voor radiobuttons//
         //Eerste groep aanmaken (Dosering)
         rij1Kolom1.setToggleGroup(rij1Groep);
@@ -160,14 +158,13 @@ public class FXMLLinksafController extends BorderPane
                 Configuratie.evaluatie.getVerkeerstechniek().getLinksAfslaan().setLinksAfslaanAndere(getal);
             }
         });
-        
+
         Leerling leerling = Configuratie.getLeerling();
         lblNaamLeerling.setText(leerling.getVolledigeNaam());
     }
-    
+
     @FXML
-    public void verkeerstechniek()
-    {
+    public void verkeerstechniek() {
         VerkeerstechniekDAO.getInstance().updateVerkeerstechniek(Configuratie.evaluatie.getVerkeerstechniek());
         switcher.verkeerstechniek();
     }

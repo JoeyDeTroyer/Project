@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Rijtechniek_Keren {
-    
+
     private int keren;
 
     public int getKeren() {
@@ -14,6 +14,5 @@ public class Rijtechniek_Keren {
     public void setKeren(int keren) {
         this.keren = keren;
     }
-    
-    
+
 }

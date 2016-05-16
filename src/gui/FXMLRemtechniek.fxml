@@ -35,7 +35,7 @@
                   <Font size="18.0" />
                </font></TextArea>
             <Button fx:id="btnTerug" layoutX="890.0" layoutY="636.0" mnemonicParsing="false" onAction="#rijtechniek" prefHeight="119.0" prefWidth="120.0" styleClass="back" stylesheets="@../resources/cssDashboard.css" />
-            <Label layoutX="14.0" layoutY="510.0" text="Opmerkingen:">
+            <Label layoutX="14.0" layoutY="501.0" text="Opmerkingen">
                <font>
                   <Font size="24.0" />
                </font></Label>
@@ -167,6 +167,7 @@
                   <Circle fill="#29e100" radius="20.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
                </children>
             </GridPane>
+            <Button fx:id="btnOpmerking" layoutX="699.0" layoutY="491.0" mnemonicParsing="false" onAction="#opmerkingOpslaan" prefHeight="49.0" prefWidth="165.0" text="Opmerking hoofdmenu" />
          </children>
       </Pane>
    </center>
